@@ -66,7 +66,7 @@ class TestArticle(unittest.TestCase):
         article.click_article_class3()
         # 上传图片
         article.click_up_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
         self.log.info('上传图片成功！')
         article.input_link_address('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         article.click_cancel()

@@ -235,6 +235,12 @@ class ChildAudioPage(Crazy):
     def click_edit_audio_user_tag(self):
         self.click(self.edit_audio_user_tag_loc)
 
+    # 视频名称过长错误提示
+    video_name_error_loc = ('class name', 'ant-form-explain')
+
+    def element_video_name_error(self):
+        return self.find_element(self.video_name_error_loc)
+
     # 保存
     edit_save_loc = ('xpath', '//div[@class="ant-col-offset-3"]/button')
 

@@ -153,6 +153,12 @@ class ChildVideoPage(Crazy):
     def text_upload_success(self):
         return self.get_text(self.upload_success_loc)
 
+    # 视频连接
+    video_url_loc = ('id', 'videoUrl')
+
+    def input_video_url(self, url):
+        self.send_keys(self.video_url_loc, url)
+
     # 确定按钮
     upload_sure_btn_loc = ('xpath', '/html/body/div[5]/div/div[2]/div/div[1]/div[3]/div/button[2]')
 
@@ -228,6 +234,12 @@ class ChildVideoPage(Crazy):
 
     def click_edit_video_user_tag(self):
         self.click(self.edit_video_user_tag_loc)
+
+    # 视频名称过长错误提示
+    video_name_error_loc = ('class name', 'ant-form-explain')
+
+    def element_video_name_error(self):
+        return self.find_element(self.video_name_error_loc)
 
     # 保存
     edit_save_loc = ('xpath', '//div[@class="ant-col-offset-3"]/button')

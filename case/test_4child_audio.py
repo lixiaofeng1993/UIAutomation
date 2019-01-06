@@ -72,10 +72,11 @@ class Testaudio(unittest.TestCase):
         time.sleep(1)
         audio.input_link_info('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         audio.click_cover_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
         audio.click_share_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
         self.log.info('上传封面图片和分享图片成功.')
+        time.sleep(1)
         audio.click_sure_btn()
         self.assertEqual('+ 上传', audio.text_upload_btn(), '音频信息保存错误！')
         self.log.info('音频信息保存成功.')
@@ -91,10 +92,10 @@ class Testaudio(unittest.TestCase):
         audio.input_upload_audio_name('test')
         audio.click_typesetting()
         audio.click_upload_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
         time.sleep(1)
         audio.click_upload_audio()
-        os.system('D:\\UIAutomation\driver\\upaudio1.exe "D:\\UIAutomation\data\\1.wav"')
+        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.wav"')
         time.sleep(1)
         while True:
             audio_success = audio.text_upload_success()
@@ -130,6 +131,11 @@ class Testaudio(unittest.TestCase):
         audio.click_edit_audio_user_tag()
         audio.js_scroll_top()
         audio.click_edit_save()
+        if audio.element_video_name_error():
+            self.log.error('视频名称过长错误，重新输入.')
+            audio.input_audio_title('test')
+            audio_name = ''
+            audio.click_edit_save()
         time.sleep(1)
         audio_name_new = audio.text_edit_audio_name()
         self.assertEqual(audio_name + 'test', audio_name_new, '编辑失败，音频名称验证错误！')
@@ -139,6 +145,11 @@ class Testaudio(unittest.TestCase):
     def test_e_edit_audio_num(self):
         """音频编辑"""
         audio = self.audio
+        if audio.element_top():
+            time.sleep(1)
+            audio.click_top()
+            time.sleep(1)
+            self.log.info('返回页面顶部.')
         self.assertEqual('+ 新增音频', audio.text_newly_btn_audio(), '当前页面不在音频管理页，无法进行编辑操作！')
         try:
             audio.click_edit_audio_num()

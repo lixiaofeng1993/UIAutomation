@@ -6,7 +6,7 @@
 # @File    : test_2child_article.py
 # @Software: PyCharm
 import unittest
-import time, os, re, random
+import time, os, re, random, subprocess
 from unittest import skip
 from BeautifulReport import BeautifulReport
 from page.page_child_article import ChildArticlePage
@@ -66,7 +66,7 @@ class TestArticle(unittest.TestCase):
         article.click_article_class3()
         # 上传图片
         article.click_up_img()
-        os.system('D:\\UIAutomation\driver\\upfile.exe')
+        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
         self.log.info('上传图片成功！')
         article.input_link_address('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         article.click_cancel()

@@ -72,9 +72,9 @@ class Testaudio(unittest.TestCase):
         time.sleep(1)
         audio.input_link_info('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         audio.click_cover_img()
-        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio.jpg"')
         audio.click_share_img()
-        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio_share.jpg"')
         self.log.info('上传封面图片和分享图片成功.')
         time.sleep(1)
         audio.click_sure_btn()
@@ -92,10 +92,10 @@ class Testaudio(unittest.TestCase):
         audio.input_upload_audio_name('test')
         audio.click_typesetting()
         audio.click_upload_img()
-        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio.jpg"')
         time.sleep(1)
         audio.click_upload_audio()
-        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.wav"')
+        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio.wav"')
         time.sleep(1)
         while True:
             audio_success = audio.text_upload_success()
@@ -183,7 +183,6 @@ class Testaudio(unittest.TestCase):
         nun = int(re.findall('(\d+)', page_num)[0])
         if nun > 10:
             skip_page = int(random.randint(0, nun) / 10) + 1  # 取整数 + 1
-            print(skip_page)
             audio.input_skip_page(skip_page)
             audio.send_keys_enter()
             page_num_list = audio.elements_page_num()

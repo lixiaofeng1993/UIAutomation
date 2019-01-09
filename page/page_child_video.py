@@ -201,7 +201,7 @@ class ChildVideoPage(Crazy):
     def click_delete_sure_btn(self):
         self.click(self.delete_sure_btn_loc)
 
-    # 取消                        /html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/button[1]
+    # 取消                        /html/body/div[4]/div/div[2]/div/div[1]/div/div/div[2]/button[1]
     cancel_btn_loc = ('xpath', '/html/body/div[3]/div/div[2]/div/div[1]/div/div/div[2]/button[1]')
     cancel_btn1_loc = ('xpath', '/html/body/div[4]/div/div[2]/div/div[1]/div/div/div[2]/button[1]')
 

@@ -66,7 +66,7 @@ class TestArticle(unittest.TestCase):
         article.click_article_class3()
         # 上传图片
         article.click_up_img()
-        os.system('G:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\1.jpg"')
+        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\article.jpg"')
         self.log.info('上传图片成功！')
         article.input_link_address('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         article.click_cancel()
@@ -74,6 +74,7 @@ class TestArticle(unittest.TestCase):
         time.sleep(2)
         self.assertEqual('test', article.text_check_article_name(), '文章没有新建成功！')
         self.log.info('文章： {},创建成功.'.format(article.text_check_article_name()))
+
 
     @BeautifulReport.add_test_img('test_3update_class_article')
     def test_3update_class_article(self):
@@ -103,6 +104,7 @@ class TestArticle(unittest.TestCase):
         self.assertEqual(article.text_check_class(), update_class, '修改文章分类失败！')
         self.log.info('修改文章分类成功.')
 
+
     @BeautifulReport.add_test_img('test_4update_tag_article')
     def test_4update_tag_article(self):
         """修改文章标签"""
@@ -130,6 +132,7 @@ class TestArticle(unittest.TestCase):
             article.click_tag_sure_btn1()
         self.log.info('修改文章标签成功.')
 
+
     @BeautifulReport.add_test_img('test_5lower_article')
     def test_5lower_article(self):
         """文章跳转"""
@@ -146,6 +149,7 @@ class TestArticle(unittest.TestCase):
         article.switch_window_handle(handle)
         article.click_upper()
         self.log.info('返回原页面成功.')
+
 
     @BeautifulReport.add_test_img('test_6page_article')
     def test_6page_article(self):
@@ -177,6 +181,7 @@ class TestArticle(unittest.TestCase):
         else:
             self.log.info('文章数量太少，无法切换页面.')
 
+    @skip
     @BeautifulReport.add_test_img('test_7query_article')
     def test_7query_article(self):
         """查询文章"""
@@ -187,13 +192,28 @@ class TestArticle(unittest.TestCase):
         time.sleep(1)
         article.click_query_class1()
         time.sleep(1)
-        article.click_query_class2()
-        article.click_query_class3()
+        try:
+            article.click_query_class2_1()
+            article.click_query_class3_1()
+        except AttributeError:
+            article.click_query_class2()
+            article.click_query_class3()
         article.input_query_string('test')
         article.click_query_btn()
         time.sleep(1)
         self.assertEqual('test', article.text_check_article_name(), '查询失败，没有发现查询文章！')
         self.log.info('文章查询成功.')
+
+    @skip
+    def test_operation_article(self):
+        """下架，编辑"""
+        article = self.article
+        time.sleep(1)
+        self.assertEqual(article.text_article_manage_text(), '文章管理', '不在 文章管理 页面，无法进行查询操作！')
+        self.log.info('正在进行下架操作...')
+
+        article.move_lower_shelf()
+        time.sleep(5)
 
 
 if __name__ == '__main__':

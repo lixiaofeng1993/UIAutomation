@@ -565,3 +565,9 @@ class ChildShopPage(Crazy):
 
     def move_options_delete_btn(self):
         self.move(self.options_btn_loc, self.options_copy_btn_loc)
+
+    # 验证数据是否超过十条
+    data_ten_loc = ('xpath', '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li')
+
+    def elements_data_ten(self):
+        return self.find_elements(self.data_ten_loc)

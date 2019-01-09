@@ -123,9 +123,13 @@ class Crazy:
             self.log.error('locator参数必须是元组类型，而不是：{}'.format(type(locator)))
             return ""
         else:
-            elements = WebDriverWait(self.driver, self.timeout, self.t).until(
-                EC.presence_of_all_elements_located(locator))
-            return elements
+            try:
+                elements = WebDriverWait(self.driver, self.timeout, self.t).until(
+                    EC.presence_of_all_elements_located(locator))
+                return elements
+            except:
+                self.log.info('%s页面中未能找到元素%s' % (self, locator))
+                return ""
 
     def click_coordinate(self, coordinate, timeout=10):
         """点击坐标"""
@@ -149,6 +153,12 @@ class Crazy:
     def send_keys(self, locator, text):
         """发送文本，清空后输入"""
         element = self.find_element(locator)
+        element.clear()
+        element.send_keys(text)
+
+    def sends_keys(self, locator, n, text):
+        """发送文本，清空后输入"""
+        element = self.find_elements(locator)[n]
         element.clear()
         element.send_keys(text)
 
@@ -254,6 +264,11 @@ class Crazy:
         except ElementNotVisibleException as e:
             self.log.error('鼠标点击事件失败：%s' % e)
 
+    def drag_and_drop(self, element, element1):
+        """拖拽"""
+        ActionChains(self.driver).drag_and_drop(element, element1).perform()
+        ActionChains(self.driver).click_and_hold(element).release(element1).perform()
+
     def switch_frame(self, frame):
         """切换ifarm"""
         try:
@@ -329,8 +344,8 @@ class Crazy:
         self.driver.execute_script(js)
 
     def js_scroll_bottom(self):
-        """滚动到顶部"""
-        js = "var q=document.documentElement.scrollTop=0"
+        """滚动到底部"""
+        js = "var q=document.documentElement.scrollTop=10000"
         self.driver.execute_script(js)
 
     def select_by_index(self, locator, index):

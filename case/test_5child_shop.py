@@ -105,6 +105,7 @@ class Testaudio(unittest.TestCase):
         self.assertEqual('选择数据', shop.text_check_data(), '选择数据弹窗未弹出！')
         self.log.info('进行选择数据操作.')
         self.choice_data(shop)
+        self.save_page(shop)
 
     def test_d_audio_shop(self):
         """装修页面-单列音频"""
@@ -113,11 +114,16 @@ class Testaudio(unittest.TestCase):
         self.assertEqual('test', shop.text_page_title(), '打开页面错误！')
         self.log.info('已选中新建页面，选择音频进行店铺装修.')
         self.choice_page_data(shop)
-        shop.click_add_audio()
+        if self.check_already_ten(shop):
+            shop.click_add_audio()
+        else:
+            self.log.error('选择模块数据已经有十条，无法继续添加.')
+            return
         time.sleep(1)
         self.assertEqual('选择数据', shop.text_check_data(), '选择数据弹窗未弹出！')
         self.log.info('进行选择数据操作.')
         self.choice_data(shop)
+        self.save_page(shop)
 
     def test_e_article_shop(self):
         """装修页面-单列文章"""
@@ -126,11 +132,17 @@ class Testaudio(unittest.TestCase):
         self.assertEqual('test', shop.text_page_title(), '打开页面错误！')
         self.log.info('已选中新建页面，选择文章进行店铺装修.')
         self.choice_page_data(shop)
-        shop.click_add_article()
+        self.check_bottom(shop)
+        if self.check_already_ten(shop):
+            shop.click_add_article()
+        else:
+            self.log.error('选择模块数据已经有十条，无法继续添加.')
+            return
         time.sleep(1)
         self.assertEqual('选择数据', shop.text_check_data(), '选择数据弹窗未弹出！')
         self.log.info('进行选择数据操作.')
         self.choice_data(shop, make=True)
+        self.save_page(shop)
 
     def test_f_single_ad_shop(self):
         """装修页面-单列广告"""
@@ -414,6 +426,8 @@ class Testaudio(unittest.TestCase):
                 else:
                     self.log.info('test 页面已经存在，直接进行装修操作.')
                     return False
+        else:
+            return True
 
     def get_element_title(self, elements):
         """遍历元素，加到一个list中"""
@@ -425,8 +439,11 @@ class Testaudio(unittest.TestCase):
         """随机选择页面元素，点击"""
         data_list = []
         elements = []
+        self.log.info('开始随机选择元素.')
         if shop.elements_video_img():
+            print(11111111111111111)
             data_list.append(shop.elements_video_img())
+            print(data_list)
         if shop.elements_audio_img():
             data_list.append(shop.elements_audio_img())
         if shop.elements_article_single_img():
@@ -444,9 +461,11 @@ class Testaudio(unittest.TestCase):
         for datas in data_list:
             for data in datas:
                 elements.append(data)
+                print(elements, 222222222222222)
         elements = list(set(elements))
         n = random.randint(0, len(elements) - 1)
         elements[n].click()
+        self.log.info('随机选择的元素是:{}.'.format(elements[n]))
 
     def switch_data_page(self, shop):
         """切换选择数据页面"""
@@ -472,7 +491,7 @@ class Testaudio(unittest.TestCase):
         else:
             data = shop.element_choice_data()
         n = random.randint(0, len(data) - 1)
-        self.log.info('n-----------------------' + str(n))
+        self.log.info('n----------------------->' + str(n))
         data[n].click()
         time.sleep(1)
         if type != 'ad':
@@ -552,12 +571,31 @@ class Testaudio(unittest.TestCase):
 
     def check_bottom(self, shop):
         time.sleep(1)
+        self.log.info('向下滑动页面.')
         while True:
             if not shop.element_bottom():
                 shop.js_scroll_bottom()
                 time.sleep(2)
             else:
                 break
+
+    def check_top(self, shop):
+        time.sleep(1)
+        self.log.info('向上滑动页面.')
+        while True:
+            if not shop.text_page_title():
+                shop.js_scroll_top()
+                time.sleep(2)
+            else:
+                break
+
+    def check_already_ten(self, shop):
+        """验证随机选择数据是否已经十条"""
+        data_num = len(shop.elements_data_ten())
+        if data_num < 10:
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':

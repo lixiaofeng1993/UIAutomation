@@ -14,6 +14,7 @@ from page.page_child_login import ChildLoginPage
 from common.logger import Log, img_path
 from common.basics import open_browser
 from common import read_config
+from common.random_upload import uploaded
 
 
 class TestVideo(unittest.TestCase):
@@ -59,21 +60,17 @@ class TestVideo(unittest.TestCase):
         video.send_keys_enter()
         time.sleep(1)
         video.click_video_class1()
-        try:
-            time.sleep(1)
-            video.click_video_class2()
-            video.click_video_class3()
-        except AttributeError:
-            video.click_video_class2_2()
-            video.click_video_class3_3()
-        video.input_video_title('test')
+        time.sleep(1)
+        video.click_video_class2()
+        video.click_video_class3()
+        video.input_video_title('这是一个测试视频')
         video.click_link()
         time.sleep(1)
         video.input_link_info('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         video.click_cover_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\video.jpg"')
+        uploaded()
         video.click_share_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\video_share.jpg"')
+        uploaded()
         self.log.info('上传封面图片和分享图片成功.')
         time.sleep(1)
         video.click_sure_btn()
@@ -88,13 +85,13 @@ class TestVideo(unittest.TestCase):
         self.log.info('上传视频操作开始.')
         video.click_upload_btn()
         time.sleep(1)
-        video.input_upload_video_name('test')
+        video.input_upload_video_name('测试视频')
         video.click_typesetting()
         video.click_upload_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\video.jpg"')
+        uploaded()
         time.sleep(1)
         video.click_upload_video()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\video.mp4"')
+        uploaded(type=1)
         time.sleep(1)
         while True:
             video_success = video.text_upload_success()
@@ -104,7 +101,7 @@ class TestVideo(unittest.TestCase):
             else:
                 self.log.info('视频大小：{}mb，已上传：{}mb'.format(mb_list[1], mb_list[0]))
                 time.sleep(2)
-
+        time.sleep(1)
         video.click_upload_sure_btn()
         time.sleep(1)
         self.assertEqual('test', video.text_check_upload_success(), '上传视频失败！')
@@ -117,29 +114,26 @@ class TestVideo(unittest.TestCase):
         video = self.video
         self.assertEqual('+ 新增视频', video.text_newly_btn_video(), '当前页面不在视频管理页，无法进行编辑操作！')
         self.log.info('选择第一个视频专辑，进行编辑操作.')
-        video_name = video.text_edit_video_name()
-        print(video_name)
-        try:
-            video.click_edit_video_name()
-        except Exception:
+        make = False
+        video_name_list = video.elements_edit_video_name()
+        for element in video_name_list:
+            if element.text == '这是一个测试视频':
+                element.click()
+                make = True
+        if make:
+            self.assertEqual('这是一个测试视频', video.text_video_title(), '进入视频编辑页面错误！')
+            self.log.info('进入视频：{} 编辑页成功.'.format('这是一个测试视频'))
             time.sleep(1)
-            video.click_edit_video_name()
-        self.assertEqual(video_name, video.text_video_title(), '进入视频编辑页面错误！')
-        self.log.info('进入视频：{} 编辑页成功.'.format(video_name))
-        time.sleep(1)
-        video.input_video_title(video_name + 'test')
-        video.click_edit_video_tag()
-        video.click_edit_video_user_tag()
-        video.click_edit_save()
-        if video.element_video_name_error():
-            self.log.error('视频名称过长错误，重新输入.')
             video.input_video_title('test')
-            video_name = ''
+            video.click_edit_video_tag()
+            video.click_edit_video_user_tag()
             video.click_edit_save()
-        time.sleep(1)
-        video_name_new = video.text_edit_video_name()
-        self.assertEqual(video_name + 'test', video_name_new, '编辑失败，视频名称验证错误！')
-        self.log.info('编辑视频成功.')
+            video_name_list = video.elements_edit_video_name()
+            for element in video_name_list:
+                if element.text == 'test':
+                    self.log.info('编辑视频成功.')
+        else:
+            pass # 66666666666666666666666666666
 
     @BeautifulReport.add_test_img('test_e_edit_video_num')
     def test_e_edit_video_num(self):
@@ -151,13 +145,10 @@ class TestVideo(unittest.TestCase):
             time.sleep(1)
             self.log.info('返回页面顶部.')
         self.assertEqual('+ 新增视频', video.text_newly_btn_video(), '当前页面不在视频管理页，无法进行编辑操作！')
-        try:
-            video.click_edit_video_num()
-        except Exception:
-            time.sleep(1)
-            video.click_edit_video_num()
+        time.sleep(1)
+        video.click_edit_video_num()
         self.assertEqual('+ 上传', video.text_upload_btn(), '当前页面没有上传按钮，无法进行删除操作！')
-        if video.text_no_data() == '暂无数据':
+        if video.text_check_delete_video() == '暂无数据':
             self.log.info('页面暂无数据，请先上传视频.')
         else:
             self.log.info('页面确认，可以进行删除操作.')
@@ -166,12 +157,8 @@ class TestVideo(unittest.TestCase):
             self.log.info('勾选视频成功.')
             video.click_delete_btn()
             time.sleep(1)
-            # video.click_delete_sure_btn()
-            try:
-                video.click_cancel_btn1()
-            except AttributeError:
-                video.click_cancel_btn()
-            # self.assertIsNone(video.text_delete_btn(), '删除视频失败！')
+            video.click_delete_sure_btn()
+            self.assertEqual('暂无数据', video.text_check_delete_video(), '删除视频失败！')
             self.log.info('删除视频成功.')
         video.back()
 

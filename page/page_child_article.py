@@ -24,10 +24,16 @@ class ChildArticlePage(Crazy):
         return self.get_text(self.article_manage_text_loc)
 
     # 新建文章按钮
-    newly_btn_loc = ('xpath', '//*[@id="mainContainer"]/div[2]/div[2]/div[1]/div[1]/div[4]/button')
+    newly_btn_loc = ('xpath', '//div[@class="ant-row-flex ant-row-flex-start ant-row-flex-middle"]/div[4]/button')
 
     def click_newly_btn(self):
         self.click(self.newly_btn_loc)
+
+    # 验证
+    check_newly_loc = ('xpath', '//div[@class="ant-modal-title"]')
+
+    def text_check_newly(self):
+        return self.get_text(self.check_newly_loc)
 
     # 文章标题
     article_title_loc = ('id', 'title')
@@ -44,24 +50,28 @@ class ChildArticlePage(Crazy):
 
     # 文章分类
     article_class1_loc = (
-        'xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[2]/form/div[3]/div[2]/div/span/span/span')
+        'xpath', '//form[@class="ant-form ant-form-horizontal"]/div[3]/div[2]/div/span/span/span')
 
     def click_article_class1(self):
         self.click(self.article_class1_loc)
 
-    article_class2_loc = ('xpath', '/html/body/div[4]/div/div/div/ul[1]/li[2]')
+    article_class2_loc = ('xpath', '//ul[@class="ant-cascader-menu"]/li[4]')
 
     def click_article_class2(self):
         self.click(self.article_class2_loc)
 
-    article_class3_loc = ('xpath', '/html/body/div[4]/div/div/div/ul[2]/li[1]')
+    article_class3_loc = (
+        'xpath', '//div[@class="ant-cascader-menus ant-cascader-menus-placement-bottomLeft"]/div/ul[2]/li[2]')
 
     def click_article_class3(self):
         self.click(self.article_class3_loc)
 
+    def text_article_class(self):
+        return self.get_text(self.article_class3_loc)
+
     # 上传图片
     up_img_loc = (
-        'xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[2]/form/div[5]/div[2]/div/span/span/div[1]/span/button')
+        'xpath', '//div[@class="ant-upload ant-upload-select ant-upload-select-picture"]/span/button')
 
     def click_up_img(self):
         self.click(self.up_img_loc)
@@ -94,20 +104,16 @@ class ChildArticlePage(Crazy):
 
     # 查询
     # 分类
-    query_class1_loc = ('xpath', '//*[@id="mainContainer"]/div[2]/div[2]/div[1]/div[1]/div[1]/span/span')
+    query_class1_loc = (
+        'xpath', '//div[@class="ant-cascader-menus ant-cascader-menus-placement-bottomLeft"]/div/ul/li[4]')
 
     def click_query_class1(self):
         self.click(self.query_class1_loc)
 
-    query_class2_loc = ('xpath', '/html/body/div[3]/div/div/div/ul[1]/li[3]')
+    query_class_loc = ('xpath', '//span[@class="ant-cascader-picker-label"]')
 
-    def click_query_class2(self):
-        self.click(self.query_class2_loc)
-
-    query_class3_loc = ('xpath', '/html/body/div[3]/div/div/div/ul[2]/li[3]')
-
-    def click_query_class3(self):
-        self.click(self.query_class3_loc)
+    def click_query_class(self):
+        self.click(self.query_class_loc)
 
     query_string_loc = ('id', 'queryString')
 
@@ -134,25 +140,15 @@ class ChildArticlePage(Crazy):
     def click_update_class(self):
         self.click(self.update_class_loc)
 
-    # 点不上                       /html/body/div[3]/div/div[2]/div/div[1]/div[2]/form/div/div[2]/div/span/span/span
-    choice_class1_loc = ('xpath', '/html/body/div[3]/div/div[2]/div/div[1]/div[2]/form/div/div[2]/div/span/span')
-    choice_class1_1_loc = ('xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[2]/form/div/div[2]/div/span/span/span')
+    # 批量修改分类
+    choice_class1_loc = ('xpath', '//div[@class="ant-row ant-form-item"]/div[2]/div/span/span')
+    choice_class2_loc = ('xpath', '//ul[@class="ant-cascader-menu"]/li[3]')
 
     def click_choice_class1(self):
         self.click(self.choice_class1_loc)
 
-    def click_choice_class1_1(self):
-        self.click(self.choice_class1_1_loc)
-
-    #                               /html/body/div[4]/div/div/div/ul/li[2]
-    choice_class2_loc = ('xpath', '/html/body/div[4]/div/div/div/ul/li[2]')
-    choice_class2_2_loc = ('xpath', '/html/body/div[3]/div/div/div/ul/li[2]')
-
     def click_choice_class2(self):
         self.click(self.choice_class2_loc)
-
-    def click_choice_class2_2(self):
-        self.click(self.choice_class2_2_loc)
 
     choice_class3_loc = ('xpath', '/html/body/div[4]/div/div/div/ul[2]/li[3]')
     choice_class3_3_loc = ('xpath', '/html/body/div[3]/div/div/div/ul[2]/li[3]')
@@ -169,14 +165,10 @@ class ChildArticlePage(Crazy):
     def click_choice_class3_3(self):
         self.click(self.choice_class3_3_loc)
 
-    choice_sure_btn_loc = ('xpath', '/html/body/div[3]/div/div[2]/div/div[1]/div[3]/div/button[2]')
-    choice_sure_btn1_loc = ('xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[3]/div/button[2]')
+    choice_sure_btn_loc = ('xpath', '//div[@class="ant-modal-footer"]/div/button[2]')
 
     def click_choice_sure_btn(self):
         self.click(self.choice_sure_btn_loc)
-
-    def click_choice_sure_btn1(self):
-        self.click(self.choice_sure_btn1_loc)
 
     # 验证
     check_class_loc = (
@@ -196,29 +188,17 @@ class ChildArticlePage(Crazy):
 
     age_tag_loc = (
         'xpath',
-        '/html/body/div[3]/div/div[2]/div/div[1]/div[2]/form/div[1]/div[2]/div/span/div/label[1]/span[1]')
-    age_tag1_loc = (
-        'xpath',
-        '/html/body/div[2]/div/div[2]/div/div[1]/div[2]/form/div[1]/div[2]/div/span/div/label[1]/span[1]')
+        '//form[@class="ant-form ant-form-horizontal"]/div[1]/div[2]/div/span/div/label[1]/span[1]')
 
     def click_age_tag(self):
         self.click(self.age_tag_loc)
 
-    def click_age_tag1(self):
-        self.click(self.age_tag1_loc)
-
     others_tag_loc = (
         'xpath',
-        '/html/body/div[3]/div/div[2]/div/div[1]/div[2]/form/div[2]/div[2]/div/span/div/label[1]/span[1]')
-    others_tag1_loc = (
-        'xpath',
-        '/html/body/div[2]/div/div[2]/div/div[1]/div[2]/form/div[2]/div[2]/div/span/div/label[1]/span[1]')
+        '//form[@class="ant-form ant-form-horizontal"]/div[2]/div[2]/div/span/div/label[1]/span[1]')
 
     def click_others_tag(self):
         self.click(self.others_tag_loc)
-
-    def click_others_tag1(self):
-        self.click(self.others_tag1_loc)
 
     tag_sure_btn_loc = ('xpath', '/html/body/div[3]/div/div[2]/div/div[1]/div[3]/div/button[2]')
     tag_sure_btn1_loc = ('xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[3]/div/button[2]')
@@ -230,7 +210,7 @@ class ChildArticlePage(Crazy):
         self.click(self.tag_sure_btn1_loc)
 
     # 下架文章
-    lower_btn_loc = ('xpath', '//*[@id="mainContainer"]/div[2]/div[2]/div[1]/div[2]/div/div/label[2]/span[2]')
+    lower_btn_loc = ('xpath', '//div[@class="ant-radio-group"]/label[2]/span[2]')
 
     def click_lower_btn(self):
         self.click(self.lower_btn_loc)
@@ -280,3 +260,48 @@ class ChildArticlePage(Crazy):
 
     def click_top(self):
         self.click(self.top_loc)
+
+    # 下架 删除
+    # 文章名称
+    get_all_article_name_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr/td[3]')
+
+    def elements_get_all_article_name(self):
+        return self.find_elements(self.get_all_article_name_loc)
+
+    article_option_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr[1]/td[8]/button')
+
+    # 下架按钮
+    lower_option_loc = ('xpath',
+                        '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[1]')
+
+    def element_lower_option(self):
+        return self.find_element(self.lower_option_loc)
+
+    def move_lower_option(self):
+        self.move(self.article_option_loc, self.lower_option_loc)
+
+    # 确认下架
+    lower_sure_btn_loc = ('xpath', '//div[@class="ant-confirm-btns"]/button[2]')
+
+    def click_lower_sure_btn(self):
+        self.click(self.lower_sure_btn_loc)
+
+    # 验证选中下架中
+    check_lower_btn_loc = ('xpath', '//div[@class="ant-row"]/div/div/label')
+
+    def elements_check_lower_btn(self):
+        return self.find_elements(self.check_lower_btn_loc)
+
+    # 删除按钮
+    delete_option_loc = ('xpath',
+                         '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[3]')
+
+    def move_delete_option(self):
+        self.move(self.article_option_loc, self.delete_option_loc)
+
+    # 编辑按钮
+    edit_btn_loc = ('xpath',
+                    '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[2]')
+
+    def move_edit_option(self):
+        self.move(self.article_option_loc, self.edit_btn_loc)

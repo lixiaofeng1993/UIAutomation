@@ -14,6 +14,7 @@ from page.page_child_login import ChildLoginPage
 from common.logger import Log, img_path
 from common.basics import open_browser
 from common import read_config
+from common.random_upload import uploaded
 
 
 class Testaudio(unittest.TestCase):
@@ -72,9 +73,9 @@ class Testaudio(unittest.TestCase):
         time.sleep(1)
         audio.input_link_info('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         audio.click_cover_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio.jpg"')
+        uploaded()
         audio.click_share_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio_share.jpg"')
+        uploaded()
         self.log.info('上传封面图片和分享图片成功.')
         time.sleep(1)
         audio.click_sure_btn()
@@ -92,10 +93,10 @@ class Testaudio(unittest.TestCase):
         audio.input_upload_audio_name('test')
         audio.click_typesetting()
         audio.click_upload_img()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio.jpg"')
+        uploaded()
         time.sleep(1)
         audio.click_upload_audio()
-        os.system('D:\\UIAutomation\driver\\upfile1.exe "D:\\UIAutomation\data\\audio.wav"')
+        uploaded(type=2)
         time.sleep(1)
         while True:
             audio_success = audio.text_upload_success()

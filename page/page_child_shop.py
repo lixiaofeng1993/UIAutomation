@@ -42,7 +42,7 @@ class ChildShopPage(Crazy):
 
     # 分享图片
     share_img_loc = (
-        'xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[2]/form/div[3]/div[2]/div/span/span/div/span/button')
+        'xpath', '//div[@class="ant-upload ant-upload-select ant-upload-select-text"]/span/button')
 
     def click_share_img(self):
         self.click(self.share_img_loc)
@@ -54,7 +54,7 @@ class ChildShopPage(Crazy):
         self.click(self.is_share_loc)
 
     # 确定 ant-btn ant-btn-primary
-    sure_btn_loc = ('xpath', '//button[@class="ant-btn ant-btn-primary"]')
+    sure_btn_loc = ('xpath', '//div[@class="ant-modal-footer"]/div/button[2]')
 
     def click_sure_btn(self):
         self.click(self.sure_btn_loc)
@@ -160,7 +160,7 @@ class ChildShopPage(Crazy):
         return self.find_elements(self.choice_data_loc)
 
     # 广告图选择视频、音频、文章
-    choice_vaa_loc = ('class name', 'ant-radio-input')
+    choice_vaa_loc = ('xpath', '//tr[@class="ant-table-row  ant-table-row-level-0"]/td/span/label/span/input')
 
     def element_choice_vaa(self):
         return self.find_elements(self.choice_vaa_loc)
@@ -235,6 +235,9 @@ class ChildShopPage(Crazy):
     def elements_video_title(self):
         return self.find_elements(self.video_title_loc)
 
+    def texts_video_title(self, n):
+        return self.get_texts(self.video_title_loc, 0)
+
     video_img_loc = ('class name', 'zent-design-component-column1-preview__video-img')
 
     def elements_video_img(self):
@@ -308,6 +311,12 @@ class ChildShopPage(Crazy):
                         '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[2]/div/div/div/div[2]/span/span/button')
     choice_link2_loc = ('xpath',
                         '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[3]/div/div/div/div[2]/span/span/button')
+    # 单列选择
+    choice_link4_loc = ('xpath',
+                        '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[1]/div/div/div/div[2]/div[2]/span/span/button')
+
+    def click_choice_link4(self):
+        self.click(self.choice_link4_loc)
 
     def click_choice_link(self):
         self.click(self.choice_link_loc)
@@ -334,7 +343,7 @@ class ChildShopPage(Crazy):
     def clicks_type(self, n):
         self.clicks(self.type_loc, n)
 
-    # 获取广告链接id  //*[@id="mainContainer"]/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div[1]/div[4]/div[2]/div[1]/ul/li[2]/div/div/div/div[2]/span/input
+    # 获取广告链接id  //ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[1]/div/div/div/div[2]/div/span/input
     ad_link_id_loc = (
         'xpath', '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[1]/div/div/div/div[2]/span/input')
     ad_link_id1_loc = (
@@ -343,6 +352,12 @@ class ChildShopPage(Crazy):
         'xpath', '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[3]/div/div/div/div[2]/span/input')
     ad_link_id3_loc = (
         'xpath', '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[4]/div/div/div/div[2]/span/input')
+    ad_link_id4_loc = (
+        'xpath',
+        '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[1]/div/div/div/div[2]/div/span/input')
+
+    def elements_ad_link_id4(self):
+        return self.find_elements(self.ad_link_id4_loc)
 
     def elements_ad_link_id(self):
         return self.find_elements(self.ad_link_id_loc)
@@ -420,7 +435,7 @@ class ChildShopPage(Crazy):
     def input_two_text3(self, text):
         self.send_keys(self.two_text3_loc, text)
 
-    # 选择数据  click_choice_link1
+    # 选择数据
     two_choice_data_loc = (
         'xpath',
         '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li[1]/div/div/div/div[3]/span/span/button')
@@ -562,12 +577,45 @@ class ChildShopPage(Crazy):
 
     options_delete_btn_loc = ('xpath',
                               '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[2]')
+    options_edit_btn_loc = ('xpath',
+                            '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[1]')
 
     def move_options_delete_btn(self):
-        self.move(self.options_btn_loc, self.options_copy_btn_loc)
+        self.move(self.options_btn_loc, self.options_delete_btn_loc)
+
+    def move_options_edit_btn(self):
+        self.move(self.options_btn_loc, self.options_edit_btn_loc)
 
     # 验证数据是否超过十条
     data_ten_loc = ('xpath', '//ul[@class="zent-design-component-image-ad-editor__entry-list"]/li')
 
     def elements_data_ten(self):
         return self.find_elements(self.data_ten_loc)
+
+    # 返回顶部
+
+    cancel_top_loc = ('xpath', '//div[@class="ant-back-top-icon"]')
+
+    def element_cancel_top(self):
+        return self.find_element(self.cancel_top_loc)
+
+    def click_cancel_top(self):
+        self.click(self.cancel_top_loc)
+
+    # 元素功能
+    element_btn_loc = ('xpath', '//button[@class="ant-btn ant-btn-circle ant-btn-lg ant-btn-icon-only"]')
+
+    def click_element_btn(self):
+        self.click(self.element_btn_loc)
+
+    # 验证
+    check_element_loc = ('xpath', '//div[@class="elementHead___2BdSp"]/b')
+
+    def text_check_element(self):
+        return self.get_text(self.check_element_loc)
+
+    # 删除图标
+    element_delete_btn_loc = ('xpath', '//div[@class="elementList___3KqwN"]/div[1]/div/i')
+
+    def click_element_delete_btn(self):
+        self.click(self.element_delete_btn_loc)

@@ -6,9 +6,5 @@
 # @File    : test.py
 # @Software: PyCharm
 
-import re
-
-data = '已上传8.91MB，共144.82MB'
-
-a = re.findall('(\d+\.\d+)', data)
-print(a)
+for i in range(2):
+    print(i)

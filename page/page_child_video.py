@@ -85,14 +85,14 @@ class ChildVideoPage(Crazy):
 
     # 封面图片
     cover_img_loc = ('xpath',
-                     '//*[@id="mainContainer"]/div[2]/div[2]/div/div[2]/div[1]/div/form/div[1]/div[2]/div[1]/div[2]/div/span/div/span/div/span/button')
+                     '//form[@class="ant-form ant-form-horizontal"]/div[1]/div[2]/div[1]/div[2]/div/span/div/span/div')
 
     def click_cover_img(self):
         self.click(self.cover_img_loc)
 
     # 分享图片
     share_img_loc = ('xpath',
-                     '//*[@id="mainContainer"]/div[2]/div[2]/div/div[2]/div[1]/div/form/div[1]/div[2]/div[2]/div[2]/div/span/div/span/div/span/button')
+                     '//form[@class="ant-form ant-form-horizontal"]/div[1]/div[2]/div[2]/div[2]/div/span/div/span/div')
 
     def click_share_img(self):
         self.click(self.share_img_loc)
@@ -125,23 +125,23 @@ class ChildVideoPage(Crazy):
     def click_typesetting(self):
         self.click(self.typesetting_loc)
 
-    # 上传图片   /html/body/div[5]/div/div[2]/div/div[1]/div[2]/form/div[5]/div[2]/div/span/span/div/span/button
+    # 上传图片
     upload_img_loc = (
-        'xpath', '/html/body/div[5]/div/div[2]/div/div[1]/div[2]/form/div[5]/div[2]/div/span/span/div')
+        'xpath', '//div[@class="ant-modal-body"]/form/div[5]/div[2]/div/span/span/div')
 
     def click_upload_img(self):
         self.click(self.upload_img_loc)
 
-    # 上传视频      /html/body/div[5]/div/div[2]/div/div[1]/div[2]/form/div[6]/div[2]/div/span/span/div/span/button
+    # 上传视频
     upload_video_loc = (
-        'xpath', '/html/body/div[5]/div/div[2]/div/div[1]/div[2]/form/div[6]/div[2]/div/span/span/div')
+        'xpath', '//div[@class="ant-modal-body"]/form/div[6]/div[2]/div/span/span/div')
 
     def click_upload_video(self):
         self.click(self.upload_video_loc)
 
     # 上传成功
     upload_success_loc = (
-        'xpath', '/html/body/div[5]/div/div[2]/div/div[1]/div[2]/form/div[6]/div[2]/div/span/div/span')
+        'xpath', '//div[@class="ant-modal-body"]/form/div[6]/div[2]/div/span/div/span')
 
     def text_upload_success(self):
         return self.get_text(self.upload_success_loc)
@@ -153,7 +153,7 @@ class ChildVideoPage(Crazy):
         self.send_keys(self.video_url_loc, url)
 
     # 确定按钮
-    upload_sure_btn_loc = ('xpath', '/html/body/div[5]/div/div[2]/div/div[1]/div[3]/div/button[2]')
+    upload_sure_btn_loc = ('xpath', '//div[@class="ant-modal-footer"]/div/button[2]')
 
     def click_upload_sure_btn(self):
         self.click(self.upload_sure_btn_loc)

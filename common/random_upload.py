@@ -18,7 +18,7 @@ upfile_img_path = os.path.join(read_config.upfile_path, 'ad')
 def random_num():
     if os.path.exists(upfile_img_path):
         file_list = os.listdir(upfile_img_path)
-        num = random.randint(0, len(file_list))
+        num = random.randint(0, len(file_list) - 1)
         return num
     else:
         log.error('图片目录不存在！')
@@ -46,4 +46,4 @@ def uploaded(type=0):
 
 
 if __name__ == '__main__':
-    uploaded(type=2)
+    uploaded(type=0)

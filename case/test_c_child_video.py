@@ -3,7 +3,7 @@
 # @Time    : 2019/1/3 17:04
 # @Author  : lixiaofeng
 # @Site    : 
-# @File    : test_3child_video.py
+# @File    : test_c_child_video.py
 # @Software: PyCharm
 import unittest
 import time, os, re, random

@@ -60,7 +60,7 @@ class ChildShopPage(Crazy):
         self.click(self.sure_btn_loc)
 
     # 取消
-    cancel_btn_lco = ('xpath', '/html/body/div[2]/div/div[2]/div/div[1]/div[3]/div/button[1]')
+    cancel_btn_lco = ('xpath', '//div[@class="ant-modal-footer"]/div/button[1]')
 
     def click_cancel_btn(self):
         self.click(self.cancel_btn_lco)

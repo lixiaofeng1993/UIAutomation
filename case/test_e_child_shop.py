@@ -3,7 +3,7 @@
 # @Time    : 2019/1/4 16:19
 # @Author  : lixiaofeng
 # @Site    : 
-# @File    : test_4child_audio.py
+# @File    : test_d_child_audio.py
 # @Software: PyCharm
 import random
 import re
@@ -81,7 +81,7 @@ class Testaudio(unittest.TestCase):
 
     @BeautifulReport.add_test_img('test_b_new_page_shop')
     def test_b_new_page_shop(self):
-        """新建、删除页面"""
+        """新建页面"""
         shop = self.shop
         self.assertEqual(shop.text_check_shop_manage(), '店铺装修', '当前不在 店铺装修 页面，无法进行新建页面操作！')
         self.log.info('开始新建页面.')
@@ -100,6 +100,7 @@ class Testaudio(unittest.TestCase):
         else:
             self.log.error('test 页面创建失败！')
 
+
     @BeautifulReport.add_test_img('test_c_video_shop')
     def test_c_video_shop(self):
         """装修页面-单列视频"""
@@ -115,6 +116,7 @@ class Testaudio(unittest.TestCase):
         self.log.info('进行选择数据操作.')
         self.choice_data(shop)
         self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_d_audio_shop')
     def test_d_audio_shop(self):
@@ -135,6 +137,7 @@ class Testaudio(unittest.TestCase):
         self.choice_data(shop)
         self.save_page(shop)
 
+
     @BeautifulReport.add_test_img('test_e_article_shop')
     def test_e_article_shop(self):
         """装修页面-单列文章"""
@@ -154,6 +157,7 @@ class Testaudio(unittest.TestCase):
         self.log.info('进行选择数据操作.')
         self.choice_data(shop, make=True)
         self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_f_single_ad_shop')
     def test_f_single_ad_shop(self):
@@ -179,6 +183,7 @@ class Testaudio(unittest.TestCase):
         self.choice_data(shop, type='ad', make=n, ad=True)
         self.save_page(shop)
 
+
     @BeautifulReport.add_test_img('test_g_two_ad_shop')
     def test_g_two_ad_shop(self):
         """两列广告"""
@@ -193,6 +198,7 @@ class Testaudio(unittest.TestCase):
             self.two_ad_shop(shop, make=True)
         if self.two:
             self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_g_two_img_ad_shop')
     def test_g_two_img_ad_shop(self):
@@ -224,6 +230,7 @@ class Testaudio(unittest.TestCase):
         if self.three:
             self.save_page(shop)
 
+
     @BeautifulReport.add_test_img('test_h_three_img_ad_shop')
     def test_h_three_img_ad_shop(self):
         """三列图文广告"""
@@ -239,6 +246,7 @@ class Testaudio(unittest.TestCase):
                 self.two_ad_shop(shop, img=True)
         if self.three:
             self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_i_four_ad_shop')
     def test_i_four_ad_shop(self):
@@ -258,6 +266,7 @@ class Testaudio(unittest.TestCase):
         if self.four:
             self.save_page(shop)
 
+
     @BeautifulReport.add_test_img('test_i_four_img_ad_shop')
     def test_i_four_img_ad_shop(self):
         """四列图文广告"""
@@ -275,6 +284,7 @@ class Testaudio(unittest.TestCase):
                     self.two_ad_shop(shop, img=True)
         if self.four:
             self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_j_carousel_ad_shop')
     def test_j_carousel_ad_shop(self):
@@ -294,6 +304,7 @@ class Testaudio(unittest.TestCase):
         if self.four:
             self.save_page(shop)
 
+
     @BeautifulReport.add_test_img('test_k_left_ad_shop')
     def test_k_left_ad_shop(self):
         """左滑广告"""
@@ -311,6 +322,7 @@ class Testaudio(unittest.TestCase):
                     self.two_ad_shop(shop, make=True, left=True)
         if self.four:
             self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_l_blank_ad_shop')
     def test_l_blank_ad_shop(self):
@@ -333,6 +345,7 @@ class Testaudio(unittest.TestCase):
         shop.click_blank_color_check()
         self.log.info('空白添加成功.')
         self.save_page(shop)
+
 
     @BeautifulReport.add_test_img('test_m_page_ad_shop')
     def test_m_page_ad_shop(self):
@@ -382,8 +395,11 @@ class Testaudio(unittest.TestCase):
         shop = self.shop
         self.assertEqual('test', shop.text_page_title(), '打开页面错误！')
         self.log.info('已选中新建页面，验证 元素 功能.')
-        video_name = shop.texts_video_title(0)
-        print(video_name, 1111111111111)
+        try:
+            video_name = shop.texts_video_title(0)
+        except IndexError:
+            self.log.error('test 页面没有元素！')
+            return
         shop.click_element_btn()
         self.assertEqual('元素', shop.text_check_element(), '没有打开元素功能页面！')
         self.log.info('打开元素功能页面成功.')
@@ -403,8 +419,8 @@ class Testaudio(unittest.TestCase):
         shop.click_share_img()
         uploaded()
         shop.click_is_share()
-        # shop.click_cancel_btn()
-        shop.click_sure_btn()
+        shop.click_cancel_btn()
+        shop.click_choice_sure_btn()
 
     def delete_test_page(self, shop):
         """删除test页面"""
@@ -450,6 +466,7 @@ class Testaudio(unittest.TestCase):
                     element.click()
                     if make == 3:
                         self.delete_test_page(shop)
+                        time.sleep(1)
             elif make in [2, 4]:
                 if element.text == 'test 的副本':
                     self.test = True
@@ -463,7 +480,7 @@ class Testaudio(unittest.TestCase):
         folder = shop.elements_page_folder()
         for element in folder:
             if element.text == 'test':
-                element.click()
+                # element.click()
                 self.make = True
 
     def two_ad_shop(self, shop, make=False, img=False, carousel=False, left=False):

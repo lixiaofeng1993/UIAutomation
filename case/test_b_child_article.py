@@ -157,7 +157,6 @@ class TestArticle(unittest.TestCase):
         frame_list = article.elements_frame_age_tag()
         global frame_num
         frame_num = self.random_check(frame_list, make=1, list_name='frame_list')
-        print(frame_num, 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr')
         article.input_link_address('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         # article.click_cancel()
         article.click_sure_btn()
@@ -308,8 +307,6 @@ class TestArticle(unittest.TestCase):
             random_num = random.randint(0, len(lis) - 1)
             if not lis[random_num].is_displayed():
                 random_num = 6
-            if make == 1:
-                random_num = 1
             if make == 2:
                 update_class = lis[random_num].text
             lis[random_num].click()
@@ -337,7 +334,6 @@ class TestArticle(unittest.TestCase):
 
     def switch_self(self, article, num, make=0):
         global frame_num
-        print(frame_num, 1111111111111111111)
         if frame_num == num:
             article.move_upper_option()  # 上架中文章做下架操作
             time.sleep(1)

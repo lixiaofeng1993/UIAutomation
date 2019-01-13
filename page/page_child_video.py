@@ -12,7 +12,7 @@ from common.basics import Crazy
 class ChildVideoPage(Crazy):
     """视频管理"""
 
-    video_manage_loc = ('xpath', '//*[@id="root"]/div/div[2]/div[1]/div/div/ul/li[3]/a')
+    video_manage_loc = ('xpath', '//ul[@class="ant-menu ant-menu-light ant-menu-root ant-menu-inline"]/li[3]/a')
 
     def click_video_manage(self):
         self.click(self.video_manage_loc)
@@ -40,33 +40,76 @@ class ChildVideoPage(Crazy):
 
     # 老师
     teacher_loc = ('xpath',
-                   '//*[@id="mainContainer"]/div[2]/div[2]/div/div[2]/div[1]/div/form/div[1]/div[1]/div[2]/div[2]/div/span/div/div/div')
+                   '//form[@class="ant-form ant-form-horizontal"]/div[1]/div[1]/div[2]/div[2]/div/span/div/div')
 
     def click_teacher(self):
         self.click(self.teacher_loc)
 
+    check_teacher_name_loc = ('xpath',
+                              '//ul[@class="ant-select-dropdown-menu  ant-select-dropdown-menu-root ant-select-dropdown-menu-vertical"]/li')
+
+    def elements_check_teacher_name(self):
+        return self.find_elements(self.check_teacher_name_loc)
+
     # 课程分类
     video_class1_loc = ('xpath',
-                        '//form[@class="ant-form ant-form-horizontal"]/div[1]/div[1]/div[3]/div[2]/div/span/span/span')
+                        '//form[@class="ant-form ant-form-horizontal"]/div[1]/div[1]/div[3]/div[2]/div/span/span')
 
     def click_video_class1(self):
         self.click(self.video_class1_loc)
 
-    video_class2_loc = ('xpath', '//ul[@class="ant-cascader-menu"]/li[1]')
+    video_class2_loc = ('xpath', '//ul[@class="ant-cascader-menu"]/li')
 
-    def click_video_class2(self):
-        self.click(self.video_class2_loc)
+    def elements_video_class2(self):
+        return self.find_elements(self.video_class2_loc)
 
     video_class3_loc = (
-        'xpath', '//div[@class="ant-cascader-menus ant-cascader-menus-placement-bottomLeft"]/div/ul[2]/li[3]')
+        'xpath', '//div[@class="ant-cascader-menus ant-cascader-menus-placement-bottomLeft"]/div/ul[2]/li')
 
-    def click_video_class3(self):
-        self.click(self.video_class3_loc)
+    def elements_video_class3(self):
+        return self.find_elements(self.video_class3_loc)
 
     video_title_loc = ('id', 'title')
 
     def input_video_title(self, title):
         self.send_keys(self.video_title_loc, title)
+
+    # 视频描述
+    video_description_loc = ('id', 'description')
+
+    def input_description(self, description):
+        self.send_keys(self.video_description_loc, description)
+
+    # 课程标签
+    course_tag_loc = ('xpath', '//form[@class="ant-form ant-form-horizontal"]/div[2]/div[2]/div/span/div/label/span[1]')
+
+    def elements_course_tag(self):
+        return self.find_elements(self.course_tag_loc)
+
+    # 课程用户标签
+    course_user_tag_loc = (
+        'xpath', '//form[@class="ant-form ant-form-horizontal"]/div[3]/div[2]/div/span/div/label/span[1]')
+
+    def elements_course_user_tag(self):
+        return self.find_elements(self.course_user_tag_loc)
+
+    # 图片类型
+    img_type_loc = ('xpath', '//form[@class="ant-form ant-form-horizontal"]/div[4]/div[2]/div/span/div/label/span[1]')
+
+    def elements_img_type(self):
+        return self.find_elements(self.img_type_loc)
+
+    # 读取形式
+    read_link_loc = ('xpath', '//form[@class="ant-form ant-form-horizontal"]/div[5]/div[2]/div/span/div/label/span[1]')
+
+    def elements_read_link(self):
+        return self.find_elements(self.read_link_loc)
+
+    # 写入图文
+    input_article_loc = ('xpath', '//div[@class="DraftEditor-editorContainer"]/div')
+
+    def input_article(self, text):
+        self.send_keys(self.input_article_loc, text)
 
     # 验证
     def text_video_title(self):
@@ -98,7 +141,7 @@ class ChildVideoPage(Crazy):
         self.click(self.share_img_loc)
 
     # 确定按钮
-    sure_btn_loc = ('xpath', '//*[@id="mainContainer"]/div[2]/div[2]/div/div[2]/div[1]/div/form/div[7]/div/button')
+    sure_btn_loc = ('xpath', '//form[@class="ant-form ant-form-horizontal"]/div[last()]/div/button')
 
     def click_sure_btn(self):
         self.click(self.sure_btn_loc)
@@ -119,11 +162,17 @@ class ChildVideoPage(Crazy):
     def input_upload_video_name(self, name):
         self.send_keys(self.upload_video_name_loc, name)
 
-    # 排版，横版
-    typesetting_loc = ('xpath', '//*[@id="typeSettings"]/label[1]/span[1]')
+    # 视频描述
+    upload_video_dec_loc = ('id', 'subtitle')
 
-    def click_typesetting(self):
-        self.click(self.typesetting_loc)
+    def input_upload_video_dec(self, dec):
+        self.send_keys(self.upload_video_dec_loc, dec)
+
+    # 排版，横版
+    typesetting_loc = ('xpath', '//*[@id="typeSettings"]/label/span[1]')
+
+    def elements_typesetting(self):
+        return self.find_elements(self.typesetting_loc)
 
     # 上传图片
     upload_img_loc = (
@@ -165,6 +214,112 @@ class ChildVideoPage(Crazy):
     def text_check_upload_success(self):
         return self.get_text(self.check_upload_success_loc)
 
+    # 编辑上传视频
+    edit_upload_video_btn_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr[1]/td[9]/button')
+
+    edit_upload_video_loc = ('xpath',
+                             '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[1]')
+    edit_scene_loc = ('xpath',
+                      '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[3]')
+
+    def move_edit_upload_video(self):
+        self.move(self.edit_upload_video_btn_loc, self.edit_upload_video_loc)
+
+    # 情景配置
+    def move_edit_scene_video(self):
+        self.move(self.edit_upload_video_btn_loc, self.edit_scene_loc)
+
+    # 验证进入情景配置
+    check_scene_loc = ('xpath', '//div[@class="ant-modal-content"]/div[1]/div')
+
+    def text_check_scene(self):
+        return self.get_text(self.check_scene_loc)
+
+    # 播放时间
+    play_time_m_loc = ('xpath', '//div[@class="ant-row"]/div/div[1]/div/div/div')
+
+    def click_play_time_m(self):
+        self.click(self.play_time_m_loc)
+
+    check_time_m_loc = ('xpath',
+                        '//div[@class="ant-select-dropdown ant-select-dropdown--single ant-select-dropdown-placement-bottomLeft  ant-select-dropdown-hidden"]/div/ul/li')
+
+    def elements_check_time_m(self):
+        return self.find_elements(self.check_time_m_loc)
+
+    play_time_s_loc = ('xpath', '//div[@class="ant-row"]/div/div[2]/div/div/div')
+
+    def click_play_time_s(self):
+        self.click(self.play_time_s_loc)
+
+    check_time_s_loc = ('xpath',
+                        '//div[last()]/div/div[@class="ant-select-dropdown ant-select-dropdown--single ant-select-dropdown-placement-bottomLeft  ant-select-dropdown-hidden"]/div/ul/li')
+
+    def elements_check_time_s(self):
+        return self.find_elements(self.check_time_s_loc)
+
+    # 播出中间位置
+    play_position_loc = ('xpath', '//div[@class="block___3eMO0"]/div/div[2]/div[2]/div/label/span[1]')
+
+    def elements_play_position(self):
+        return self.find_elements(self.play_position_loc)
+
+    type_btn_loc = ('xpath', '//div[@class="block___3eMO0"]/div[2]/div[2]/div/button')
+
+    def elements_type_btn(self):
+        return self.find_elements(self.type_btn_loc)
+
+    # 验证选择
+    check_config_loc = ('xpath', '//body[@class="browser-chrome"]/div[last()]/div/div[2]/div/div/div[1]/div')
+
+    def text_check_config(self):
+        return self.get_text(self.check_config_loc)
+
+    # 选择内容
+    check_content_loc = ('xpath',
+                         '//body[@class="browser-chrome"]/div[last()]/div/div[2]/div/div[1]/div[2]/div/div/div/div/div/div/table/tbody/tr/td/span[1]/label/span')
+
+    def elements_check_content(self):
+        return self.find_elements(self.check_content_loc)
+
+    # 确定 //body[@class="browser-chrome"]/div[last()]/div/div[2]/div/div[1]/div[3]/div/button[2]
+    scene_sure_btn_loc = (
+        'xpath', '//body[@class="browser-chrome"]/div[last()]/div/div[2]/div/div[1]/div[3]/div/button[2]')
+
+    def click_scene_sure_btn(self):
+        self.click(self.scene_sure_btn_loc)
+
+    # 结束视频
+    end_video_btn_loc = ('xpath', '//div[@class="block___3eMO0"]/div[1]/div[2]/div/button')
+
+    def elements_end_video_btn(self):
+        return self.find_elements(self.end_video_btn_loc)
+
+    # 验证成功
+    check_scene_success_loc = ('xpath', '//div[@class="ant-message"]/span/div/div/div/span')
+
+    def text_check_scene_success(self):
+        return self.get_text(self.check_scene_success_loc)
+
+    # 编辑视频信息
+    edit_video_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr[1]/td[10]/button')
+
+    upper_btn_loc = ('xpath',
+                     '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[4]')
+
+    delete_btn_loc = ('xpath',
+                      '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[2]')
+
+    def move_delete_btn(self):
+        self.move(self.edit_video_loc, self.delete_btn_loc)
+
+    def move_edit_video(self):
+        self.move(self.edit_video_loc, self.edit_upload_video_loc)
+
+    # 上架
+    def move_upper_video(self):
+        self.move(self.edit_video_loc, self.upper_btn_loc)
+
     # 删除视频
 
     # 勾选视频 //tbody[@class="ant-table-tbody"]/tr[1]/td[1]/span/label/span
@@ -174,10 +329,10 @@ class ChildVideoPage(Crazy):
         self.click(self.choice_video_loc)
 
     # 删除按钮
-    delete_btn_loc = ('xpath', '//div[@class="ant-tabs-tabpane ant-tabs-tabpane-active"]/div[2]/button')
+    choice_delete_btn_loc = ('xpath', '//div[@class="ant-tabs-tabpane ant-tabs-tabpane-active"]/div[2]/button')
 
     def click_delete_btn(self):
-        self.click(self.delete_btn_loc)
+        self.click(self.choice_delete_btn_loc)
 
     def text_delete_btn(self):
         return self.get_text(self.delete_btn_loc)
@@ -200,6 +355,24 @@ class ChildVideoPage(Crazy):
 
     def elements_edit_video_name(self):
         return self.find_elements(self.edit_video_name_loc)
+
+    # 下架中按钮
+    lower_btn_loc = ('xpath', '//div[@class="contentInner___3XSLP"]/div[1]/div[3]/div/div/label[2]/span[2]')
+
+    def click_lower_btn(self):
+        self.click(self.lower_btn_loc)
+
+    # 验证选中下架中
+    check_lower_btn_loc = ('xpath', '//div[@class="contentInner___3XSLP"]/div[1]/div[3]/div/div/label')
+
+    def elements_check_lower_btn(self):
+        return self.find_elements(self.check_lower_btn_loc)
+
+    # 上架中按钮
+    upper_loc = ('xpath', '//div[@class="contentInner___3XSLP"]/div[1]/div[3]/div/div/label[1]/span[2]')
+
+    def click_upper(self):
+        self.click(self.upper_loc)
 
     # 课程标签
     edit_video_tag_loc = ('xpath',
@@ -240,7 +413,7 @@ class ChildVideoPage(Crazy):
         return self.get_text(self.page_video_loc)
 
     # 跳至
-    skip_page_loc = ('xpath', '//div[@class="ant-spin-container"]/ul/li[7]/div[2]/input')
+    skip_page_loc = ('xpath', '//ul[@class="ant-pagination ant-table-pagination"]/li[last()]/div[2]/input')
 
     def input_skip_page(self, num):
         self.send_keys(self.skip_page_loc, num)
@@ -267,7 +440,7 @@ class ChildVideoPage(Crazy):
         self.send_keys(self.video_query_loc, name)
 
     # 查询按钮
-    video_query_btn_loc = ('xpath', '//*[@id="mainContainer"]/div[2]/div[2]/div[1]/div[2]/div[2]/div/div/button[1]')
+    video_query_btn_loc = ('xpath', '//div[@class="ant-row"]/div[2]/div/div/button[1]')
 
     def click_video_query_btn(self):
         self.click(self.video_query_btn_loc)

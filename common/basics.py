@@ -166,6 +166,10 @@ class Crazy:
         """敲enter"""
         self.action.send_keys(Keys.ENTER).perform()
 
+    def send_keys_down(self):
+        """敲向下键"""
+        self.action.send_keys(Keys.DOWN).perform()
+
     def send_keys_arrow_down(self):
         self.action.send_keys(Keys.ARROW_DOWN).perform()
 

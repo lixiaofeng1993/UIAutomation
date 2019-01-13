@@ -315,7 +315,6 @@ class TestArticle(unittest.TestCase):
                 return random_num
             elif make == 2:
                 return [update_class, random_num]
-
         else:
             self.log.error('random_check函数传参错误！')
 
@@ -333,6 +332,7 @@ class TestArticle(unittest.TestCase):
                 self.log.info('文章新建/编辑成功.')
 
     def switch_self(self, article, num, make=0):
+        """切换上下架"""
         global frame_num
         if frame_num == num:
             article.move_upper_option()  # 上架中文章做下架操作

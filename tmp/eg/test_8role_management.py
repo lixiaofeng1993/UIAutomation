@@ -1,11 +1,14 @@
+import time
 import unittest
-import time, os
+
 from BeautifulReport import BeautifulReport
-from common.logger import Log, img_path
-from common.basics import open_browser
-from page.page_role_management import RoleManagementPage
+
 from common import read_config
+from common.basics import open_browser
+from common.logger import Log, img_path
 from page.page_child_login import ChildLoginPage
+from tmp.eg.page_role_management import RoleManagementPage
+
 
 class TestRoleManagement(unittest.TestCase):
     @classmethod

@@ -1,11 +1,13 @@
-import unittest
 import time
-from common.logger import Log,img_path
+import unittest
+
+from BeautifulReport import BeautifulReport
+
 from common import read_config
 from common.basics import open_browser
-from BeautifulReport import BeautifulReport
+from common.logger import Log,img_path
 from page.page_child_login import ChildLoginPage
-from page.page_label_management import LabelManagementPage
+from tmp.eg.page_label_management import LabelManagementPage
 
 
 class TestLabelManagement(unittest.TestCase):

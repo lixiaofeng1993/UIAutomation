@@ -28,6 +28,7 @@ def uploaded(type=0):
     if not os.path.exists(read_config.autolt_path):
         log.error('autolt工具生成的可执行文件不存在！')
     else:
+
         if type == 0:
             log.info('开始上传图片...')
             os.system(

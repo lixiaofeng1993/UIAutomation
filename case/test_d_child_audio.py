@@ -17,7 +17,7 @@ from common import read_config
 from common.random_upload import uploaded
 
 
-class Testaudio(unittest.TestCase):
+class TestAudio(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = open_browser()
@@ -27,9 +27,9 @@ class Testaudio(unittest.TestCase):
         cls.url = read_config.url
         cls.img_path = img_path  # 必须是这个路径
 
-    # @classmethod
-    # def tearDownClass(cls):
-    #     cls.driver.close()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
 
     def save_img(self, img_name):
         self.driver.get_screenshot_as_file('{}/{}.png'.format(self.img_path, img_name))
@@ -59,12 +59,9 @@ class Testaudio(unittest.TestCase):
         audio.click_teacher()
         teacher_name = audio.elements_check_teacher_name()
         self.random_check(teacher_name, list_name='teacher_name')
-        time.sleep(1)
         audio.click_audio_class1()
-        time.sleep(1)
         audio_class2 = audio.elements_audio_class2()
         self.random_check(audio_class2, list_name='audio_class2')
-        time.sleep(1)
         audio_class3 = audio.elements_audio_class3()
         self.random_check(audio_class3, list_name='audio_class3')
         audio.input_audio_title('这是一个测试音频')
@@ -116,7 +113,6 @@ class Testaudio(unittest.TestCase):
             else:
                 self.log.info('音频大小：{}mb，已上传：{}mb'.format(mb_list[1], mb_list[0]))
                 time.sleep(2)
-        time.sleep(1)
         audio.click_upload_sure_btn()
         time.sleep(1)
         self.assertEqual('测试音频', audio.text_check_upload_success(), '上传音频失败！')
@@ -165,12 +161,9 @@ class Testaudio(unittest.TestCase):
         audio.click_teacher()
         teacher_name = audio.elements_check_teacher_name()
         self.random_check(teacher_name, list_name='teacher_name')
-        time.sleep(1)
         audio.click_audio_class1()
-        time.sleep(1)
         audio_class2 = audio.elements_audio_class2()
         self.random_check(audio_class2, list_name='audio_class2')
-        time.sleep(1)
         audio_class3 = audio.elements_audio_class3()
         self.random_check(audio_class3, list_name='audio_class3')
         audio.input_audio_title('这是一个编辑测试音频')
@@ -184,7 +177,6 @@ class Testaudio(unittest.TestCase):
         self.random_check(img_type)
         read_link = audio.elements_read_link()
         read_link_num = self.random_check(read_link, make=1, list_name='read_link')
-        time.sleep(1)
         if read_link_num:
             audio.input_link_info('https://mp.weixin.qq.com/s/w0dTikK5q7ov0AbPkQYM5g')
         else:
@@ -305,14 +297,11 @@ class Testaudio(unittest.TestCase):
         audio = self.audio
         if not self.check_audio_is_test(audio, make=2, name='这是一个编辑测试音频'):
             return
+        time.sleep(1)
         audio.click_edit_audio_num()
         self.assertEqual('+ 上传', audio.text_upload_btn(), '不在上传页面，无法进行删除上传音频操作！')
         self.log.info('开始删除上传音频.')
-        try:
-            audio.click_choice_audio()
-        except Exception:
-            audio.click_choice_audio()
-        audio.click_delete_btn()
+        audio.move_edit_delete()
         time.sleep(1)
         audio.click_delete_sure_btn()
         time.sleep(1)
@@ -365,15 +354,16 @@ class Testaudio(unittest.TestCase):
     def random_check(self, lis, make=0, list_name=''):
         """随机点击元素"""
         if isinstance(lis, list):
+            time.sleep(1)
             random_num = random.randint(0, len(lis) - 1)
             if not lis[random_num].is_displayed():
                 random_num = 6
             if make == 2:
                 update_class = lis[random_num].text
+            self.log.info('随机点击的元素text：{}'.format(lis[random_num].text))
             lis[random_num].click()
             self.log.info('{} 随机选择元素：{}'.format(list_name, random_num))
             if make == 1:
-                print(random_num)
                 return random_num
             elif make == 2:
                 return [update_class, random_num]

@@ -1,11 +1,13 @@
-import unittest
 import time
+import unittest
+
 from BeautifulReport import BeautifulReport
-from common.logger import Log, img_path
-from common.basics import open_browser
-from page.page_account_management import AccountManagementPage
-from page.page_child_login import ChildLoginPage
+
 from common import read_config
+from common.basics import open_browser
+from common.logger import Log, img_path
+from page.page_child_login import ChildLoginPage
+from tmp.eg.page_account_management import AccountManagementPage
 
 
 class TestAccountManagement(unittest.TestCase):

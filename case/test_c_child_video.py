@@ -355,6 +355,7 @@ class TestVideo(unittest.TestCase):
     def random_check(self, lis, make=0, list_name=''):
         """随机点击元素"""
         if isinstance(lis, list):
+            time.sleep(1)
             random_num = random.randint(0, len(lis) - 1)
             if not lis[random_num].is_displayed():
                 random_num = 6

@@ -147,7 +147,7 @@ class ChildAudioPage(Crazy):
 
     # 上传按钮
 
-    upload_btn_loc = ('xpath', '//*[@id="mainContainer"]/div[2]/div[2]/div/div[2]/div[2]/div[1]/button')
+    upload_btn_loc = ('xpath', '//div[@class="ant-tabs-tabpane ant-tabs-tabpane-active"]/div[1]/button')
 
     def click_upload_btn(self):
         self.click(self.upload_btn_loc)
@@ -220,9 +220,15 @@ class ChildAudioPage(Crazy):
                              '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[1]')
     edit_scene_loc = ('xpath',
                       '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[3]')
+    edit_delete_loc = ('xpath',
+                       '//ul[@class="ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical"]/li[2]')
 
     def move_edit_upload_audio(self):
         self.move(self.edit_upload_audio_btn_loc, self.edit_upload_audio_loc)
+
+    # 删除
+    def move_edit_delete(self):
+        self.move(self.edit_upload_audio_btn_loc, self.edit_delete_loc)
 
     # 情景配置
     def move_edit_scene_audio(self):
@@ -322,7 +328,7 @@ class ChildAudioPage(Crazy):
     # 删除视频
 
     # 勾选视频 //tbody[@class="ant-table-tbody"]/tr[1]/td[1]/span/label/span
-    choice_audio_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr/td[1]/span/label/span')
+    choice_audio_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr/td[1]/span/label/span/span')
 
     def click_choice_audio(self):
         self.click(self.choice_audio_loc)

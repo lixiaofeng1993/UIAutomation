@@ -19,7 +19,7 @@ from page.page_child_login import ChildLoginPage
 from page.page_child_shop import ChildShopPage
 
 
-class Testaudio(unittest.TestCase):
+class TestShop(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = open_browser()

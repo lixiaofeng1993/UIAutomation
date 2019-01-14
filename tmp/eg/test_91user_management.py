@@ -1,11 +1,13 @@
-import unittest
 import time
-from common import read_config
-from page.page_user_management import UserManagementPage
-from page.page_child_login import ChildLoginPage
-from common.basics import open_browser
+import unittest
+
 from BeautifulReport import BeautifulReport
+
+from common import read_config
+from common.basics import open_browser
 from common.logger import Log,img_path
+from page.page_child_login import ChildLoginPage
+from tmp.eg.page_user_management import UserManagementPage
 
 
 class TetsUserManagement(unittest.TestCase):

@@ -1,14 +1,16 @@
 #coding:utf-8
 
+import os
+import time
 import unittest
-import time,os
-from common.basics import open_browser
-from common import read_config
-from page.page_teacher_management import TeacherManagementPage
-from page.page_child_login import ChildLoginPage
-from common.logger import Log,img_path
+
 from BeautifulReport import BeautifulReport
 
+from common import read_config
+from common.basics import open_browser
+from common.logger import Log,img_path
+from page.page_child_login import ChildLoginPage
+from tmp.eg.page_teacher_management import TeacherManagementPage
 
 
 class TestTeacherManagement(unittest.TestCase):

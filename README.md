@@ -74,5 +74,15 @@ BeautifulReport     运行case，生成html报告
     run_this
         运行测试case，生成报告,发送 email;
 
-### 示例：
+### App示例：
 <a href="https://www.cnblogs.com/changqing8023/p/10153371.html">BeautifulReport 实现app UI自动化测试</a>
+
+### web示例：
+##### 存在的问题：
+    1.好多想不到的地方，中间经历了一次重构，好蛋疼；
+    2.xpath定位使用的不够熟练，好多定位问题，只能靠强制等待解决；
+    3.存在功能重复的方法，因为xpath定位不同，只能分开写，有时间可以继续优化；
+    4.selenium 拖拽功能，没有成功；
+    5.小功能没有完善，基于测试环境现有的数据写的，如果数据发生变化的话，可能会出现问题；
+    6.打印日志加了一部分，不够完整；
+<a href="https://www.cnblogs.com/changqing8023/p/10273210.html">python selenium web自动化测试完整项目实例<未更新></a>

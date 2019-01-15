@@ -59,6 +59,12 @@ class ChildShopPage(Crazy):
     def click_sure_btn(self):
         self.click(self.sure_btn_loc)
 
+    # 新建页面确定
+    new_page_sure_btn_loc = ('xpath', '//div[@class="ant-modal-content"]/div[3]/div/button[2]')
+
+    def click_new_page_sure_btn(self):
+        self.click(self.new_page_sure_btn_loc)
+
     # 取消
     cancel_btn_lco = ('xpath', '//div[@class="ant-modal-footer"]/div/button[1]')
 

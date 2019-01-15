@@ -37,9 +37,9 @@ class TestShop(unittest.TestCase):
         cls.single = False
         cls.test = False
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.close()
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.driver.close()
 
     def save_img(self, img_name):
         self.driver.get_screenshot_as_file('{}/{}.png'.format(self.img_path, img_name))
@@ -404,8 +404,9 @@ class TestShop(unittest.TestCase):
         shop.click_share_img()
         uploaded()
         shop.click_is_share()
-        shop.click_cancel_btn()
-        shop.click_choice_sure_btn()
+        # shop.click_cancel_btn()
+        time.sleep(1)
+        shop.click_new_page_sure_btn()
 
     def delete_test_page(self, shop):
         """删除test页面"""

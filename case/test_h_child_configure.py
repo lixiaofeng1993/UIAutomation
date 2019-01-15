@@ -27,9 +27,9 @@ class TestConfigure(unittest.TestCase):
         cls.url = read_config.url
         cls.img_path = img_path  # 必须是这个路径
 
-    # @classmethod
-    # def tearDownClass(cls):
-    #     cls.driver.close()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
 
     def save_img(self, img_name):
         self.driver.get_screenshot_as_file('{}/{}.png'.format(self.img_path, img_name))

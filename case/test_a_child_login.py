@@ -50,6 +50,7 @@ class TestLogin(unittest.TestCase):
 
     @BeautifulReport.add_test_img('test_login')
     def test_login(self):
+        """登录"""
         login = self.login
         login.open(self.url, t='育儿锦囊后台管理系统')
         self.log.info('输入用户名和密码...')

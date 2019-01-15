@@ -83,7 +83,7 @@ class Crazy:
         """启动浏览器参数化，默认启动chrome"""
         self.driver = driver
         self.action = ActionChains(self.driver)
-        self.timeout = 10
+        self.timeout = 5
         self.t = 1
         self.log = Log()
 

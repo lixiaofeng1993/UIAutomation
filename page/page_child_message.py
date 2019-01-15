@@ -173,3 +173,14 @@ class ChildMessagePage(Crazy):
 
     def elements_check_message_time(self):
         return self.find_elements(self.check_message_time_loc)
+
+    # 查询日期
+    start_time_loc = ('xpath', '//div[@class="item___21igP"]/span/span/input[1]')
+
+    def text_start_time(self):
+        return self.get_attribute(self.start_time_loc, 'value')
+
+    end_time_loc = ('xpath', '//div[@class="item___21igP"]/span/span/input[2]')
+
+    def text_end_time(self):
+        return self.get_attribute(self.end_time_loc, 'value')

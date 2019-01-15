@@ -100,7 +100,6 @@ class TestShop(unittest.TestCase):
         else:
             self.log.error('test 页面创建失败！')
 
-
     @BeautifulReport.add_test_img('test_c_video_shop')
     def test_c_video_shop(self):
         """装修页面-单列视频"""
@@ -116,7 +115,6 @@ class TestShop(unittest.TestCase):
         self.log.info('进行选择数据操作.')
         self.choice_data(shop)
         self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_d_audio_shop')
     def test_d_audio_shop(self):
@@ -137,7 +135,6 @@ class TestShop(unittest.TestCase):
         self.choice_data(shop)
         self.save_page(shop)
 
-
     @BeautifulReport.add_test_img('test_e_article_shop')
     def test_e_article_shop(self):
         """装修页面-单列文章"""
@@ -157,7 +154,6 @@ class TestShop(unittest.TestCase):
         self.log.info('进行选择数据操作.')
         self.choice_data(shop, make=True)
         self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_f_single_ad_shop')
     def test_f_single_ad_shop(self):
@@ -183,7 +179,6 @@ class TestShop(unittest.TestCase):
         self.choice_data(shop, type='ad', make=n, ad=True)
         self.save_page(shop)
 
-
     @BeautifulReport.add_test_img('test_g_two_ad_shop')
     def test_g_two_ad_shop(self):
         """两列广告"""
@@ -198,7 +193,6 @@ class TestShop(unittest.TestCase):
             self.two_ad_shop(shop, make=True)
         if self.two:
             self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_g_two_img_ad_shop')
     def test_g_two_img_ad_shop(self):
@@ -230,7 +224,6 @@ class TestShop(unittest.TestCase):
         if self.three:
             self.save_page(shop)
 
-
     @BeautifulReport.add_test_img('test_h_three_img_ad_shop')
     def test_h_three_img_ad_shop(self):
         """三列图文广告"""
@@ -246,7 +239,6 @@ class TestShop(unittest.TestCase):
                 self.two_ad_shop(shop, img=True)
         if self.three:
             self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_i_four_ad_shop')
     def test_i_four_ad_shop(self):
@@ -266,7 +258,6 @@ class TestShop(unittest.TestCase):
         if self.four:
             self.save_page(shop)
 
-
     @BeautifulReport.add_test_img('test_i_four_img_ad_shop')
     def test_i_four_img_ad_shop(self):
         """四列图文广告"""
@@ -284,7 +275,6 @@ class TestShop(unittest.TestCase):
                     self.two_ad_shop(shop, img=True)
         if self.four:
             self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_j_carousel_ad_shop')
     def test_j_carousel_ad_shop(self):
@@ -304,7 +294,6 @@ class TestShop(unittest.TestCase):
         if self.four:
             self.save_page(shop)
 
-
     @BeautifulReport.add_test_img('test_k_left_ad_shop')
     def test_k_left_ad_shop(self):
         """左滑广告"""
@@ -322,7 +311,6 @@ class TestShop(unittest.TestCase):
                     self.two_ad_shop(shop, make=True, left=True)
         if self.four:
             self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_l_blank_ad_shop')
     def test_l_blank_ad_shop(self):
@@ -345,7 +333,6 @@ class TestShop(unittest.TestCase):
         shop.click_blank_color_check()
         self.log.info('空白添加成功.')
         self.save_page(shop)
-
 
     @BeautifulReport.add_test_img('test_m_page_ad_shop')
     def test_m_page_ad_shop(self):
@@ -544,21 +531,20 @@ class TestShop(unittest.TestCase):
         self.log.info('开始随机选择元素.')
         if shop.elements_video_img():
             data_list.append(shop.elements_video_img())
-            print(data_list)
         if shop.elements_audio_img():
             data_list.append(shop.elements_audio_img())
-        if shop.elements_article_single_img():
-            data_list.append(shop.elements_article_single_img())
-        if shop.elements_article_three_img():
-            data_list.append(shop.elements_article_three_img())
-        if shop.elements_single_ad_img():
-            data_list.append(shop.elements_single_ad_img())
-        if shop.elements_two_ad_img():
-            data_list.append(shop.elements_two_ad_img())
-        if shop.elements_three_ad_img():
-            data_list.append(shop.elements_three_ad_img())
-        if shop.elements_four_ad_img():
-            data_list.append(shop.elements_four_ad_img())
+        # if shop.elements_article_single_img():
+        #     data_list.append(shop.elements_article_single_img())
+        # if shop.elements_article_three_img():
+        #     data_list.append(shop.elements_article_three_img())
+        # if shop.elements_single_ad_img():
+        #     data_list.append(shop.elements_single_ad_img())
+        # if shop.elements_two_ad_img():
+        #     data_list.append(shop.elements_two_ad_img())
+        # if shop.elements_three_ad_img():
+        #     data_list.append(shop.elements_three_ad_img())
+        # if shop.elements_four_ad_img():
+        #     data_list.append(shop.elements_four_ad_img())
         for datas in data_list:
             for data in datas:
                 elements.append(data)

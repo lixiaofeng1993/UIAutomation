@@ -61,7 +61,7 @@ class TestMessage(unittest.TestCase):
         stay_message_info = message.elements_message_info()
         to_success_examine_message = stay_message_info[0].text
         message.move_option_to_examine()
-        self.log.info('审核通过的留言是：{}'.format(to_success_examine_message))
+        self.log.info('待审核留言，审核通过操作.{}'.format(to_success_examine_message))
         time.sleep(1)
         message.click_sure_btn()
         self.check_status(message, status=1)
@@ -71,7 +71,7 @@ class TestMessage(unittest.TestCase):
         choice_message = message.elements_choice_message()
         to_not_examine_message = self.random_check(choice_message, message, make=3, list_name='choice_message')[0]
         self.assertTrue(message.element_check_choice_message(), '批量勾选失败！')
-        self.log.info('批量勾选成功，审核不通过的留言是：{}.'.format(to_not_examine_message))
+        self.log.info('批量勾选成功，待审核留言，审核不通过操作.{}.'.format(to_not_examine_message))
         message.element_check_choice_message().click()
         time.sleep(1)
         message.click_choice_sure_btn()
@@ -92,7 +92,7 @@ class TestMessage(unittest.TestCase):
             return
         stay_message_info = message.elements_message_info()
         to_success_examine_message = stay_message_info[0].text
-        self.log.info('审核通过的留言是：{}'.format(to_success_examine_message))
+        self.log.info('审核不通过留言，审核通过操作.{}'.format(to_success_examine_message))
         message.move_option_to_examine()  # 做审核通过操作
         time.sleep(1)
         message.click_sure_btn()
@@ -103,7 +103,7 @@ class TestMessage(unittest.TestCase):
         choice_message = message.elements_choice_message()
         to_not_examine_message = self.random_check(choice_message, message, make=3, list_name='choice_message')[0]
         self.assertTrue(message.element_check_to_success_message(), '批量勾选失败！')
-        self.log.info('批量勾选成功，审核通过的留言是：{}.'.format(to_not_examine_message))
+        self.log.info('批量勾选成功，审核不通过留言，审核通过操作.{}.'.format(to_not_examine_message))
         message.element_check_to_success_message().click()
         time.sleep(1)
         message.click_choice_sure_btn()
@@ -119,7 +119,7 @@ class TestMessage(unittest.TestCase):
         if not self.get_message_num(message):
             return
         not_message_info = message.elements_message_info()[0].text
-        self.log.info('选择回复的留言是：{}'.format(not_message_info))
+        self.log.info('审核通过留言，选择回复操作.{}'.format(not_message_info))
         message.move_option_to_not_examine()  # 回复留言
         time.sleep(1)
         message.input_reply_message('测试回复留言')
@@ -128,7 +128,7 @@ class TestMessage(unittest.TestCase):
         self.assertEqual('测试回复留言', message.text_check_reply_message(), '回复留言失败！')
         self.log.info('回复留言成功，回复内容：{}'.format(message.text_check_reply_message()))
         message.move_option_to_examine()
-        self.log.info('审核不通过的留言是：{}'.format(not_message_info))
+        self.log.info('审核通过留言，审核不通过操作.{}'.format(not_message_info))
         time.sleep(1)
         message.click_sure_btn()
         time.sleep(1)
@@ -141,7 +141,7 @@ class TestMessage(unittest.TestCase):
         choice_message = message.elements_choice_message()
         to_not_examine_message = self.random_check(choice_message, message, make=3, list_name='choice_message')[0]
         self.assertTrue(message.element_check_choice_message(), '批量勾选失败！')
-        self.log.info('批量勾选成功，审核不通过的留言是：{}.'.format(to_not_examine_message))
+        self.log.info('批量勾选成功，审核通过留言，审核不通过操作.{}.'.format(to_not_examine_message))
         message.element_check_choice_message().click()
         time.sleep(1)
         message.click_choice_sure_btn()
@@ -163,22 +163,32 @@ class TestMessage(unittest.TestCase):
         message.click_query_click_year()
         message.click_query_select_year()
         dat_list = message.elements_query_select_day()
-        start_day = self.random_check(dat_list, message, list_name='dat_list', make=2)[0]
-        self.log.info('选择的开始日期是：2018-01-{}'.format(start_day))
-        start_time = '2018-01-{}'.format(start_day)
-        start_s = self.format_time(start_time)
+        self.random_check(dat_list, message, list_name='dat_list')
         end_list = message.elements_query_end_day()
-        end_day = self.random_check(end_list, message, list_name='end_list', make=2)[0]
-        self.log.info('选择的结束日期是：2019-02-{}'.format(end_day))
-        end_time = '2019-01-{}'.format(end_day)
+        self.random_check(end_list, message, list_name='end_list')
+        start_time = message.text_start_time()
+        self.log.info('选择的开始日期是：{}'.format(start_time))
+        start_s = self.format_time(start_time)
+        end_time = message.text_end_time()
+        self.log.info('选择的结束日期是：{}'.format(end_time))
         end_s = self.format_time(end_time)
-        message.click_query_btn()
+        num = self.get_message_num(message)
+        self.log.info('查询到的留言数量：{}'.format(num))
+        page_num = int(int(num) / 10) + 1
+        for i in range(page_num):
+            self.check_query_success(message, start_s, end_s)
+            message.click_next_page()
+            time.sleep(1)
+
+    def check_query_success(self, message, start_s, end_s):
+        """验证查询成功"""
         message_time = message.elements_check_message_time()
-        self.log.info('查询到的留言数量：{}'.format(len(message_time)))
         for element in message_time:
             message_s = self.format_time(element.text, make=1)
             if start_s < message_s < end_s:
                 self.log.info('查询成功，留言日期：{}'.format(element.text))
+            else:
+                self.log.error('查询失败！{}'.format(element.text))
 
     def format_time(self, t, make=0):
         """格式化日期"""

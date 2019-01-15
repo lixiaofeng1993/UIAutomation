@@ -11,7 +11,7 @@ from common.basics import Crazy
 
 class ChildConfigurePage(Crazy):
     """配置管理"""
-    configure_manage_loc = ('xpath', '//div[@class="ant-layout-sider-children"]/div/ul/li[7]/a')
+    configure_manage_loc = ('xpath', '//div[@class="ant-layout-sider-children"]/div/ul/li[7]/div/span')
 
     def click_configure_manage(self):
         self.click(self.configure_manage_loc)

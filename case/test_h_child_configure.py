@@ -67,3 +67,5 @@ class TestConfigure(unittest.TestCase):
         configure.click_upload_sure_btn()
         time.sleep(1)
 
+if __name__ == '__main__':
+    unittest.main()

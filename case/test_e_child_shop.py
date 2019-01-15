@@ -171,8 +171,6 @@ class TestShop(unittest.TestCase):
         time.sleep(1)
         self.assertEqual('选择数据', shop.text_check_data(), '选择数据弹窗未弹出！')
         n = random.randint(0, len(shop.elements_type()) - 1)
-        print('n ==========>   ', n)
-        print('len(shop.elements_type()) ==========>   ', len(shop.elements_type()))
         shop.clicks_type(n)
         time.sleep(1)
         self.single = True
@@ -507,8 +505,6 @@ class TestShop(unittest.TestCase):
         time.sleep(1)
         self.assertEqual('选择数据', shop.text_check_data(), '选择数据弹窗未弹出！')
         n = random.randint(0, len(shop.elements_type()) - 1)
-        print('n ==========>   ', n)
-        print('len(shop.elements_type()) ==========>   ', len(shop.elements_type()))
         shop.clicks_type(n)
         time.sleep(1)
         if img:

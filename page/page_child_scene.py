@@ -204,9 +204,4 @@ class ChildScenePage(Crazy):
     query_input_loc = ('id', 'queryString')
 
     def input_query_input(self, query):
-        self.send_keys(self.query_input_loc, query)
-
-    query_btn_loc = ('xpath', '//button[@class="ant-btn margin-right ant-btn-primary"]')
-
-    def click_query_btn(self):
-        self.click(self.query_btn_loc)
+        self

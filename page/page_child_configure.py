@@ -64,3 +64,67 @@ class ChildConfigurePage(Crazy):
 
     def click_upload_sure_btn(self):
         self.click(self.upload_sure_btn_loc)
+
+    # 取消按钮
+    upload_cancel_btn_loc = ('xpath', '//div[@class="ant-modal-footer"]/div/button[1]')
+
+    def click_upload_cancel_btn(self):
+        self.click(self.upload_cancel_btn_loc)
+
+    # 标签重复提示
+    tag_already_exist_error_loc = ('xpath', '//div[@class="ant-message-notice"]/div/div/span')
+
+    def text_tag_already_exist_error(self):
+        return self.get_text(self.tag_already_exist_error_loc)
+
+    # 已存在的标签名称
+    already_exist_tag_name_loc = ('xpath', '//div[@class="ant-table-body"]/table/tbody/tr/td[2]')
+
+    def elements_already_exist_tag_name(self):
+        return self.find_elements(self.already_exist_tag_name_loc)
+
+    # 存在标签属于的标签类型
+    exist_tag_type_loc = ('xpath', '//div[@class="ant-table-body"]/table/tbody/tr/td[3]')
+
+    def elements_exist_tag_type(self):
+        return self.find_elements(self.exist_tag_type_loc)
+
+    # 标签数量
+    tag_number_loc = ('xpath', '//ul[@class="ant-pagination ant-table-pagination"]/li[1]')
+
+    def text_tag_number(self):
+        return self.get_text(self.tag_number_loc)
+
+    # 点击下一页
+    next_page_loc = ('xpath', '//ul[@class="ant-pagination ant-table-pagination"]/li[last()-1]/a')
+
+    def click_next_page(self):
+        self.click(self.next_page_loc)
+
+    delete_sure_btn_loc = ('xpath', '//div[@class="ant-confirm-btns"]/button[2]')
+
+    def click_delete_sure_btn(self):
+        self.click(self.delete_sure_btn_loc)
+
+    # 翻页
+    random_skip_page_loc = ('xpath', '//div[@class="ant-pagination-options-quick-jumper"]/input')
+
+    def input_skip_page(self, num):
+        self.send_keys(self.random_skip_page_loc, num)
+
+    page_num_loc = ('xpath', '//div[@class="ant-spin-container"]/ul/li')
+
+    def elements_page_num(self):
+        return self.find_elements(self.page_num_loc)
+
+    # 查询
+    query_text_loc = ('id', 'tag')
+
+    def input_text(self, text):
+        self.send_keys(self.query_text_loc, text)
+
+    # 查询按钮
+    query_btn_loc = ('xpath', 'class="ant-btn margin-right ant-btn-primary"')
+
+    def click_query_btn(self):
+        self.click(self.query_btn_loc)

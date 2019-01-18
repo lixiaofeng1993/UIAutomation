@@ -239,9 +239,9 @@ class TestArticle(unittest.TestCase):
         """文章翻页"""
         article = self.article
         page_num = article.text_page_article()
-        nun = int(re.findall('(\d+)', page_num)[0])
-        if nun > 10:
-            skip_page = int(random.randint(0, nun) / 10) + 1  # 取整数 + 1
+        num = int(re.findall('(\d+)', page_num)[0])
+        if num > 10:
+            skip_page = int(random.randint(0, num) / 10) + 1  # 取整数 + 1
             article.input_skip_page(skip_page)
             article.send_keys_enter()
             page_num_list = article.elements_page_num()

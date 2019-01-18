@@ -5,6 +5,8 @@
 # @Site    : 
 # @File    : test.py
 # @Software: PyCharm
+import random
 
-for i in range(2):
-    print(i)
+text = random.uniform(1, 10)
+
+print(round(text, 2))

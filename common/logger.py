@@ -57,6 +57,7 @@ class Log:
             if file_list:  # 目录下没有日志文件
                 for i in file_list:
                     file_path = os.path.join(dirPath, i)  # 拼接文件的完整路径
+
                     t_list = self.TimeStampToTime(os.path.getctime(file_path)).split('-')
                     now_list = self.TimeStampToTime(time.time()).split('-')
                     t = datetime.datetime(int(t_list[0]), int(t_list[1]),
@@ -78,7 +79,7 @@ class Log:
             os.remove(file_path)
             return True
         except PermissionError as e:
-            print('权限错误，删除日志文件失败！{}'.format(e))
+            print('权限错误，删除日志文件失败！{}'.format(file_path))
             return False
 
     def __console(self, level, message):

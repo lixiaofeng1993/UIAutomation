@@ -349,3 +349,15 @@ class ChildArticlePage(Crazy):
 
     def elements_self_btn(self):
         return self.find_elements(self.self_btn_loc)
+
+    # 分类
+    class_btn_loc = ('xpath', '//tbody[@class="ant-table-tbody"]/tr/td[4]')
+
+    def elements_class_btn(self):
+        return self.find_elements(self.class_btn_loc)
+
+    # 下一页
+    next_page_loc = ('xpath', '//ul[@class="ant-pagination ant-table-pagination"]/li[last()-1]')
+
+    def click_next_page(self):
+        self.click(self.next_page_loc)

@@ -395,6 +395,7 @@ class TestShop(unittest.TestCase):
         end_video_name = shop.texts_video_title(0)
         self.assertNotEqual(video_name, end_video_name, '元素删除失败！')
         self.log.info('元素删除成功.')
+        time.sleep(1)
         shop.click_element_btn()
 
     def input_test_page_data(self, shop):

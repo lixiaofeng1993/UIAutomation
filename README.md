@@ -85,4 +85,4 @@ BeautifulReport     运行case，生成html报告
     4.selenium 拖拽功能，没有成功；
     5.小功能没有完善，基于测试环境现有的数据写的，如果数据发生变化的话，可能会出现问题；
     6.打印日志加了一部分，不够完整；
-<a href="https://www.cnblogs.com/changqing8023/p/10273210.html">python selenium web自动化测试完整项目实例<未更新></a>
+<a href="https://www.cnblogs.com/changqing8023/p/10273210.html">python selenium web自动化测试完整项目实例</a>

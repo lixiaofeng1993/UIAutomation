@@ -2,7 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2507fa38-a401-4249-a7b7-3ed77d17bea7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_03_jump_page.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_2newly_build_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_3update_class_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_4update_tag_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_5lower_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_6page_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_7query_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_a_configure.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_b_newly_audio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_b_newly_build_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_b_newly_scene.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_b_newly_user_tag_configure.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_b_newly_video.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_c_edit_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_c_edit_scene.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_c_lower_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_c_to_not_audited_message.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_c_upload_audio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_c_upload_video.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_d_audio_shop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_d_edit_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_d_edit_audio_num.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_d_option_scene.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_d_to_success_audited_message.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_d_update_class_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_e_article_shop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_e_query_message.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_e_query_scene.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_e_update_class_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_e_update_tag_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_f_lower_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_f_page_video.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_f_single_ad_shop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_f_update_tag_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_g_audio_query.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_g_page_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_g_two_ad_shop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_g_video_query.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_h_query_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_h_scene_audio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_i_delete_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_i_delete_audio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_i_operation_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_j_delete_article.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_n_copy_page_shop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/test_o_element_shop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/创建角色.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/删除老师.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/店铺装修.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/情景互动.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/搜索角色名称.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/文章管理.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/新增账号.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/查询标签.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/查询用户.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/标签管理.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/添加老师.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/用户登录成功.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/用户管理.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/留言管理.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/编辑老师.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/编辑账号.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/视频管理.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/账号管理.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/账号管理页面跳转.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/跳转N页.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/选择每页显示条数.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/report/img/音频管理.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/case/test_c_child_video.py" afterPath="$PROJECT_DIR$/case/test_c_child_video.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/basics.py" afterPath="$PROJECT_DIR$/common/basics.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/logger.py" afterPath="$PROJECT_DIR$/common/logger.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +95,7 @@
     <SUITE FILE_PATH="coverage/UIAutomation$test_b_child_article.coverage" NAME="test_b_child_article Coverage Results" MODIFIED="1547715154091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_c_child_video.coverage" NAME="test_c_child_video Coverage Results" MODIFIED="1547432442803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$basics.coverage" NAME="basics Coverage Results" MODIFIED="1547716481917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
-    <SUITE FILE_PATH="coverage/UIAutomation$logger.coverage" NAME="logger Coverage Results" MODIFIED="1548041865056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/UIAutomation$logger.coverage" NAME="logger Coverage Results" MODIFIED="1548053704536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_e_child_shop.coverage" NAME="test_e_child_shop Coverage Results" MODIFIED="1547548407132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_i_child_class.coverage" NAME="test_i_child_class Coverage Results" MODIFIED="1547720952002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
   </component>
@@ -34,63 +105,53 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_l_child_role.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/test_l_child_role.py">
+      <file leaf-file-name="basics.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/basics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1814">
-              <caret line="53" column="55" lean-forward="true" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+            <state relative-caret-position="396">
+              <caret line="293" column="55" lean-forward="false" selection-start-line="293" selection-start-column="55" selection-end-line="293" selection-end-column="55" />
               <folding>
-                <element signature="e#168#183#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_c_child_video.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="logger.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/logger.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_this.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_this.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="521">
+              <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_c_child_video.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/case/test_c_child_video.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="211" column="21" lean-forward="true" selection-start-line="211" selection-start-column="21" selection-end-line="211" selection-end-column="21" />
+            <state relative-caret-position="364">
+              <caret line="365" column="25" lean-forward="false" selection-start-line="365" selection-start-column="25" selection-end-line="365" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_d_child_audio.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/test_d_child_audio.py">
+      <file leaf-file-name="page_child_video.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/page_child_video.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="221" column="53" lean-forward="false" selection-start-line="221" selection-start-column="53" selection-end-line="221" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_f_child_message.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/case/test_f_child_message.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="220" column="35" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page_child_role.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/page/page_child_role.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basics.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/basics.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+            <state relative-caret-position="386">
+              <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -180,27 +241,27 @@
         <option value="$PROJECT_DIR$/run_this.py" />
         <option value="$PROJECT_DIR$/page/page_child_shop.py" />
         <option value="$PROJECT_DIR$/case/test_e_child_shop.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/page/page_child_scene.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/cfg.ini" />
         <option value="$PROJECT_DIR$/case/test_d_child_audio.py" />
-        <option value="$PROJECT_DIR$/case/test_c_child_video.py" />
         <option value="$PROJECT_DIR$/page/page_child_article.py" />
-        <option value="$PROJECT_DIR$/common/basics.py" />
         <option value="$PROJECT_DIR$/case/test_b_child_article.py" />
         <option value="$PROJECT_DIR$/page/page_child_class.py" />
         <option value="$PROJECT_DIR$/case/test_i_child_class.py" />
         <option value="$PROJECT_DIR$/tmp/test.py" />
         <option value="$PROJECT_DIR$/page/page_child_gold.py" />
         <option value="$PROJECT_DIR$/case/test_h_child_configure.py" />
-        <option value="$PROJECT_DIR$/common/logger.py" />
         <option value="$PROJECT_DIR$/page/page_child_teacher.py" />
         <option value="$PROJECT_DIR$/case/test_k_child_teacher.py" />
         <option value="$PROJECT_DIR$/case/test_j_child_gold.py" />
         <option value="$PROJECT_DIR$/page/page_child_configure.py" />
         <option value="$PROJECT_DIR$/page/page_child_role.py" />
         <option value="$PROJECT_DIR$/case/test_l_child_role.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/common/basics.py" />
+        <option value="$PROJECT_DIR$/common/logger.py" />
+        <option value="$PROJECT_DIR$/case/test_c_child_video.py" />
       </list>
     </option>
   </component>
@@ -253,67 +314,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tmp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="report" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="report" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UIAutomation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,7 +371,7 @@
       <recent name="D:\UIAutomation\tmp\eg" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_l_child_role">
+  <component name="RunManager" selected="Python.logger">
     <configuration default="false" name="basics" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -900,15 +901,15 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16577825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24733475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28805238" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36266094" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36266094" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32725322" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725322" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -934,14 +935,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/common/keys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/eg/test_d_child_audio.py" />
     <entry file="file://$PROJECT_DIR$/tmp/eg/page_child_audio.py" />
     <entry file="file://$PROJECT_DIR$/common/random_upload.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -984,13 +977,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/test_a_child_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/python/Lib/unittest/suite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -1012,16 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="286">
-            <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/eg/cfg.ini" />
     <entry file="file://$PROJECT_DIR$/pip.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1034,13 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="7" lean-forward="false" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_this.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2926">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1076,6 +1045,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="319" column="0" lean-forward="false" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,14 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/page_child_video.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
-          <caret line="331" column="36" lean-forward="false" selection-start-line="331" selection-start-column="36" selection-end-line="331" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/page_child_teacher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
@@ -1233,25 +1195,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/logger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="70" column="38" lean-forward="false" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/basics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/page_child_role.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="312">
           <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding />
         </state>
@@ -1267,26 +1213,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/test_c_child_video.py">
+    <entry file="file://$PROJECT_DIR$/case/test_f_child_message.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="211" column="21" lean-forward="true" selection-start-line="211" selection-start-column="21" selection-end-line="211" selection-end-column="21" />
+        <state relative-caret-position="301">
+          <caret line="220" column="35" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="440">
+            <caret line="87" column="88" lean-forward="true" selection-start-line="87" selection-start-column="88" selection-end-line="87" selection-end-column="88" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_a_child_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/test_d_child_audio.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
+        <state relative-caret-position="1520">
           <caret line="221" column="53" lean-forward="false" selection-start-line="221" selection-start-column="53" selection-end-line="221" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/test_f_child_message.py">
+    <entry file="file://$PROJECT_DIR$/tmp/eg/test_7label_management.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="220" column="35" lean-forward="false" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="35" />
+        <state relative-caret-position="386">
+          <caret line="76" column="37" lean-forward="false" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_this.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_child_video.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="293" column="55" lean-forward="false" selection-start-line="293" selection-start-column="55" selection-end-line="293" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2019-01-15 17-40-10report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_c_child_video.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="365" column="25" lean-forward="false" selection-start-line="365" selection-start-column="25" selection-end-line="365" selection-end-column="25" />
           <folding />
         </state>
       </provider>

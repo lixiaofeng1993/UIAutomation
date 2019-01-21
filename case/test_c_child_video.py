@@ -331,7 +331,6 @@ class TestVideo(unittest.TestCase):
         """检测操作视频是不是test video"""
         time.sleep(1)
         video_name_list = video.elements_edit_video_name()
-        print(video_name_list[0].text, 1111111111111111111111111)
         if video_name_list[0].text != name:
             self.log.error('选择视频错误，非测试创建视频！')
             return 0
@@ -364,7 +363,6 @@ class TestVideo(unittest.TestCase):
             lis[random_num].click()
             self.log.info('{} 随机选择元素：{}'.format(list_name, random_num))
             if make == 1:
-                print(random_num)
                 return random_num
             elif make == 2:
                 return [update_class, random_num]

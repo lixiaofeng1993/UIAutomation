@@ -83,7 +83,7 @@ class Crazy:
         """启动浏览器参数化，默认启动chrome"""
         self.driver = driver
         self.action = ActionChains(self.driver)
-        self.timeout = 5
+        self.timeout = 5  # 显示等待超时时间
         self.t = 1
         self.log = Log()
 
@@ -106,7 +106,7 @@ class Crazy:
         """重写元素定位方法"""
         if not isinstance(locator, tuple):
             self.log.error('locator参数必须是元组类型，而不是：{}'.format(type(locator)))
-            return ""
+            return ""  # 根据返回值判断是否定位到元素，使用频率很高
         else:
             try:
                 element = WebDriverWait(self.driver, self.timeout, self.t).until(
@@ -157,7 +157,7 @@ class Crazy:
         element.send_keys(text)
 
     def sends_keys(self, locator, n, text):
-        """发送文本，清空后输入"""
+        """选中一组元素中的一个，发送文本，清空后输入"""
         element = self.find_elements(locator)[n]
         element.clear()
         element.send_keys(text)
@@ -282,9 +282,11 @@ class Crazy:
             self.log.warning('没有发现iframe元素%s' % frame)
 
     def current_window_handle(self):
+        """浏览器handle"""
         return self.driver.current_window_handle
 
     def switch_window_handle(self, n):
+        """切换handle"""
         if not isinstance(n, int):
             self.driver.switch_to.window(n)
         else:

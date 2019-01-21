@@ -32,6 +32,7 @@ class Log:
         self.formatter = colorlog.ColoredFormatter(
             '%(log_color)s[%(asctime)s] [%(filename)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s',
             log_colors=log_colors_config)  # 日志输出格式
+        self.make = False
         self.handle_logs()
 
     def get_file_sorted(self, file_path):
@@ -52,6 +53,8 @@ class Log:
         """处理日志过期天数和日志size备份"""
         dir_list = ['logs', 'report']  # 要删除文件的目录名
         for dir in dir_list:
+            if dir == 'report':
+                self.make = True
             dirPath = os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + '\\' + dir  # 拼接删除目录完整路径
             file_list = self.get_file_sorted(dirPath)  # 返回按修改时间排序的文件list
             if file_list:  # 目录下没有日志文件
@@ -76,7 +79,12 @@ class Log:
 
     def delete_logs(self, file_path):
         try:
-            os.remove(file_path)
+            if self.make:
+                img_list = os.listdir(file_path)
+                for i in img_list:
+                    os.remove(os.path.join(file_path, i))
+            else:
+                os.remove(file_path)
             return True
         except PermissionError as e:
             print('权限错误，删除日志文件失败！{}'.format(file_path))

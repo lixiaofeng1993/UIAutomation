@@ -53,21 +53,22 @@ class Log:
         """处理日志过期天数和日志size备份"""
         dir_list = ['logs', 'report']  # 要删除文件的目录名
         for dir in dir_list:
-            if dir == 'report':
-                self.make = True
             dirPath = os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + '\\' + dir  # 拼接删除目录完整路径
             file_list = self.get_file_sorted(dirPath)  # 返回按修改时间排序的文件list
             if file_list:  # 目录下没有日志文件
                 for i in file_list:
                     file_path = os.path.join(dirPath, i)  # 拼接文件的完整路径
-
-                    t_list = self.TimeStampToTime(os.path.getctime(file_path)).split('-')
-                    now_list = self.TimeStampToTime(time.time()).split('-')
-                    t = datetime.datetime(int(t_list[0]), int(t_list[1]),
-                                          int(t_list[2]))  # 将时间转换成datetime.datetime 类型
-                    now = datetime.datetime(int(now_list[0]), int(now_list[1]), int(now_list[2]))
-                    if (now - t).days > 6:  # 创建时间大于6天的文件删除
-                        self.delete_logs(file_path)
+                    if os.path.isdir(file_path):
+                        self.make = True
+                        pass
+                    else:
+                        t_list = self.TimeStampToTime(os.path.getctime(file_path)).split('-')
+                        now_list = self.TimeStampToTime(time.time()).split('-')
+                        t = datetime.datetime(int(t_list[0]), int(t_list[1]),
+                                              int(t_list[2]))  # 将时间转换成datetime.datetime 类型
+                        now = datetime.datetime(int(now_list[0]), int(now_list[1]), int(now_list[2]))
+                        if (now - t).days > 6:  # 创建时间大于6天的文件删除
+                            self.delete_logs(file_path)
                 if len(file_list) > 6:  # 限制目录下记录文件数量
                     file_list = file_list[0:-6]
                     for i in file_list:

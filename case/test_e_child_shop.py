@@ -37,9 +37,9 @@ class TestShop(unittest.TestCase):
         cls.single = False
         cls.test = False
 
-    # @classmethod
-    # def tearDownClass(cls):
-    #     cls.driver.close()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.close()
 
     def save_img(self, img_name):
         self.driver.get_screenshot_as_file('{}/{}.png'.format(self.img_path, img_name))

@@ -62,6 +62,7 @@ class Log:
                         self.make = True
                         pass
                     else:
+                        self.make = False
                         t_list = self.TimeStampToTime(os.path.getctime(file_path)).split('-')
                         now_list = self.TimeStampToTime(time.time()).split('-')
                         t = datetime.datetime(int(t_list[0]), int(t_list[1]),

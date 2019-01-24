@@ -1,6 +1,7 @@
 import os
 import smtplib
 import time
+import itchat
 import unittest
 from BeautifulReport import BeautifulReport
 from email.mime.multipart import MIMEMultipart
@@ -33,7 +34,7 @@ def run_case(all_case, report_path):
     # HTMLTestRunner
     # report_abspath = os.path.join(report_path, now + 'report.html')
     # fp = open(report_abspath, 'wb')
-    # runner = HTMLTestRunner(stream=fp, verbosity=2, title=readConfig.title, description='用例执行情况：')
+    # runner = HTMLTestRunner(stream=fp, verbosity=2, title=read_config.title, description='用例执行情况：')
     # runner.run(all_case)  # 调用add_case函数返回值
 
     # BeautifulReport
@@ -70,7 +71,7 @@ def get_new_report_excel(report_path_excel):
     return report_file_excel
 
 
-def send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163, report_file_list):
+def send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163, report_file):
     """发送邮件"""
     msg = MIMEMultipart()
     msg['Subject'] = read_config.title
@@ -79,18 +80,17 @@ def send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163
     msg["Accept-Language"] = "zh-CN"
     msg["Accept-Charset"] = "ISO-8859-1,utf-8"
     # 邮件正文
-    # part = MIMEText('使用Jenkins第一次自动化测试报告尝试 定时 发送邮件')
-    for report_file in report_file_list:
-        if os.path.splitext(report_file)[1] == '.html':
-            with open(report_file, 'rb') as f:
-                mail_body = f.read()
-            body = MIMEText(mail_body, 'html', 'utf-8')
-            msg.attach(body)
-            Log().info('写入邮件正文')
-        att = MIMEText(open(report_file, 'rb').read(), 'base64', 'utf-8')  # 添加多个附件
-        att['Content-Type'] = 'application/octet-stream'
-        att['Content-Disposition'] = 'attach;filename=' + report_file[-11:]
-        msg.attach(att)
+    part = MIMEText('{} UI自动化测试完成，测试报告见附件，请注意查看...'.format(read_config.title))
+    if os.path.splitext(report_file)[1] == '.html':
+        # with open(report_file, 'rb') as f:
+        #     mail_body = f.read()
+        # body = MIMEText(mail_body, 'html', 'utf-8')
+        msg.attach(part)
+        Log().info('写入邮件正文')
+    att = MIMEText(open(report_file, 'rb').read(), 'base64', 'utf-8')  # 添加多个附件
+    att['Content-Type'] = 'application/octet-stream'
+    att['Content-Disposition'] = 'attach;filename=' + report_file[-11:]
+    msg.attach(att)
     Log().info('添加邮件附件')
     try:
         try:
@@ -111,7 +111,10 @@ def send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163
 
 
 def run_email():
-    report_file_list = []
+    itchat.auto_login(hotReload=True)
+    name = itchat.search_friends(name='道在光明')
+    username = name[0]['UserName']
+    msg = '{} UI自动化测试完成，测试报告已发送到您的邮箱，请注意查看...'.format(read_config.title)
     # 测试用例路径，匹配规则
     # case_path = os.path.abspath(os.path.dirname(__file__)) + '/case'
     case_path = os.path.abspath(os.path.dirname(__file__)) + '\\case'
@@ -120,22 +123,20 @@ def run_email():
     # report_path = os.path.abspath(os.path.dirname(__file__)) + '/report'
     # report_path = os.path.abspath(os.path.dirname(__file__)) + '\\report'
     run_case(all_case, report_path)
+    itchat.send(msg, username)
     # 获取最新的测试报告
-    # report_file_html = get_new_report_html(report_path)
-    # report_file_excel = get_new_report_excel(report_path)
-    # report_file_list.append(report_file_html)
-    # report_file_list.append(report_file_excel)
-    # user = readConfig.user
-    # # qq邮箱授权码
-    # pwd = readConfig.pwd
-    # user_163 = readConfig.user_163
-    # # 163邮箱授权码
-    # pwd_163 = readConfig.pwd_163
-    # # _to = ['1977907603@qq.com', 'liyongfeng@tzx.com.cn']
-    # _to = readConfig.to
-    # smtp_service = readConfig.smtp_service
-    # smtp_service_163 = readConfig.smtp_service_163
-    # send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163, report_file_list)
+    report_file_html = get_new_report_html(report_path)
+    user = read_config.user
+    # qq邮箱授权码
+    pwd = read_config.pwd
+    user_163 = read_config.user_163
+    # 163邮箱授权码
+    pwd_163 = read_config.pwd_163
+    # _to = ['18701137212@163.com','liyongfeng@xxbmm.com','954274592@qq.com']
+    _to = read_config.to.split(',')
+    smtp_service = read_config.smtp_service
+    smtp_service_163 = read_config.smtp_service_163
+    send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163, report_file_html)
 
 
 if __name__ == '__main__':

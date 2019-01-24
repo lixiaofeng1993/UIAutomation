@@ -59,10 +59,8 @@ class Log:
                 for i in file_list:
                     file_path = os.path.join(dirPath, i)  # 拼接文件的完整路径
                     if os.path.isdir(file_path):
-                        self.make = True
                         pass
                     else:
-                        self.make = False
                         t_list = self.TimeStampToTime(os.path.getctime(file_path)).split('-')
                         now_list = self.TimeStampToTime(time.time()).split('-')
                         t = datetime.datetime(int(t_list[0]), int(t_list[1]),
@@ -81,12 +79,7 @@ class Log:
 
     def delete_logs(self, file_path):
         try:
-            if self.make:
-                img_list = os.listdir(file_path)
-                for i in img_list:
-                    os.remove(os.path.join(file_path, i))
-            else:
-                os.remove(file_path)
+            os.remove(file_path)
             return True
         except PermissionError as e:
             print('权限错误，删除日志文件失败！{}'.format(file_path))

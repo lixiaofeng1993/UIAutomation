@@ -110,22 +110,30 @@ def send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163
         Log().info('邮件发送失败的原因是：%s \n' % e)
 
 
+def send_wx():
+    wx_name_list = read_config.wx_name.split(',')
+    for wx_name in wx_name_list:
+        name = itchat.search_friends(name=wx_name)
+        if not name:
+            name = itchat.search_chatrooms(name=wx_name)
+            msg = '{} UI自动化测试完成，测试报告已发送到各位的邮箱，请下载后查看...'.format(read_config.title)
+        else:
+            msg = '{} UI自动化测试完成，测试报告已发送到您的邮箱，请下载后查看...'.format(read_config.title)
+        username = name[0]['UserName']
+        itchat.send(msg, username)
+        Log().info('微信：{}，提示信息发送成功.'.format(wx_name))
+
+
 def run_email():
     itchat.auto_login(hotReload=True)
-    name = itchat.search_friends(name='道在光明')
-    username = name[0]['UserName']
-    msg = '{} UI自动化测试完成，测试报告已发送到您的邮箱，请注意查看...'.format(read_config.title)
     # 测试用例路径，匹配规则
-    # case_path = os.path.abspath(os.path.dirname(__file__)) + '/case'
     case_path = os.path.abspath(os.path.dirname(__file__)) + '\\case'
     all_case = add_case(case_path)
     # 生成报告测试路径
-    # report_path = os.path.abspath(os.path.dirname(__file__)) + '/report'
-    # report_path = os.path.abspath(os.path.dirname(__file__)) + '\\report'
     run_case(all_case, report_path)
-    itchat.send(msg, username)
     # 获取最新的测试报告
     report_file_html = get_new_report_html(report_path)
+    send_wx()  # 发送微信信息
     user = read_config.user
     # qq邮箱授权码
     pwd = read_config.pwd

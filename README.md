@@ -61,6 +61,7 @@ BeautifulReport     运行case，生成html报告
         存放需要参数化的测试数据;
     driver
         浏览器驱动，grid服务；
+        upfile.exe autolt文件上传脚本，需要跟文件路径，等待500；
     logs
         存放 log 日志;
     page

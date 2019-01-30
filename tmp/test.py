@@ -5,8 +5,16 @@
 # @Site    : 
 # @File    : test.py
 # @Software: PyCharm
-import random
+# import random
+#
+# text = random.uniform(1, 10)
+#
+# print(round(text, 2))
 
-text = random.uniform(1, 10)
+from jpype import *
+import sys
 
-print(round(text, 2))
+print(get_default_jvm_path())
+startJVM(get_default_jvm_path())
+java.lang.System.out.println("hello world!")
+shutdownJVM()

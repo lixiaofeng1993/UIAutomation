@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Author  : lixiaofeng
+# @Site    :
+# @File    : basics.py
+# @Software: PyCharm
 import os
 import time
 from PIL import Image

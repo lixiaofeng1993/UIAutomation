@@ -192,4 +192,22 @@ class Testcla(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    # unittest.main()
+    from selenium import webdriver
+
+    # 驱动路径
+    driver_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    option = webdriver.ChromeOptions()
+    option.add_argument('disable-infobars')
+    # chrome启动静默模式;默认显示浏览器界面
+    if read_config.chrome_interface != 'True':
+        option.add_argument('headless')
+    executable_path = os.path.join(driver_path, 'driver\\chromedriver.exe')
+    # executable_path = os.path.join(driver_path, 'driver/chromedriver')
+    driver = webdriver.Chrome(chrome_options=option, executable_path=executable_path)
+    driver.get('file:///C:/Users/liyongfeng/Desktop/1.html')
+    driver.implicitly_wait(10)
+
+    driver.find_element_by_xpath(".//*[@id='selectdemo']/option[3]").click()
+    driver.implicitly_wait(5)
+    # driver.find_element_by_name('lanqiu').click() 一般的下拉框，点两下，都可以选中的

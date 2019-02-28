@@ -20,11 +20,13 @@ def open_browser(browser='chrome'):
     driver_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
     try:
         if browser == 'firefox':
+            Log().info("start browser name :Firefox")
             executable_path = os.path.join(driver_path, 'driver\\geckodriver.exe')
             # executable_path = os.path.join(driver_path, 'driver/geckodriver')
             driver = webdriver.Firefox(executable_path=executable_path)
             return driver
         elif browser == 'chrome':
+            Log().info("start browser name :Chrome")
             # 加启动配置,忽略 Chrome正在受到自动软件的控制 提示
             option = webdriver.ChromeOptions()
             option.add_argument('disable-infobars')
@@ -36,9 +38,11 @@ def open_browser(browser='chrome'):
             driver = webdriver.Chrome(chrome_options=option, executable_path=executable_path)
             return driver
         elif browser == 'ie':
+            Log().info("start browser name :Ie")
             driver = webdriver.Ie()
             return driver
         elif browser == 'js':
+            Log().info("start browser name :PhantomJS")
             driver = webdriver.PhantomJS()
             return driver
         else:
@@ -412,6 +416,24 @@ class Crazy:
             self.driver.swipe(x1, y1, x1, y2, t)
 
 
-if __name__ == '__main__':
-    driver = open_browser()
-    driver.get('file:///D:/UIAutomation/report/2019-01-15%2017-40-10report.html')
+# if __name__ == '__main__':
+#     driver = open_browser()
+#     driver.get('file:///D:/UIAutomation/report/2019-01-15%2017-40-10report.html')
+
+from tomorrow import threads
+
+
+# 同时启动多个浏览器
+@threads(5)
+def run_case(name):
+    driver = open_browser(name)
+    driver.get("https://www.cnblogs.com/yoyoketang/")
+    time.sleep(3)
+    print(driver.title)
+    driver.quit()
+
+
+if __name__ == "__main__":
+    names = ["chrome", "firefox", "js"]
+    for i in names:
+        run_case(i)

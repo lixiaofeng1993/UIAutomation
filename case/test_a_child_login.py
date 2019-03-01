@@ -18,7 +18,7 @@ from common import read_config
 
 # /html/body/div[2]/div/span/div/div/div/span
 @paramunittest.parametrized(
-    {'user': '18701137212', 'psw': '123456'},
+    # {'user': '18701137212', 'psw': '123456'},
     # {'user': 'lixiaofeng', 'psw': 'fengzi80230'},
     # {'user': 'python', 'psw': 'fengzi80230'},
     # {'user': 'java', 'psw': 'fengzi80230'},
@@ -26,7 +26,7 @@ from common import read_config
     # {'user': 'demaxiy', 'psw': 'fengzi80230'},
     # {'user': '德玛西亚', 'psw': 'fengzi80230'},
     # {'user': '哈哈', 'psw': 'fengzi80230'},
-    {'user': 'test001', 'psw': '123456'},
+    {'user': 'liyongfeng', 'psw': 'liyongfeng123'},
 )
 class TestLogin(unittest.TestCase):
     @classmethod

@@ -11,10 +11,12 @@
 #
 # print(round(text, 2))
 
-from jpype import *
-import sys
+from common.basics import open_browser
 
-print(get_default_jvm_path())
-startJVM(get_default_jvm_path())
-java.lang.System.out.println("hello world!")
-shutdownJVM()
+d = open_browser()
+d.get('https://dev.edu.xxbmm.com')
+
+d.find_element_by_id('username').send_keys('root')
+d.find_element_by_id('password').send_keys('admin')
+d.find_element_by_xpath('//*[@id="root"]/div[2]/div/form/div[3]/button').click()
+

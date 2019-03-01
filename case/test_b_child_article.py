@@ -44,11 +44,11 @@ class TestArticle(unittest.TestCase):
         """进入文章管理"""
         article = self.article
         article.open(self.url, t='育儿锦囊后台管理系统')
-        self.login.input_user('test001')
-        self.login.input_password('123456')
+        self.login.input_user('liyongfeng')
+        self.login.input_password('liyongfeng123')
         self.login.click_login_btn()
         time.sleep(3)
-        self.assertEqual('test001', self.login.text_check_login(), '用户登录失败！')
+        self.assertEqual('liyongfeng', self.login.text_check_login(), '用户登录失败！')
         article.click_article_manage()
         self.assertEqual(article.text_article_manage_text(), '文章管理', '进入文章管理栏失败！')
         self.log.info('进入 文章管理 成功.')

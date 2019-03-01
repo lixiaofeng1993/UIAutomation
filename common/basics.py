@@ -99,8 +99,12 @@ class Crazy:
 
     def open(self, url, t=''):
         """get url，最大化浏览器，判断title"""
-        self.driver.get(url)
-        self.driver.implicitly_wait(10)
+        self.driver.set_page_load_timeout(10)  # 页面加载等待
+        try:
+            self.driver.get(url)
+        except TimeoutException as e:
+            self.log.error('打开{} 页面加载超时！'.format(url))
+            self.driver.execute_script('window.stop()')
         # 是否最大化浏览器
         if read_config.maximize != 'True':
             self.driver.maximize_window()
@@ -108,9 +112,9 @@ class Crazy:
             WebDriverWait(self.driver, self.timeout, self.t).until(EC.title_contains(t))
             self.log.info('打开网页成功！')
         except TimeoutException:
-            self.log.error('打开%s title错误，超时' % url)
+            self.log.error('打来 {} title错误，超时！'.format(url))
         except Exception as msg:
-            self.log.error('打开网页产生的其他错误：%s' % msg)
+            self.log.error('打开网页产生的其他错误：{}'.format(msg))
 
     def find_element(self, locator):
         """重写元素定位方法"""
@@ -288,7 +292,8 @@ class Crazy:
             frame：元素id属性
         """
         try:
-            result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.frame_to_be_available_and_switch_to_it(frame))
+            result = WebDriverWait(self.driver, self.timeout, self.t).until(
+                EC.frame_to_be_available_and_switch_to_it(frame))
             if result:
                 self.log.info('切换iframe成功！')
             else:
@@ -301,162 +306,136 @@ class Crazy:
         # except:
         #     self.log.warning('没有发现iframe元素%s' % frame)
 
+    def current_window_handle(self):
+        """浏览器handle"""
+        return self.driver.current_window_handle
 
-def current_window_handle(self):
-    """浏览器handle"""
-    return self.driver.current_window_handle
+    def switch_window_handle(self, n):
+        """切换handle"""
+        if not isinstance(n, int):
+            self.driver.switch_to.window(n)
+        else:
+            all_handle = self.driver.window_handles
+            self.driver.switch_to.window(all_handle[n])
 
+    def back(self):
+        """返回之前的网页"""
+        self.driver.back()
 
-def switch_window_handle(self, n):
-    """切换handle"""
-    if not isinstance(n, int):
-        self.driver.switch_to.window(n)
-    else:
-        all_handle = self.driver.window_handles
-        self.driver.switch_to.window(all_handle[n])
+    def forward(self):
+        """前往下一个网页"""
+        self.driver.forward()
 
+    def close(self):
+        """关闭当前网页"""
+        self.driver.close()
 
-def back(self):
-    """返回之前的网页"""
-    self.driver.back()
+    def quit(self):
+        """关闭所有网页"""
+        self.driver.quit()
 
+    def get_title(self):
+        """获取title"""
+        return self.driver.title
 
-def forward(self):
-    """前往下一个网页"""
-    self.driver.forward()
+    def get_texts(self, locator, n):
+        """获取一组相同元素中的指定文本"""
+        element = self.find_elements(locator)[n]
+        if element:
+            return element.text
+        else:
+            return None
 
+    def get_text(self, locator):
+        """获取文本"""
+        element = self.find_element(locator)
+        if element:
+            return element.text
+        else:
+            return None
 
-def close(self):
-    """关闭当前网页"""
-    self.driver.close()
+    def get_attribute(self, locator, name):
+        """获取属性"""
+        element = self.find_element(locator)
+        if element:
+            return element.get_attribute(name)
 
+    def js_execute(self, js):
+        """执行js"""
+        return self.driver.execute_script(js)
 
-def quit(self):
-    """关闭所有网页"""
-    self.driver.quit()
+    def js_focus_element(self, locator):
+        """聚焦元素"""
+        target = self.find_element(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", target)
 
+    def js_scroll_top(self):
+        """滚动到顶部"""
+        js = "var q=document.documentElement.scrollTop=0"
+        self.driver.execute_script(js)
 
-def get_title(self):
-    """获取title"""
-    return self.driver.title
+    def js_scroll_bottom(self):
+        """滚动到底部"""
+        js = "var q=document.documentElement.scrollTop=10000"
+        self.driver.execute_script(js)
 
+    def select_by_index(self, locator, index):
+        """通过索引，index是第几个，从0开始, 下拉框"""
+        element = self.find_element(locator)
+        Select(element).select_by_index(index)
 
-def get_texts(self, locator, n):
-    """获取一组相同元素中的指定文本"""
-    element = self.find_elements(locator)[n]
-    if element:
-        return element.text
-    else:
-        return None
+    def select_by_value(self, locator, value):
+        """通过value属性"""
+        element = self.find_element(locator)
+        Select(element).select_by_value(value)
 
+    def select_by_text(self, locator, text):
+        """通过text属性"""
+        element = self.find_element(locator)
+        Select(element).select_by_visible_text(text)
 
-def get_text(self, locator):
-    """获取文本"""
-    element = self.find_element(locator)
-    if element:
-        return element.text
-    else:
-        return None
+    def save_screenshot(self, img_path):
+        """获取电脑屏幕截屏"""
+        self.driver.save_screenshot(img_path)
 
+    def save_report_html(self):
+        """可以在html报告中使用的截图"""
+        self.driver.get_screenshot_as_base64()
 
-def get_attribute(self, locator, name):
-    """获取属性"""
-    element = self.find_element(locator)
-    if element:
-        return element.get_attribute(name)
+    def save_element_img(self, locator, img_path):
+        """获取元素截图"""
+        self.driver.save_screenshot(img_path)
+        element = self.find_element(locator)
+        left = element.location['x']
+        top = element.location['y']
+        right = element.location['x'] + element.size['width']
+        bottom = element.location['y'] + element.size['height']
+        im = Image.open(img_path)
+        im = im.crop((left, top, right, bottom))
+        im.save(img_path)
 
+    def get_cookies(self):
+        """获取cookies"""
+        return self.driver.get_cookies()
 
-def js_execute(self, js):
-    """执行js"""
-    return self.driver.execute_script(js)
+    def swipeDown(self, t=500, n=1):
+        '''向下滑动屏幕'''
+        l = self.driver.get_window_size()
+        x1 = l['width'] * 0.5  # x坐标
+        y1 = l['height'] * 0.25  # 起始y坐标
+        y2 = l['height'] * 0.75  # 终点y坐标
+        for i in range(n):
+            self.driver.swipe(x1, y1, x1, y2, t)
 
+    def swipeUp(self, t=500, n=1):
+        '''向上滑动屏幕'''
+        l = self.driver.get_window_size()
+        x1 = l['width'] * 0.5  # x坐标
+        y1 = l['height'] * 0.65  # 起始y坐标
+        y2 = l['height'] * 0.25  # 终点y坐标
+        for i in range(n):
+            self.driver.swipe(x1, y1, x1, y2, t)  # if __name__ == '__main__':
 
-def js_focus_element(self, locator):
-    """聚焦元素"""
-    target = self.find_element(locator)
-    self.driver.execute_script("arguments[0].scrollIntoView();", target)
-
-
-def js_scroll_top(self):
-    """滚动到顶部"""
-    js = "var q=document.documentElement.scrollTop=0"
-    self.driver.execute_script(js)
-
-
-def js_scroll_bottom(self):
-    """滚动到底部"""
-    js = "var q=document.documentElement.scrollTop=10000"
-    self.driver.execute_script(js)
-
-
-def select_by_index(self, locator, index):
-    """通过索引，index是第几个，从0开始, 下拉框"""
-    element = self.find_element(locator)
-    Select(element).select_by_index(index)
-
-
-def select_by_value(self, locator, value):
-    """通过value属性"""
-    element = self.find_element(locator)
-    Select(element).select_by_value(value)
-
-
-def select_by_text(self, locator, text):
-    """通过text属性"""
-    element = self.find_element(locator)
-    Select(element).select_by_visible_text(text)
-
-
-def save_screenshot(self, img_path):
-    """获取电脑屏幕截屏"""
-    self.driver.save_screenshot(img_path)
-
-
-def save_report_html(self):
-    """可以在html报告中使用的截图"""
-    self.driver.get_screenshot_as_base64()
-
-
-def save_element_img(self, locator, img_path):
-    """获取元素截图"""
-    self.driver.save_screenshot(img_path)
-    element = self.find_element(locator)
-    left = element.location['x']
-    top = element.location['y']
-    right = element.location['x'] + element.size['width']
-    bottom = element.location['y'] + element.size['height']
-    im = Image.open(img_path)
-    im = im.crop((left, top, right, bottom))
-    im.save(img_path)
-
-
-def get_cookies(self):
-    """获取cookies"""
-    return self.driver.get_cookies()
-
-
-def swipeDown(self, t=500, n=1):
-    '''向下滑动屏幕'''
-    l = self.driver.get_window_size()
-    x1 = l['width'] * 0.5  # x坐标
-    y1 = l['height'] * 0.25  # 起始y坐标
-    y2 = l['height'] * 0.75  # 终点y坐标
-    for i in range(n):
-        self.driver.swipe(x1, y1, x1, y2, t)
-
-
-def swipeUp(self, t=500, n=1):
-    '''向上滑动屏幕'''
-    l = self.driver.get_window_size()
-    x1 = l['width'] * 0.5  # x坐标
-    y1 = l['height'] * 0.65  # 起始y坐标
-    y2 = l['height'] * 0.25  # 终点y坐标
-    for i in range(n):
-        self.driver.swipe(x1, y1, x1, y2, t)  # if __name__ == '__main__':
-
-
-# driver = open_browser()
-#     driver.get('file:///D:/UIAutomation/report/2019-01-15%2017-40-10report.html')
 
 from tomorrow import threads
 
@@ -465,8 +444,12 @@ from tomorrow import threads
 @threads(5)
 def run_case(name):
     driver = open_browser(name)
-    driver.get("https://www.cnblogs.com/yoyoketang/")
-    time.sleep(3)
+    driver.set_page_load_timeout(10)
+    try:
+        driver.get('https://github.com/')
+    except TimeoutException as e:
+        print('{}, 111111111111111111111111111111111'.format(e))
+        driver.execute_script('window.stop()')
     print(driver.title)
     driver.quit()
 

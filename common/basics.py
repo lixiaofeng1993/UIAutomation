@@ -437,24 +437,24 @@ class Crazy:
             self.driver.swipe(x1, y1, x1, y2, t)  # if __name__ == '__main__':
 
 
-from tomorrow import threads
-
-
-# 同时启动多个浏览器
-@threads(5)
-def run_case(name):
-    driver = open_browser(name)
-    driver.set_page_load_timeout(10)
-    try:
-        driver.get('https://github.com/')
-    except TimeoutException as e:
-        print('{}, 111111111111111111111111111111111'.format(e))
-        driver.execute_script('window.stop()')
-    print(driver.title)
-    driver.quit()
-
-
-if __name__ == "__main__":
-    names = ["chrome", "firefox", "js"]
-    for i in names:
-        run_case(i)
+# from tomorrow import threads
+#
+#
+# # 同时启动多个浏览器
+# @threads(5)
+# def run_case(name):
+#     driver = open_browser(name)
+#     driver.set_page_load_timeout(10)
+#     try:
+#         driver.get('https://github.com/')
+#     except TimeoutException as e:
+#         print('{}, 111111111111111111111111111111111'.format(e))
+#         driver.execute_script('window.stop()')
+#     print(driver.title)
+#     driver.quit()
+#
+#
+# if __name__ == "__main__":
+#     names = ["chrome", "firefox", "js"]
+#     for i in names:
+#         run_case(i)

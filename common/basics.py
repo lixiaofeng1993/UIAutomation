@@ -11,7 +11,8 @@ from selenium import webdriver
 from appium import webdriver as app
 from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.action_chains import ActionChains # web
+from appium.webdriver.common.touch_action import TouchAction # app
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -93,6 +94,7 @@ class Crazy:
         """启动浏览器参数化，默认启动chrome"""
         self.driver = driver
         self.action = ActionChains(self.driver)
+        self.touch = TouchAction(self.driver)
         self.timeout = 5  # 显示等待超时时间
         self.t = 1
         self.log = Log()
@@ -189,6 +191,15 @@ class Crazy:
 
     def send_keys_arrow_right(self):
         self.action.send_keys(Keys.ARROW_RIGHT).perform()
+
+    def long_press(self, element):
+        """长按"""
+        return self.touch.long_press(element).perform()
+
+    def drag_and_drop(self, element, element1):
+        """拖拽, 添加微信小程序到我的小程序"""
+        element_obj = self.long_press(element)
+        element_obj.move_to(element1).wait(1000).perform()
 
     def is_text_in_element(self, locator, text):
         """判断文本在元素里，没定位到元素返回False，定位到返回判断结果布尔值"""
@@ -300,11 +311,11 @@ class Crazy:
                 self.log.warning('frame 切换失败！')
         except TimeoutException:
             self.log.warning('没有发现iframe元素%s' % frame)
-        # try:
-        #     self.driver.switch_to_frame(self.find_element(frame))
-        #     self.log.info('切换iframe成功！')
-        # except:
-        #     self.log.warning('没有发现iframe元素%s' % frame)
+            # try:
+            #     self.driver.switch_to_frame(self.find_element(frame))
+            #     self.log.info('切换iframe成功！')
+            # except:
+            #     self.log.warning('没有发现iframe元素%s' % frame)
 
     def current_window_handle(self):
         """浏览器handle"""
@@ -435,7 +446,6 @@ class Crazy:
         y2 = l['height'] * 0.25  # 终点y坐标
         for i in range(n):
             self.driver.swipe(x1, y1, x1, y2, t)  # if __name__ == '__main__':
-
 
 # from tomorrow import threads
 #

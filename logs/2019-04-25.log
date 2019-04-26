@@ -1,0 +1,106 @@
+[32m[2019-04-25 11:51:42,131] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03E58350>页面中未能找到元素('xpath', '//*[@resource-id="com.tencent.mm:id/c5" and @text="小小包早教"]')[0m
+[32m[2019-04-25 11:53:58,245] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x039F86D0>页面中未能找到元素('xpath', '//*[@resource-id="com.tencent.mm:id/c5" and @text="小小包早教"]')[0m
+[32m[2019-04-25 11:53:58,247] [logger.py:103] [logger:__console] [INFO]- 测试小程序删除成功！[0m
+[32m[2019-04-25 11:59:58,196] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03FB8730>页面中未能找到元素('xpath', '//*[contains(@text, "删除")]')[0m
+[32m[2019-04-25 12:04:12,560] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03668710>页面中未能找到元素('xpath', '//*[@resource-id="com.tencent.mm:id/c5" and @text="小小包早教"]')[0m
+[32m[2019-04-25 12:04:12,564] [logger.py:103] [logger:__console] [INFO]- 测试小程序删除成功！[0m
+[32m[2019-04-25 13:12:56,521] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x035DA8B0>页面中未能找到元素('xpath', '//*[@resource-id="com.tencent.mm:id/cw" and @text="小小包早教"]')[0m
+[31m[2019-04-25 13:12:56,525] [logger.py:109] [logger:__console] [ERROR]- 被测小程序不存在！[0m
+[32m[2019-04-25 13:50:46,084] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x035E1BD0>页面中未能找到元素('xpath', '//*[contains(@text, "立即购买")]')[0m
+[32m[2019-04-25 13:51:47,908] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x035E1BD0>页面中未能找到元素('xpath', '//*[contains(@text, "立即购买")]')[0m
+[32m[2019-04-25 14:12:17,646] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03F38930>页面中未能找到元素('xpath', '//*[contains(@text, "立即了解正式课 ")]')[0m
+[32m[2019-04-25 14:30:40,402] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x0431B1B0>页面中未能找到元素('xpath', '//*[contains(@text, "立即购买")]')[0m
+[31m[2019-04-25 14:32:05,117] [logger.py:109] [logger:__console] [ERROR]- locator参数必须是元组类型，而不是：<class 'method'>[0m
+[31m[2019-04-25 14:52:41,726] [logger.py:109] [logger:__console] [ERROR]- locator参数必须是元组类型，而不是：<class 'method'>[0m
+[32m[2019-04-25 15:10:19,854] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03AB1630>页面中未能找到元素('xpath', '//*[contains(@text, "立即听课")]')[0m
+[32m[2019-04-25 15:10:58,434] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03B5C1B0>页面中未能找到元素('xpath', '//*[contains(@text, "立即听课")]')[0m
+[32m[2019-04-25 15:11:30,813] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x035CC170>页面中未能找到元素('xpath', '//*[contains(@text, "立即听课")]')[0m
+[32m[2019-04-25 15:57:12,381] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 15:57:17,713] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 15:57:23,916] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 15:57:23,918] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 15:57:37,561] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 15:57:50,800] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x040C26B0>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 15:57:50,803] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 15:58:55,607] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 15:58:57,440] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 17:56:20,941] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 17:56:28,618] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 17:56:35,203] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 17:56:47,048] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 17:57:00,039] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x045DF8F0>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 17:57:00,041] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 17:57:56,292] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 17:57:58,067] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 17:58:14,088] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x045DF8F0>页面中未能找到元素('xpath', '//*[contains(@text, "2019-0")]')[0m
+[32m[2019-04-25 18:10:33,991] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:10:39,315] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:10:46,100] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:10:59,728] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:11:12,863] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x035C8350>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:11:12,865] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:12:18,198] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:12:20,139] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:12:37,582] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x035C8350>页面中未能找到元素('xpath', '//*[contains(@text, "2019-0")]')[0m
+[32m[2019-04-25 18:14:52,163] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:14:57,243] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:15:04,359] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:15:19,124] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:15:32,028] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04438D90>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:15:32,032] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:15:42,663] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04438D90>页面中未能找到元素('xpath', '//*[contains(@text, "添加地址")]')[0m
+[32m[2019-04-25 18:17:37,169] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:17:43,072] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:17:49,659] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:18:03,727] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:18:16,734] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03E28A50>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:18:16,738] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:19:22,406] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:19:24,384] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:19:42,023] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03E28A50>页面中未能找到元素('xpath', '//*[contains(@text, "2019-0")]')[0m
+[32m[2019-04-25 18:27:33,932] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:27:39,978] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:27:46,845] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:28:00,017] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:28:13,192] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04C94BF0>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:28:13,197] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:29:06,781] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:29:08,062] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:31:27,376] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04C94BF0>页面中未能找到元素('xpath', '//*[contains(@text, "查看全部课程")]')[0m
+[32m[2019-04-25 18:41:29,436] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:41:35,468] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:41:41,559] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:41:55,268] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:42:08,762] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04428D30>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:42:08,765] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:43:04,978] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:43:06,877] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:43:21,380] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04428D30>页面中未能找到元素('xpath', '//*[contains(@text, "2019-0")]')[0m
+[32m[2019-04-25 18:46:45,837] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:46:51,143] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:46:57,493] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:47:11,079] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:47:24,814] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03611110>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:47:24,817] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:48:32,027] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:48:32,949] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:48:43,999] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03611110>页面中未能找到元素('xpath', '//*[contains(@text, "知道了")]')[0m
+[32m[2019-04-25 18:49:00,084] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03611110>页面中未能找到元素('xpath', '//*[contains(@text, "查看全部课程")]')[0m
+[32m[2019-04-25 18:51:47,477] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:51:52,698] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:51:58,764] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:52:12,275] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:52:25,787] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x03DC7D50>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:52:25,790] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:53:30,958] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:53:32,595] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:53:44,282] [logger.py:103] [logger:__console] [INFO]- 查看历史推送成功！[0m
+[32m[2019-04-25 18:54:52,543] [logger.py:103] [logger:__console] [INFO]- 正在进入被测小程序...[0m
+[32m[2019-04-25 18:54:58,521] [logger.py:103] [logger:__console] [INFO]- 进行购买核心课操作...[0m
+[32m[2019-04-25 18:55:04,927] [logger.py:103] [logger:__console] [INFO]- 支付金额是：0.01[0m
+[32m[2019-04-25 18:55:19,190] [logger.py:103] [logger:__console] [INFO]- 支付完成，进行领取核心课操作...[0m
+[32m[2019-04-25 18:55:31,400] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04587D70>页面中未能找到元素('xpath', '//*[contains(@text, "收件人：")]')[0m
+[32m[2019-04-25 18:55:31,405] [logger.py:103] [logger:__console] [INFO]- 地址信息不存在，进行添加地址信息操作...[0m
+[32m[2019-04-25 18:56:38,460] [logger.py:103] [logger:__console] [INFO]- 添加收货地址完成！[0m
+[32m[2019-04-25 18:56:40,383] [logger.py:103] [logger:__console] [INFO]- 领取课程成功！[0m
+[32m[2019-04-25 18:57:00,973] [logger.py:103] [logger:__console] [INFO]- <page.page_zaojiao.Zaojiaopage object at 0x04587D70>页面中未能找到元素('xpath', '//*[contains(@text, "2019-0")]')[0m

@@ -11,8 +11,8 @@ from selenium import webdriver
 from appium import webdriver as app
 from selenium.common.exceptions import *
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains # web
-from appium.webdriver.common.touch_action import TouchAction # app
+from selenium.webdriver.common.action_chains import ActionChains  # web
+from appium.webdriver.common.touch_action import TouchAction  # app
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -78,7 +78,9 @@ def open_app():
             # 隐藏手机默认键盘
             'unicodeKeyboard': True,
 
-            'resetKeyboard': True
+            'resetKeyboard': True,
+
+            'chromeOptions': {'androidProcess': 'com.tencent.mm:tools'}
         }
         # 关联appium
         driver = app.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
@@ -95,13 +97,13 @@ class Crazy:
         self.driver = driver
         self.action = ActionChains(self.driver)
         self.touch = TouchAction(self.driver)
-        self.timeout = 5  # 显示等待超时时间
+        self.timeout = 10  # 显示等待超时时间
         self.t = 1
         self.log = Log()
 
     def open(self, url, t=''):
         """get url，最大化浏览器，判断title"""
-        self.driver.set_page_load_timeout(10)  # 页面加载等待
+        self.driver.set_page_load_timeout(self.timeout)  # 页面加载等待
         try:
             self.driver.get(url)
         except TimeoutException as e:
@@ -293,11 +295,6 @@ class Crazy:
         except ElementNotVisibleException as e:
             self.log.error('鼠标点击事件失败：%s' % e)
 
-    def drag_and_drop(self, element, element1):
-        """拖拽"""
-        ActionChains(self.driver).drag_and_drop(element, element1).perform()
-        ActionChains(self.driver).click_and_hold(element).release(element1).perform()
-
     def switch_frame(self, frame):
         """判断该frame是否可以switch进去，如果可以的话，返回True并且switch进去，否则返回False
             frame：元素id属性
@@ -431,21 +428,28 @@ class Crazy:
 
     def swipeDown(self, t=500, n=1):
         '''向下滑动屏幕'''
+        time.sleep(2)
         l = self.driver.get_window_size()
         x1 = l['width'] * 0.5  # x坐标
         y1 = l['height'] * 0.25  # 起始y坐标
-        y2 = l['height'] * 0.75  # 终点y坐标
+        y2 = l['height'] * 0.85  # 终点y坐标
         for i in range(n):
+            time.sleep(0.5)
             self.driver.swipe(x1, y1, x1, y2, t)
 
     def swipeUp(self, t=500, n=1):
         '''向上滑动屏幕'''
+        time.sleep(2)
         l = self.driver.get_window_size()
         x1 = l['width'] * 0.5  # x坐标
         y1 = l['height'] * 0.65  # 起始y坐标
         y2 = l['height'] * 0.25  # 终点y坐标
         for i in range(n):
-            self.driver.swipe(x1, y1, x1, y2, t)  # if __name__ == '__main__':
+            time.sleep(0.5)
+            self.driver.swipe(x1, y1, x1, y2, t)
+
+    def test(self):
+        self.driver.press_keycode(84)
 
 # from tomorrow import threads
 #

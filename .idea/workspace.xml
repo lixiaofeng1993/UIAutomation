@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2507fa38-a401-4249-a7b7-3ed77d17bea7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/page_zaojiao.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/driver/IEDriverServer.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/case/test_xxbmm_public.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/case/test_yun.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/page_public.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmp/check_monkey_log.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tmp/monkey.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" afterPath="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/basics.py" afterPath="$PROJECT_DIR$/common/basics.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/page_zaojiao.py" afterPath="$PROJECT_DIR$/page/page_zaojiao.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,28 +21,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/UIAutomation$webdriver.coverage" NAME="webdriver Coverage Results" MODIFIED="1551423773479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python/Lib/site-packages/selenium/webdriver/remote" />
-    <SUITE FILE_PATH="coverage/UIAutomation$Unittests_in_TestXxbmm.coverage" NAME="Unittests in TestXxbmm Coverage Results" MODIFIED="1553943864127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_l_child_role.coverage" NAME="test_l_child_role Coverage Results" MODIFIED="1550633376111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$ticket.coverage" NAME="ticket Coverage Results" MODIFIED="1548393403287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$test_k_child_teacher.coverage" NAME="test_k_child_teacher Coverage Results" MODIFIED="1547791696709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$Unittests_in_test_xxbmm_zaojiao.coverage" NAME="Unittests in test_xxbmm_zaojiao Coverage Results" MODIFIED="1555238732512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$test_j_child_gold.coverage" NAME="test_j_child_gold Coverage Results" MODIFIED="1547780595413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$test_g_child_scene.coverage" NAME="test_g_child_scene Coverage Results" MODIFIED="1547540461158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$run_this.coverage" NAME="run_this Coverage Results" MODIFIED="1551325077151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/UIAutomation$test_a_child_login.coverage" NAME="test_a_child_login Coverage Results" MODIFIED="1551425968042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_d_child_audio.coverage" NAME="test_d_child_audio Coverage Results" MODIFIED="1547434395002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_f_child_message.coverage" NAME="test_f_child_message Coverage Results" MODIFIED="1547519320113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_h_child_configure.coverage" NAME="test_h_child_configure Coverage Results" MODIFIED="1547712404926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$test.coverage" NAME="test Coverage Results" MODIFIED="1551425496491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_xxbmm_sku.coverage" NAME="test_xxbmm_sku Coverage Results" MODIFIED="1554046906332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp/eg" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test_xxbmm_public.coverage" NAME="test_xxbmm_public Coverage Results" MODIFIED="1556269508679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test_i_child_class.coverage" NAME="test_i_child_class Coverage Results" MODIFIED="1550632879663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$rename.coverage" NAME="rename Coverage Results" MODIFIED="1551425691700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/UIAutomation$check_monkey_log.coverage" NAME="check_monkey_log Coverage Results" MODIFIED="1556268502944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/UIAutomation$webdriver.coverage" NAME="webdriver Coverage Results" MODIFIED="1551423773479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python/Lib/site-packages/selenium/webdriver/remote" />
+    <SUITE FILE_PATH="coverage/UIAutomation$Unittests_in_TestXxbmm.coverage" NAME="Unittests in TestXxbmm Coverage Results" MODIFIED="1553943864127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$zaojiao.coverage" NAME="zaojiao Coverage Results" MODIFIED="1556270968554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$ticket.coverage" NAME="ticket Coverage Results" MODIFIED="1548393403287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test_k_child_teacher.coverage" NAME="test_k_child_teacher Coverage Results" MODIFIED="1547791696709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test_j_child_gold.coverage" NAME="test_j_child_gold Coverage Results" MODIFIED="1547780595413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test_g_child_scene.coverage" NAME="test_g_child_scene Coverage Results" MODIFIED="1547540461158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test_a_child_login.coverage" NAME="test_a_child_login Coverage Results" MODIFIED="1551425968042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$test.coverage" NAME="test Coverage Results" MODIFIED="1551425496491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_b_child_article.coverage" NAME="test_b_child_article Coverage Results" MODIFIED="1551427974740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_c_child_video.coverage" NAME="test_c_child_video Coverage Results" MODIFIED="1547432442803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/UIAutomation$logger.coverage" NAME="logger Coverage Results" MODIFIED="1548226289768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/UIAutomation$basics.coverage" NAME="basics Coverage Results" MODIFIED="1551435749934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/UIAutomation$test_e_child_shop.coverage" NAME="test_e_child_shop Coverage Results" MODIFIED="1548225943291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$test_i_child_class.coverage" NAME="test_i_child_class Coverage Results" MODIFIED="1550632879663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/UIAutomation$rename.coverage" NAME="rename Coverage Results" MODIFIED="1551425691700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -44,46 +53,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="basics.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <file leaf-file-name="cfg.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/cfg.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="135" column="8" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
-              <folding>
-                <element signature="e#127#136#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="read_config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/read_config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-228">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="182">
+              <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page_sku.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tmp/eg/page_sku.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_xiaobu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/test_xiaobu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="49" column="86" lean-forward="false" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +66,8 @@
       <file leaf-file-name="test_xxbmm_zaojiao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="55" column="43" lean-forward="true" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+            <state relative-caret-position="-286">
+              <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding>
                 <element signature="e#169#180#0" expanded="true" />
               </folding>
@@ -100,21 +75,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page_zaojiao.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+      <file leaf-file-name="test_xxbmm_public.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/case/test_xxbmm_public.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="402">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding>
+                <element signature="e#169#180#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page_public.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/page_public.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="operation_excel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/operation_excel.py">
+      <file leaf-file-name="check_monkey_log.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/check_monkey_log.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1900">
-              <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="20" />
+            <state relative-caret-position="110">
+              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <folding>
+                <element signature="e#184#197#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkey_report.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/monkey_report.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basics.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/basics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="451" column="36" lean-forward="false" selection-start-line="451" selection-start-column="36" selection-end-line="451" selection-end-column="36" />
+              <folding>
+                <element signature="e#127#136#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page_zaojiao.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -131,24 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>//form[@class=&quot;ant-form ant-form-horizontal&quot;]/div[2]/div[2]/div/span/div/label/span[2]</find>
-      <find>//form[@class=&quot;ant-form ant-form-horizontal&quot;]/div[2]/div[2]/div/span/div/label/span[1]</find>
-      <find>prin</find>
-      <find>复制</find>
-      <find>查询</find>
-      <find>上下架、查看、删除</find>
-      <find>self.make</find>
-      <find>R</find>
-      <find>get_jvm_path</find>
-      <find>get_default_jvm_path</find>
-      <find>getDefaultJVMPath</find>
-      <find>di</find>
-      <find>dri</find>
-      <find>driver_path</find>
-      <find>suites</find>
-      <find>start browser name</find>
-      <find>title_is</find>
-      <find>visibility_of_element_located</find>
       <find>visibility_of</find>
       <find>TimeoutException</find>
       <find>select</find>
@@ -161,6 +164,24 @@
       <find>status</find>
       <find>w3c</find>
       <find>com.xiaobu121.xiaobu.xiaobu_android:id/tv_title</find>
+      <find>title</find>
+      <find>版本查看</find>
+      <find>小小包早教</find>
+      <find>0元领取7节试听课</find>
+      <find>立即领取</find>
+      <find>删除</find>
+      <find>self.t</find>
+      <find>com.tencent.mm:id/oa</find>
+      <find>完成</find>
+      <find>com.tencent.mm:id/cs</find>
+      <find>com.tencent.mm:id/dhz</find>
+      <find>确定</find>
+      <find>automationName</find>
+      <find>accessibility</find>
+      <find>回车</find>
+      <find>drag_and_drop</find>
+      <find>com.tencent.mm:id/cw</find>
+      <find>com.tencent.mm:id/jy</find>
     </findStrings>
     <replaceStrings>
       <replace>random_check</replace>
@@ -179,6 +200,7 @@
       <replace>老师管理</replace>
       <replace>role</replace>
       <replace>角色管理</replace>
+      <replace>包妈优选</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -187,11 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tmp/eg/test_91user_management.py" />
-        <option value="$PROJECT_DIR$/data/words.txt" />
-        <option value="$PROJECT_DIR$/common/read_config.py" />
-        <option value="$PROJECT_DIR$/tmp/eg/page_user_management.py" />
-        <option value="$PROJECT_DIR$/page/page_child_message.py" />
         <option value="$PROJECT_DIR$/case/test_g_child_configure.py" />
         <option value="$PROJECT_DIR$/logs/2019-01-15.log" />
         <option value="$PROJECT_DIR$/case/test_f_child_message.py" />
@@ -236,8 +253,13 @@
         <option value="$PROJECT_DIR$/tmp/eg/page_sku.py" />
         <option value="$PROJECT_DIR$/common/operation_excel.py" />
         <option value="$PROJECT_DIR$/case/test_xiaobu.py" />
-        <option value="$PROJECT_DIR$/common/basics.py" />
         <option value="$PROJECT_DIR$/page/page_zaojiao.py" />
+        <option value="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" />
+        <option value="$PROJECT_DIR$/common/basics.py" />
+        <option value="$PROJECT_DIR$/tmp/monkey_report.txt" />
+        <option value="$PROJECT_DIR$/tmp/check_monkey_log.py" />
+        <option value="$PROJECT_DIR$/page/page_public.py" />
+        <option value="$PROJECT_DIR$/case/test_xxbmm_public.py" />
       </list>
     </option>
   </component>
@@ -250,8 +272,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -268,6 +290,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,7 +314,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="page" />
+              <option name="myItemId" value="tmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="driver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,33 +390,33 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="F:/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/case/test_xxbmm_public.py" />
     <property name="js-jscs-nodeInterpreter" value="F:\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UIAutomation\tmp" />
       <recent name="G:\UIAutomation\page" />
       <recent name="G:\UIAutomation\case" />
       <recent name="G:\UIAutomation\data" />
       <recent name="G:\UIAutomation\common" />
-      <recent name="D:\UIAutomation\case" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UIAutomation\driver" />
+      <recent name="D:\UIAutomation\case" />
       <recent name="G:\UIAutomation\case" />
       <recent name="D:\UIAutomation\tmp" />
       <recent name="D:\UIAutomation\tmp\eg" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_xxbmm_zaojiao">
+  <component name="RunManager" selected="Python.zaojiao">
     <configuration default="false" name="basics" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -451,27 +489,22 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests in test_xxbmm_zaojiao" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="check_monkey_log" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tmp" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="UIAutomation" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/check_monkey_log.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -705,6 +738,42 @@
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
       <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="zaojiao" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="UIAutomation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_xxbmm_public" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="UIAutomation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/test_xxbmm_public.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="test_xxbmm_sku" type="PythonConfigurationType" factoryName="Python">
@@ -977,31 +1046,33 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="20">
-      <item index="0" class="java.lang.String" itemvalue="Python.test_xxbmm_sku" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test_e_child_shop" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_b_child_article" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_c_child_video" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_d_child_audio" />
-      <item index="5" class="java.lang.String" itemvalue="Python.test_f_child_message" />
-      <item index="6" class="java.lang.String" itemvalue="Python.test_g_child_scene" />
-      <item index="7" class="java.lang.String" itemvalue="Python.test_h_child_configure" />
-      <item index="8" class="java.lang.String" itemvalue="Python.test_i_child_class" />
-      <item index="9" class="java.lang.String" itemvalue="Python.ticket" />
-      <item index="10" class="java.lang.String" itemvalue="Python.test_j_child_gold" />
-      <item index="11" class="java.lang.String" itemvalue="Python.test_k_child_teacher" />
-      <item index="12" class="java.lang.String" itemvalue="Python.test_l_child_role" />
-      <item index="13" class="java.lang.String" itemvalue="Python.test" />
-      <item index="14" class="java.lang.String" itemvalue="Python.test_a_child_login" />
-      <item index="15" class="java.lang.String" itemvalue="Python.basics" />
-      <item index="16" class="java.lang.String" itemvalue="Python.run_this" />
-      <item index="17" class="java.lang.String" itemvalue="Python.rename" />
-      <item index="18" class="java.lang.String" itemvalue="Python.webdriver" />
-      <item index="19" class="java.lang.String" itemvalue="Python tests.Unittests in test_xxbmm_zaojiao" />
+    <list size="22">
+      <item index="0" class="java.lang.String" itemvalue="Python.zaojiao" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_xxbmm_public" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_xxbmm_sku" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_e_child_shop" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test_b_child_article" />
+      <item index="5" class="java.lang.String" itemvalue="Python.test_c_child_video" />
+      <item index="6" class="java.lang.String" itemvalue="Python.test_d_child_audio" />
+      <item index="7" class="java.lang.String" itemvalue="Python.test_f_child_message" />
+      <item index="8" class="java.lang.String" itemvalue="Python.test_g_child_scene" />
+      <item index="9" class="java.lang.String" itemvalue="Python.test_h_child_configure" />
+      <item index="10" class="java.lang.String" itemvalue="Python.test_i_child_class" />
+      <item index="11" class="java.lang.String" itemvalue="Python.ticket" />
+      <item index="12" class="java.lang.String" itemvalue="Python.test_j_child_gold" />
+      <item index="13" class="java.lang.String" itemvalue="Python.test_k_child_teacher" />
+      <item index="14" class="java.lang.String" itemvalue="Python.test_l_child_role" />
+      <item index="15" class="java.lang.String" itemvalue="Python.test" />
+      <item index="16" class="java.lang.String" itemvalue="Python.test_a_child_login" />
+      <item index="17" class="java.lang.String" itemvalue="Python.basics" />
+      <item index="18" class="java.lang.String" itemvalue="Python.run_this" />
+      <item index="19" class="java.lang.String" itemvalue="Python.rename" />
+      <item index="20" class="java.lang.String" itemvalue="Python.webdriver" />
+      <item index="21" class="java.lang.String" itemvalue="Python.check_monkey_log" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_xxbmm_zaojiao" />
+        <item index="0" class="java.lang.String" itemvalue="Python.check_monkey_log" />
         <item index="1" class="java.lang.String" itemvalue="Python.basics" />
         <item index="2" class="java.lang.String" itemvalue="Python.rename" />
         <item index="3" class="java.lang.String" itemvalue="Python.webdriver" />
@@ -1037,20 +1108,20 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21375267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28805238" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60883796" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39592275" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28641573" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28540772" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39770868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3969957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1090,46 +1161,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 10-40-02report.html" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 10-44-09report.html" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 10-45-56report.html" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 10-49-56report.html" />
-    <entry file="file://$PROJECT_DIR$/case/1test.py" />
-    <entry file="file://$PROJECT_DIR$/case/1test_1.py" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 10-58-31report.html" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 11-05-58report.html" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 11-08-10report.html" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 11-35-57report.html" />
-    <entry file="file://$PROJECT_DIR$/case/test_a_child_login.py" />
-    <entry file="file://$PROJECT_DIR$/report/2019-02-28 11-34-47report.html" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
-    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/phantomjs/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python/Lib/site-packages/tomorrow/tomorrow.py" />
-    <entry file="file://D:/python/Lib/concurrent/futures/_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="318" column="0" lean-forward="false" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/python/Lib/concurrent/futures/thread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/python/Lib/site-packages/colorama/ansitowin32.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -1222,24 +1258,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17157">
-          <caret line="919" column="54" lean-forward="false" selection-start-line="919" selection-start-column="54" selection-end-line="919" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/case/test_h_child_configure.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/cfg.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="49" column="132" lean-forward="false" selection-start-line="49" selection-start-column="132" selection-end-line="49" selection-end-column="132" />
         </state>
       </provider>
     </entry>
@@ -1280,71 +1302,213 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp/eg/page_sku.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
+        <state relative-caret-position="528">
           <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/operation_excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
+        <state relative-caret-position="2200">
           <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/read_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xiaobu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="396" column="0" lean-forward="false" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/appium/webdriver/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/string.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/json/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/remote/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/remote/remote_connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="485" column="0" lean-forward="false" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="922" column="29" lean-forward="false" selection-start-line="922" selection-start-column="8" selection-end-line="922" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/support/wait.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="604" column="0" lean-forward="false" selection-start-line="604" selection-start-column="0" selection-end-line="604" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/python/Lib/site-packages/appium/webdriver/common/touch_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="110" column="15" lean-forward="false" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="15" />
+        <state relative-caret-position="-324">
+          <caret line="89" column="15" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/site-packages/selenium/webdriver/common/action_chains.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7276">
+          <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/basics.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="135" column="8" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+        <state relative-caret-position="358">
+          <caret line="451" column="36" lean-forward="false" selection-start-line="451" selection-start-column="36" selection-end-line="451" selection-end-column="36" />
           <folding>
             <element signature="e#127#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/read_config.py">
+    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
+        <state relative-caret-position="198">
+          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/monkey.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/test_xiaobu.py">
+    <entry file="file://$PROJECT_DIR$/config/cfg.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="49" column="86" lean-forward="false" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="182">
+          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="55" column="43" lean-forward="true" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+        <state relative-caret-position="-286">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
             <element signature="e#169#180#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+    <entry file="file://$PROJECT_DIR$/tmp/monkey_report.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="66">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/check_monkey_log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding>
+            <element signature="e#184#197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_public.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xxbmm_public.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#169#180#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

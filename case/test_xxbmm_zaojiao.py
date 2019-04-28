@@ -39,18 +39,6 @@ class TestXbu(unittest.TestCase):
             return
         z.click_zao()
         self.log.info('正在进入被测小程序...')
-
-        # time.sleep(1)
-        # z.click_attend_lectures_btn()
-        # z.swipeUp(n=5)
-        # z.click_all_curriculum_btn()
-        # time.sleep(2)
-        # if z.element_curriculum_date_btn():
-        #     self.log.info('查看历史推送成功！')
-        # else:
-        #     self.log.error('查看历史推送失败！')
-        #     return
-
         self.buy_class(z)
         self.leading_class(z, n=1)
         self.create_baby(z)
@@ -81,14 +69,39 @@ class TestXbu(unittest.TestCase):
             self.log.error('支付金额不是0.01元！{} 元'.format(buy_money))
             return
         self.log.info('支付金额是：{} 元'.format(buy_money))
-        z.input_buy_password('802300')
+        z.input_buy_password('258369')
         z.click_success_btn()
         self.log.info('支付完成，进行领取核心课操作...')
 
     def leading_class(self, z, n):
         """领取已购买课程，并查看历史推送"""
-
         self.receive_curriculum(z)
+        self.choice_moth(z, n)
+        z.click_receive_btn()
+        self.log.info('领取课程成功！')
+        if z.element_know():
+            z.click_know()
+        z.swipeUp(n=5)
+        z.click_all_curriculum_btn()
+        time.sleep(2)
+        if z.element_curriculum_date_btn():
+            self.log.info('查看历史推送成功！')
+        else:
+            self.log.error('查看历史推送失败！')
+            return
+        self.class_info(z, n)
+        time.sleep(1)
+        z.back()  # 返回推送历史页面
+        time.sleep(1)
+        z.back()  # 核心课列表
+        time.sleep(1)
+        z.back()  # 试听课列表
+        time.sleep(1)
+        z.back()  # 返回首页
+        time.sleep(1)
+
+    def choice_moth(self, z, n):
+        """区别三个宝宝，选择不同的月份"""
         if n == 1:
             pass
         elif n == 2:
@@ -105,18 +118,9 @@ class TestXbu(unittest.TestCase):
             time.sleep(1)
             z.click_mouth_btn()
             z.click_sure_btn()
-        z.click_receive_btn()
-        self.log.info('领取课程成功！')
-        if z.element_know():
-            z.click_know()
-        z.swipeUp(n=5)
-        z.click_all_curriculum_btn()
-        time.sleep(2)
-        if z.element_curriculum_date_btn():
-            self.log.info('查看历史推送成功！')
-        else:
-            self.log.error('查看历史推送失败！')
-            return
+
+    def class_info(self, z, n):
+        """操作课程详情页功能"""
         if n == 1:
             z.click_class_name()
             self.log.info('选择指定课程.')
@@ -131,7 +135,7 @@ class TestXbu(unittest.TestCase):
             time.sleep(1)
             z.click_album_btn()
             n = random.randint(1, 9)
-            for i in (n):
+            for i in range(1):
                 z.clicks_choice_album(i)
             self.log.info('选择图片完成.')
             z.click_complete_btn()
@@ -154,15 +158,6 @@ class TestXbu(unittest.TestCase):
             time.sleep(3)
             z.click_release_btn()
             self.log.info('发布成功')
-        time.sleep(1)
-        z.back()
-        time.sleep(1)
-        z.back()
-        time.sleep(1)
-        z.back()
-        time.sleep(1)
-        z.back()
-        time.sleep(1)
 
     def create_baby(self, z):
         """创建宝宝，并返回首页切换最新创建的宝宝"""
@@ -196,6 +191,7 @@ class TestXbu(unittest.TestCase):
         time.sleep(10)
 
     def receive_curriculum(self, z):
+        """选择地址信息"""
         z.click_check_address_btn()
         if z.elements_addressee():
             self.log.info('地址信息已存在，默认选择第一个地址信息.')

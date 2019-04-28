@@ -63,7 +63,7 @@ class Zaojiaopage(Crazy):
     def click_version_btn(self):
         self.click(self.version_btn_loc)
 
-    experience_version_btn_loc = ('xpath', '//*[contains(@text, "1.1.497")]')  # 体验版
+    experience_version_btn_loc = ('xpath', '//*[contains(@text, "1.1.498")]')  # 体验版
 
     def click_experience_version_btn(self):
         self.click(self.experience_version_btn_loc)
@@ -82,6 +82,12 @@ class Zaojiaopage(Crazy):
 
     def click_sure_btn(self):
         self.click(self.sure_btn_loc)
+
+    # class_info_loc = ('xpath', '//*[contains(@text, "课程介绍")]')  # 课程介绍
+    class_info_loc = ('xpath', '//android.widget.FrameLayout/android.view.ViewGroup[0]')  # 课程介绍
+
+    def class_info_btn(self):
+        self.click(self.class_info_loc)
 
     attend_lectures_btn_loc = ('xpath', '//*[contains(@text, "立即听课")]')  # 立即听课
 
@@ -184,6 +190,9 @@ class Zaojiaopage(Crazy):
 
     my_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cs" and @text="我的"]')  # 我的
 
+    def element_my_btn(self):
+        return self.find_element(self.my_btn_loc)
+
     def click_my(self):
         self.click(self.my_btn_loc)
 
@@ -234,3 +243,68 @@ class Zaojiaopage(Crazy):
 
     def click_switch_btn(self):
         self.click(self.switch_btn_loc)
+
+    baby_bri_loc = ('xpath', '//*[contains(@text, "宝宝生日：")]')  # 宝宝生日：
+
+    def click_baby_bri(self):
+        self.click(self.baby_bri_loc)
+
+    class_img_btn_loc = ('xpath', 'android.widget.Image')
+
+    def clicks_class_img(self):
+        self.clicks(self.class_img_btn_loc, 0)
+
+    collection_btn_loc = ('xpath', '//*[contains(@text, "收藏")]')  # 收藏
+
+    def click_collection_btn(self):
+        self.click(self.collection_btn_loc)
+
+    write_record_btn_loc = ('xpath', '//*[contains(@text, "写记录")]')  # 写记录按钮
+
+    def click_write_record_btn(self):
+        self.click(self.write_record_btn_loc)
+
+    album_btn_loc = ('xpath', '//*[contains(@text, "相册")]')  # 相册
+
+    def click_album_btn(self):
+        self.click(self.album_btn_loc)
+
+    small_video_btn_loc = ('xpath', '//*[contains(@text, "小视频")]')  # 小视频
+
+    def click_small_video_btn(self):
+        self.click(self.small_video_btn_loc)
+
+    release_btn_loc = ('xpath', '//*[contains(@text, "发布")]')  # 发布
+
+    def click_release_btn(self):
+        self.click(self.release_btn_loc)
+
+    class_name_loc = ('xpath', '//*[contains(@text, "测试30")]')  # 课程名称
+
+    def click_class_name(self):
+        self.click(self.class_name_loc)
+
+    class_name1_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
+
+    def click_class1_name(self):
+        self.click(self.class_name1_loc)
+
+    # class_name2_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
+    #
+    # def click_class2_name(self):
+    #     self.click(self.class_name2_loc)
+
+    write_text_loc = ('xpath', '//*[contains(@text, "0/256")]')  # 写记录
+
+    def input_write_text(self, text):
+        self.send_keys(self.write_text_loc, text)
+
+    choice_album_loc = ('id', 'com.tencent.mm:id/bot')
+
+    def clicks_choice_album(self, n):
+        self.clicks(self.choice_album_loc, n)
+
+    complete_btn_loc = ('id', 'com.tencent.mm:id/jx')  # 完成
+
+    def click_complete_btn(self):
+        self.click(self.complete_btn_loc)

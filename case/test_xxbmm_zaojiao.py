@@ -8,9 +8,11 @@
 
 import time
 import unittest, random
+from faker import Faker
+from BeautifulReport import BeautifulReport
 from appium.webdriver.common.touch_action import TouchAction
 from common.basics import open_app
-from common.logger import Log
+from common.logger import Log, img_path
 from page.page_zaojiao import Zaojiaopage
 
 
@@ -25,36 +27,52 @@ class TestXbu(unittest.TestCase):
         cls.log = Log()
         cls.zao = Zaojiaopage(cls.driver)
         cls.t = TouchAction(cls.driver)
+        cls.faker = Faker('zh_CN')
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.close_app()
 
+    def save_img(self, img_name):
+        self.driver.get_screenshot_as_file('{}/{}.png'.format(img_path, img_name))
+
+    @BeautifulReport.add_test_img('test_1first_baby')
     def test_1first_baby(self):
         """第一个宝宝的购买和领课流程"""
         z = self.zao
-        z.swipeDown(n=2)
-        if not z.element_zao():
-            self.log.error('被测小程序不存在！')
-            return
-        z.click_zao()
-        self.log.info('正在进入被测小程序...')
-        self.buy_class(z)
-        self.leading_class(z, n=1)
-        self.create_baby(z)
+        # z.swipeDown(n=2)
+        # if not z.element_zao():
+        #     self.log.error('被测小程序不存在！')
+        #     return
+        # z.click_zao()
+        # self.log.info('正在进入被测小程序...\n')
+        # self.log.info('第一个宝宝开始进行操作...')
+        # self.buy_class(z)
+        # self.leading_class(z, n=1)
+        # self.create_baby(z)
+        # self.my_page_operation(z, n=1)
+        # self.log.info('第一个宝宝操作完成！\n')
 
-    def test_2second_baby(self):
-        """第二个宝宝的购买和领课流程"""
-        z = self.zao
-        self.buy_class(z)
-        self.leading_class(z, n=2)
-        self.create_baby(z)
-
-    def test_3last_baby(self):
-        """第三个宝宝的购买和领课流程"""
-        z = self.zao
-        self.buy_class(z)
-        self.leading_class(z, n=3)
+    # @BeautifulReport.add_test_img('test_2second_baby')
+    # def test_2second_baby(self):
+    #     """第二个宝宝的购买和领课流程"""
+    #     z = self.zao
+    #     self.log.info('第二个宝宝开始进行操作...')
+    #     self.buy_class(z)
+    #     self.leading_class(z, n=2)
+    #     self.create_baby(z)
+    #     self.my_page_operation(z, n=2)
+    #     self.log.info('第二个宝宝操作完成！\n')
+    #
+    # @BeautifulReport.add_test_img('test_3last_baby')
+    # def test_3last_baby(self):
+    #     """第三个宝宝的购买和领课流程"""
+    #     z = self.zao
+    #     self.log.info('第三个宝宝开始进行操作...')
+    #     self.buy_class(z)
+    #     self.leading_class(z, n=3)
+    #     self.my_page_operation(z, n=3)
+    #     self.log.info('第三个宝宝操作完成！\n')
 
     def buy_class(self, z):
         """购买流程"""
@@ -69,7 +87,7 @@ class TestXbu(unittest.TestCase):
             self.log.error('支付金额不是0.01元！{} 元'.format(buy_money))
             return
         self.log.info('支付金额是：{} 元'.format(buy_money))
-        z.input_buy_password('258369')
+        z.input_buy_password('802300')
         z.click_success_btn()
         self.log.info('支付完成，进行领取核心课操作...')
 
@@ -90,15 +108,7 @@ class TestXbu(unittest.TestCase):
             self.log.error('查看历史推送失败！')
             return
         self.class_info(z, n)
-        time.sleep(1)
-        z.back()  # 返回推送历史页面
-        time.sleep(1)
-        z.back()  # 核心课列表
-        time.sleep(1)
-        z.back()  # 试听课列表
-        time.sleep(1)
-        z.back()  # 返回首页
-        time.sleep(1)
+        self._back(z)
 
     def choice_moth(self, z, n):
         """区别三个宝宝，选择不同的月份"""
@@ -131,17 +141,17 @@ class TestXbu(unittest.TestCase):
             time.sleep(3)
             self.log.info('进行发布记录操作...')
             z.click_write_record_btn()
-            z.input_write_text('测试发布图文记录')
+            z.input_write_text(self.faker.text(max_nb_chars=200))
             time.sleep(1)
             z.click_album_btn()
             n = random.randint(1, 9)
-            for i in range(1):
+            for i in range(n):
                 z.clicks_choice_album(i)
             self.log.info('选择图片完成.')
             z.click_complete_btn()
             z.click_release_btn()
         else:
-            z.click_class1_name()
+            z.click_class_name()
             z.swipeUp(n=5)
             time.sleep(2)
             z.click_collection_btn()
@@ -150,7 +160,7 @@ class TestXbu(unittest.TestCase):
             self.log.info('进行发布视频记录操作...')
             time.sleep(1)
             z.click_write_record_btn()
-            z.input_write_text('测试发布记录')
+            z.input_write_text(self.faker.text(max_nb_chars=200))
             z.click_small_video_btn()
             z.clicks_choice_album(0)
             self.log.info('选择视频成功.')
@@ -174,7 +184,8 @@ class TestXbu(unittest.TestCase):
         z.click_new_baby_btn()
         time.sleep(1)
         z.click_next()
-        z.input_baby_name('我的小宝宝')
+        baby_name = self.faker.last_name()
+        z.input_baby_name(baby_name)
         z.click_baby_bir_btn()
         time.sleep(1)
         z.click_sure_btn()
@@ -182,13 +193,47 @@ class TestXbu(unittest.TestCase):
         if z.element_new_baby_btn():
             self.log.error('创建宝宝失败，请检查原因！')
             return
-        self.log.info('创建宝宝成功.')
-        time.sleep(1)
-        z.back()
-        time.sleep(1)
+        self.log.info('创建宝宝: {} 成功！'.format(baby_name))
+        self._back(z)
+
+    def my_page_operation(self, z, n):
+        """我的页面其他功能操作"""
+        if not z.element_my_btn():
+            self.log.error('当前位置不在首页，无法点击 我的 按钮！')
+            return
+        z.click_my()
+        z.click_my_collection_btn()
+        if z.elements_my_collection_english_course_btn():
+            if n == len(z.elements_my_collection_english_course_btn()):
+                self.log.info('在课程详情页添加收藏成功，共 {} 条！'.format(n))
+            else:
+                self.log.warning('收藏数量不符！')
+        else:
+            self.log.warning('在课程详情页添加收藏存在失败的情况，请查明原因！')
+        self._back(z)
+        z.click_my_course_btn()
+        if z.elements_my_course_buy_btn():
+            if n == len(z.elements_my_course_buy_btn()):
+                self.log.info('成功购买 {} 节早教核心课！'.format(n))
+            else:
+                self.log.warning('购买早教核心课数量出现错误！')
+        self._back(z)
+        z.click_my_order_btn()
+        if z.elements_my_order_card_btn():
+            for i in z.elements_my_order_card_btn():
+                self.log.info('获取到的订单编号有： {}'.format(i.text.replace('订单编号：', '')))
+        else:
+            self.log.warning('未发现订单，请检查原因！')
+        self._back(z)
+        z.click_my_record_btn()
+        if z.elements_my_record_class_btn():
+            if n == len(z.elements_my_record_class_btn()):
+                self.log.info('成长记录添加成功，共 {} 条！'.format(n))
+            else:
+                self.log.warning('成长记录添加存在失败的情况，请查看原因！')
+        self._back(z)
         z.click_my_home()
         z.click_switch_btn()
-        time.sleep(10)
 
     def receive_curriculum(self, z):
         """选择地址信息"""
@@ -199,11 +244,11 @@ class TestXbu(unittest.TestCase):
         else:
             self.log.info('地址信息不存在，进行添加地址信息操作...')
             z.click_add_address_btn()
-            z.input_name_btn('lee')
-            z.input_phone_btn('18700000000')
+            z.input_name_btn(self.faker.name())
+            z.input_phone_btn(self.faker.phone_number())
             z.click_region_btn()
             z.click_sure_btn()
-            z.input_detailed_address_btn('朝阳区酒仙桥110号')
+            z.input_detailed_address_btn(self.faker.address())
             z.click_save_btn()
             self.log.info('添加收货地址完成！')
 
@@ -223,6 +268,20 @@ class TestXbu(unittest.TestCase):
                     self.log.info('测试小程序删除成功！')
                     break
             return True
+
+    def _back(self, z):
+        """返回按钮"""
+        n = 0
+        while True:
+            if z.element_back_btn():
+                z.click_back_btn()
+                self.log.info('连续点击返回操作次数: {}'.format(n))
+                n += 1
+                if n > 5:
+                    z.back()
+                    break
+            else:
+                break
 
 
 if __name__ == '__main__':

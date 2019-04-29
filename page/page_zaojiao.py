@@ -279,15 +279,10 @@ class Zaojiaopage(Crazy):
     def click_release_btn(self):
         self.click(self.release_btn_loc)
 
-    class_name_loc = ('xpath', '//*[contains(@text, "测试30")]')  # 课程名称
+    class_name_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
 
     def click_class_name(self):
         self.click(self.class_name_loc)
-
-    class_name1_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
-
-    def click_class1_name(self):
-        self.click(self.class_name1_loc)
 
     # class_name2_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
     #
@@ -308,3 +303,51 @@ class Zaojiaopage(Crazy):
 
     def click_complete_btn(self):
         self.click(self.complete_btn_loc)
+
+    my_collection_btn_loc = ('xpath', '//*[contains(@text, "我的收藏")]')  # 我的收藏
+
+    def click_my_collection_btn(self):
+        self.click(self.my_collection_btn_loc)
+
+    my_collection_english_course_btn_loc = ('xpath', '//*[contains(@text, "早教")]')  # 早教英语课
+
+    def elements_my_collection_english_course_btn(self):
+        return self.find_elements(self.my_collection_english_course_btn_loc)
+
+    my_course_btn_loc = ('xpath', '//*[contains(@text, "我的课程")]')  # 我的课程
+
+    def click_my_course_btn(self):
+        self.click(self.my_course_btn_loc)
+
+    my_course_buy_btn_loc = ('xpath', '//*[contains(@text, "早教核心课半年卡")]')  # 早教核心课半年卡
+
+    def elements_my_course_buy_btn(self):
+        return self.find_elements(self.my_course_buy_btn_loc)
+
+    my_order_btn_loc = ('xpath', '//*[contains(@text, "我的订单")]')  # 我的订单
+
+    def click_my_order_btn(self):
+        self.click(self.my_order_btn_loc)
+
+    my_order_card_btn_loc = ('xpath', '//*[contains(@text, "订单编号：")]')  # 订单编号：
+
+    def elements_my_order_card_btn(self):
+        return self.find_elements(self.my_order_card_btn_loc)
+
+    my_record_btn_loc = ('xpath', '//*[contains(@text, "成长记录")]')  # 成长记录
+
+    def click_my_record_btn(self):
+        self.click(self.my_record_btn_loc)
+
+    my_record_class_btn_loc = ('xpath', '//*[contains(@text, "#")]')  # # 测试英语课程组
+
+    def elements_my_record_class_btn(self):
+        return self.find_elements(self.my_record_class_btn_loc)
+
+    back_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/o3" and @class="android.widget.LinearLayout"]')  # 返回按钮
+
+    def element_back_btn(self):
+        return self.find_element(self.back_btn_loc)
+
+    def click_back_btn(self):
+        self.click(self.back_btn_loc)

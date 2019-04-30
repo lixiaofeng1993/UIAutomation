@@ -13,3 +13,5 @@ dist/
 build/
 static/
 media/
+config/
+*.ini

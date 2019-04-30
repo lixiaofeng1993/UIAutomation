@@ -447,6 +447,7 @@ class Crazy:
         for i in range(n):
             time.sleep(0.5)
             self.driver.swipe(x1, y1, x1, y2, t)
+        time.sleep(1)
 
     def test(self):
         self.driver.press_keycode(84)

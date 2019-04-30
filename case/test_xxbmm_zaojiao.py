@@ -47,7 +47,7 @@ class TestXbu(unittest.TestCase):
         z.click_zao()
         self.log.info('正在进入被测小程序...\n')
         self.log.info('第一个宝宝开始进行操作...')
-        self.buy_class(z)
+        # self.buy_class(z)
         self.leading_class(z, n=1)
         self.create_baby(z)
         self.my_page_operation(z, n=1)
@@ -78,7 +78,7 @@ class TestXbu(unittest.TestCase):
     def click_reply_8_img(self, z):
         """点击回复 8 进群banner"""
         self.log.info('发现的元素数量：{}'.format(len(z.elements_reply_8())))
-        i = 16
+        i = 17
         while True:
             z.elements_reply_8()[i].click()
             i += 1
@@ -90,9 +90,9 @@ class TestXbu(unittest.TestCase):
                 break
             else:
                 if z.text_my_baby_title() == '早教核心课':
-                    self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 16))
+                    self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 17))
                 else:
-                    self.log.info('第{}次返回...'.format(i - 16))
+                    self.log.info('第{}次返回...'.format(i - 17))
                     time.sleep(1)
                     z.back()
 
@@ -169,7 +169,7 @@ class TestXbu(unittest.TestCase):
         if z.element_get_to_know_btn():
             self.log.warning('该宝宝还未购买核心课！')
             return
-        self.add_group(z, make=True)
+        # self.add_group(z, make=True)
         z.swipeUp(n=5)
         z.click_all_curriculum_btn()
         time.sleep(2)
@@ -204,8 +204,11 @@ class TestXbu(unittest.TestCase):
         """操作课程详情页功能"""
         if n == 1:
             if not make:
+                print(1)
+                z.swipeUp(n=3)
                 z.click_class_name()
             else:
+                print(2)
                 z.click_class2_name()
             self.log.info('选择指定课程.')
             z.swipeUp(n=5)
@@ -220,6 +223,7 @@ class TestXbu(unittest.TestCase):
             z.click_album_btn()
             n = random.randint(1, 9)
             for i in range(n):
+                self.log.info('选择第{}张图片中...'.format(i))
                 z.clicks_choice_album(i)
             self.log.info('选择图片完成.')
             z.click_complete_btn()
@@ -324,8 +328,8 @@ class TestXbu(unittest.TestCase):
         z.click_my_home()
         z.swipeUp(n=3)
         z.click_more_games_btn()
-        self.assertEqual(z.text_my_baby_title(), '游戏百宝箱', '进去游戏首页失败！')
-        self.log.info('进入游戏首页成功！')
+        # self.assertEqual(z.text_my_baby_title(), '游戏百宝箱', '进去游戏首页失败！')
+        # self.log.info('进入游戏首页成功！')
         z.click_look_all_btn()
         self.class_info(z, n, make=True)
         self._back(z)

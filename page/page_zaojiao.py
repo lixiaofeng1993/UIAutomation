@@ -94,10 +94,18 @@ class Zaojiaopage(Crazy):
     def click_attend_lectures_btn(self):
         self.click(self.attend_lectures_btn_loc)
 
+    class_btn_loc = ('xpath', '//*[contains(@text, "预备课 预备课")]')  # 预备课 预备课
+
+    def element_class_btn(self):
+        return self.find_element(self.class_btn_loc)
+
     get_to_know_btn_loc = ('xpath', '//*[contains(@text, "立即了解正式课 ")]')  # 立即了解正式课
 
     def click_get_to_know_btn(self):
         self.click(self.get_to_know_btn_loc)
+
+    def element_get_to_know_btn(self):
+        return self.find_element(self.get_to_know_btn_loc)
 
     sure_buy_btn_loc = ('xpath', '//*[contains(@text, "立即购买")]')  # 立即购买
 
@@ -123,6 +131,9 @@ class Zaojiaopage(Crazy):
 
     def click_check_address_btn(self):
         self.click(self.check_address_btn_loc)
+
+    def element_check_address_btn(self):
+        return self.find_element(self.check_address_btn_loc)
 
     add_address_btn_loc = ('xpath', '//*[contains(@text, "添加地址")]')  # 添加地址
 
@@ -239,6 +250,9 @@ class Zaojiaopage(Crazy):
     def click_my_home(self):
         self.click(self.my_home_loc)
 
+    def element_my_home(self):
+        return self.find_element(self.my_home_loc)
+
     switch_btn_loc = ('xpath', '//*[contains(@text, "切换")]')  # 切换
 
     def click_switch_btn(self):
@@ -284,10 +298,10 @@ class Zaojiaopage(Crazy):
     def click_class_name(self):
         self.click(self.class_name_loc)
 
-    # class_name2_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
-    #
-    # def click_class2_name(self):
-    #     self.click(self.class_name2_loc)
+    class_name2_loc = ('xpath', '//*[contains(@text, "测试游戏课程")]')  # 课程名称
+
+    def click_class2_name(self):
+        self.click(self.class_name2_loc)
 
     write_text_loc = ('xpath', '//*[contains(@text, "0/256")]')  # 写记录
 
@@ -344,10 +358,79 @@ class Zaojiaopage(Crazy):
     def elements_my_record_class_btn(self):
         return self.find_elements(self.my_record_class_btn_loc)
 
-    back_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/o3" and @class="android.widget.LinearLayout"]')  # 返回按钮
+    back_btn_loc = (
+        'xpath', '//*[@resource-id="com.tencent.mm:id/o3" and @class="android.widget.LinearLayout"]')  # 返回按钮
 
     def element_back_btn(self):
         return self.find_element(self.back_btn_loc)
 
     def click_back_btn(self):
         self.click(self.back_btn_loc)
+
+    reply_5_loc = ('xpath', '//android.widget.Image')  # 回复5
+
+    def click_reply_5(self):
+        self.click(self.reply_5_loc)
+
+    add_to_btn_loc = ('xpath', '//*[contains(@text, "立即添加")]')  # 立即添加
+
+    def click_add_to_btn(self):
+        self.click(self.add_to_btn_loc)
+
+    reply_input_5_loc = ('id', 'com.tencent.mm:id/amb')
+
+    def input_reply_5(self, num):
+        self.send_keys(self.reply_input_5_loc, num)
+
+    send_5_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/ami" and @text="发送"]')  # 发送
+
+    def click_send(self):
+        self.click(self.send_5_loc)
+
+    reply_code_loc = ('id', 'com.tencent.mm:id/aou')  # 获取回复的二维码
+
+    def elements_reply_code(self):
+        return self.find_elements(self.reply_code_loc)
+
+    long_code_loc = ('id', 'com.tencent.mm:id/adf')  # 长按二维码
+
+    def element_long_code(self):
+        return self.find_element(self.long_code_loc)
+
+    def click_long_code(self):
+        self.click(self.long_code_loc)
+
+    discern_code_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cw" and @text="识别图中二维码"]')  # 识别图中二维码
+
+    def click_discern_code(self):
+        self.click(self.discern_code_loc)
+
+    class_group_loc = ('id', 'android:id/text1')  # 群名称
+
+    def text_class_group(self):
+        return self.get_text(self.class_group_loc)
+
+    reply_8_loc = ('xpath', '//android.widget.Image')  # 回复8的banner     回复8->进公众号->点击推送 看到的二维码
+
+    def elements_reply_8(self):
+        return self.find_elements(self.reply_8_loc)
+
+    parent_btn_loc = ('xpath', '//*[contains(@text, "亲爱的家长：")]')  # 亲爱的家长：
+
+    def element_parent_btn(self):
+        return self.find_element(self.parent_btn_loc)
+
+    info_btn_loc = ('id', 'com.tencent.mm:id/a7n')
+
+    def elements_info_btn(self):
+        return self.find_elements(self.info_btn_loc)
+
+    more_games_btn_loc = ('xpath', '//*[contains(@text, "更多亲子游戏")]')  # 更多亲子游戏
+
+    def click_more_games_btn(self):
+        self.click(self.more_games_btn_loc)
+
+    look_all_btn_loc = ('xpath', '//*[contains(@text, "查看全部")]')  # 查看全部
+
+    def click_look_all_btn(self):
+        self.click(self.look_all_btn_loc)

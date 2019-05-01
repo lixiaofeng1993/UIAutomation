@@ -42,7 +42,7 @@ BeautifulReport     运行case，生成html报告
 #### 目录结构
     case
         test_*
-            测试用例;
+            测试用例;web、app、小程序、h5均可；
     common  公共函数
         basics
             [基于原生的selenium框架做二次封装](https://www.cnblogs.com/changqing8023/p/10153156.html);
@@ -57,11 +57,11 @@ BeautifulReport     运行case，生成html报告
     config
         cfg.ini
             配置文件;
-    data
-        存放需要参数化的测试数据;
+    data    存放需要参数化的测试数据;
+        ad  上传的文件
     driver
         浏览器驱动，grid服务；
-        upfile.exe autolt文件上传脚本，需要跟文件路径，等待500；
+        upfile1.exe autoit文件上传脚本，需要跟文件路径，等待500；
     logs
         存放 log 日志;
     page
@@ -72,7 +72,8 @@ BeautifulReport     运行case，生成html报告
             截图保存路径；
     tmp
         临时文件；
-    run_this
+    rename.py   批量修改case文件名；
+    run_this.py
         运行测试case，生成报告,发送 email;
 
 ### App示例：

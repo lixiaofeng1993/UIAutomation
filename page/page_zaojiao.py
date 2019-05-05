@@ -12,7 +12,7 @@ from common.basics import Crazy
 class Zaojiaopage(Crazy):
     """早教小程序"""
 
-    zao_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cw" and @text="包妈优选"]')
+    zao_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cx" and @text="包妈优选"]')
 
     def click_zao(self):
         self.click(self.zao_btn_loc)
@@ -112,17 +112,17 @@ class Zaojiaopage(Crazy):
     def click_sure_buy_btn(self):
         self.click(self.sure_buy_btn_loc)
 
-    buy_password_loc = ('id', 'com.tencent.mm:id/cei')  # 输入支付密码
+    buy_password_loc = ('id', 'com.tencent.mm:id/cfs')  # 输入支付密码
 
     def input_buy_password(self, paw):
         self.send_keys(self.buy_password_loc, paw)
 
-    check_buy_money_loc = ('id', 'com.tencent.mm:id/dhz')  # 获取支付金额
+    check_buy_money_loc = ('id', 'com.tencent.mm:id/dlh')  # 获取支付金额
 
     def text_buy_money(self):
         return self.get_text(self.check_buy_money_loc)
 
-    success_btn_loc = ('id', 'com.tencent.mm:id/f1w')  # 完成按钮
+    success_btn_loc = ('id', 'com.tencent.mm:id/f8o')  # 完成按钮
 
     def click_success_btn(self):
         self.click(self.success_btn_loc)
@@ -199,7 +199,7 @@ class Zaojiaopage(Crazy):
     def element_curriculum_date_btn(self):
         return self.find_element(self.curriculum_date_btn_loc)
 
-    my_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cs" and @text="我的"]')  # 我的
+    my_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/ct" and @text="我的"]')  # 我的
 
     def element_my_btn(self):
         return self.find_element(self.my_btn_loc)
@@ -212,15 +212,23 @@ class Zaojiaopage(Crazy):
     def click_my_baby(self):
         self.click(self.my_baby_btn_loc)
 
-    my_baby_title_loc = ('id', 'com.tencent.mm:id/oa')
+    my_baby_title_loc = ('id', 'com.tencent.mm:id/ox')
 
     def text_my_baby_title(self):
         return self.get_text(self.my_baby_title_loc)
+
+    def elements_title(self):
+        return self.find_elements(self.my_baby_title_loc)
 
     new_baby_btn_loc = ('xpath', '//*[contains(@text, "新建宝宝")]')  # 新建宝宝
 
     def element_new_baby_btn(self):
         return self.find_element(self.new_baby_btn_loc)
+
+    get_set_loc = ('xpath', '//*[contains(@text, "预备课 预备课")]')  # 新建宝宝
+
+    def element_get_set(self):
+        return self.find_element(self.get_set_loc)
 
     def click_new_baby_btn(self):
         self.click(self.new_baby_btn_loc)
@@ -245,7 +253,7 @@ class Zaojiaopage(Crazy):
     def click_finish_btn(self):
         self.click(self.finish_btn_loc)
 
-    my_home_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cs" and @text="首页"]')  # 首页
+    my_home_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/ct" and @text="首页"]')  # 首页
 
     def click_my_home(self):
         self.click(self.my_home_loc)
@@ -273,6 +281,9 @@ class Zaojiaopage(Crazy):
     def click_collection_btn(self):
         self.click(self.collection_btn_loc)
 
+    def element_collection_btn(self):
+        return self.find_element(self.collection_btn_loc)
+
     write_record_btn_loc = ('xpath', '//*[contains(@text, "写记录")]')  # 写记录按钮
 
     def click_write_record_btn(self):
@@ -283,10 +294,16 @@ class Zaojiaopage(Crazy):
     def click_album_btn(self):
         self.click(self.album_btn_loc)
 
+    def element_album_btn(self):
+        return self.find_element(self.album_btn_loc)
+
     small_video_btn_loc = ('xpath', '//*[contains(@text, "小视频")]')  # 小视频
 
     def click_small_video_btn(self):
         self.click(self.small_video_btn_loc)
+
+    def element_small_video_btn(self):
+        return self.find_element(self.small_video_btn_loc)
 
     release_btn_loc = ('xpath', '//*[contains(@text, "发布")]')  # 发布
 
@@ -298,6 +315,9 @@ class Zaojiaopage(Crazy):
     def click_class_name(self):
         self.click(self.class_name_loc)
 
+    def elements_class_name(self):
+        return self.find_elements(self.class_name_loc)
+
     class_name2_loc = ('xpath', '//*[contains(@text, "测试游戏课程")]')  # 课程名称
 
     def click_class2_name(self):
@@ -308,12 +328,12 @@ class Zaojiaopage(Crazy):
     def input_write_text(self, text):
         self.send_keys(self.write_text_loc, text)
 
-    choice_album_loc = ('id', 'com.tencent.mm:id/bot')
+    choice_album_loc = ('id', 'com.tencent.mm:id/bpy')
 
     def clicks_choice_album(self, n):
         self.clicks(self.choice_album_loc, n)
 
-    complete_btn_loc = ('id', 'com.tencent.mm:id/jx')  # 完成
+    complete_btn_loc = ('id', 'com.tencent.mm:id/ki')  # 完成
 
     def click_complete_btn(self):
         self.click(self.complete_btn_loc)
@@ -359,7 +379,7 @@ class Zaojiaopage(Crazy):
         return self.find_elements(self.my_record_class_btn_loc)
 
     back_btn_loc = (
-        'xpath', '//*[@resource-id="com.tencent.mm:id/o3" and @class="android.widget.LinearLayout"]')  # 返回按钮
+        'xpath', '//*[@resource-id="com.tencent.mm:id/on" and @class="android.widget.LinearLayout"]')  # 返回按钮
 
     def element_back_btn(self):
         return self.find_element(self.back_btn_loc)
@@ -372,27 +392,30 @@ class Zaojiaopage(Crazy):
     def click_reply_5(self):
         self.click(self.reply_5_loc)
 
+    def elements_reply_5(self):
+        return self.find_elements(self.reply_5_loc)
+
     add_to_btn_loc = ('xpath', '//*[contains(@text, "立即添加")]')  # 立即添加
 
     def click_add_to_btn(self):
         self.click(self.add_to_btn_loc)
 
-    reply_input_5_loc = ('id', 'com.tencent.mm:id/amb')
+    reply_input_5_loc = ('id', 'com.tencent.mm:id/ami')
 
     def input_reply_5(self, num):
         self.send_keys(self.reply_input_5_loc, num)
 
-    send_5_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/ami" and @text="发送"]')  # 发送
+    send_5_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/amp" and @text="发送"]')  # 发送
 
     def click_send(self):
         self.click(self.send_5_loc)
 
-    reply_code_loc = ('id', 'com.tencent.mm:id/aou')  # 获取回复的二维码
+    reply_code_loc = ('id', 'com.tencent.mm:id/ap9')  # 获取回复的二维码
 
     def elements_reply_code(self):
         return self.find_elements(self.reply_code_loc)
 
-    long_code_loc = ('id', 'com.tencent.mm:id/adf')  # 长按二维码
+    long_code_loc = ('id', 'com.tencent.mm:id/adi')  # 长按二维码
 
     def element_long_code(self):
         return self.find_element(self.long_code_loc)
@@ -400,7 +423,7 @@ class Zaojiaopage(Crazy):
     def click_long_code(self):
         self.click(self.long_code_loc)
 
-    discern_code_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cw" and @text="识别图中二维码"]')  # 识别图中二维码
+    discern_code_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cx" and @text="识别图中二维码"]')  # 识别图中二维码
 
     def click_discern_code(self):
         self.click(self.discern_code_loc)
@@ -409,6 +432,11 @@ class Zaojiaopage(Crazy):
 
     def text_class_group(self):
         return self.get_text(self.class_group_loc)
+
+    add_group_chat_loc = ('xpath', '//*[contains(@text, "加入该群聊")]')  # 加入该群聊
+
+    def element_add_group_chat(self):
+        return self.find_element(self.add_group_chat_loc)
 
     reply_8_loc = ('xpath', '//android.widget.Image')  # 回复8的banner     回复8->进公众号->点击推送 看到的二维码
 
@@ -420,7 +448,7 @@ class Zaojiaopage(Crazy):
     def element_parent_btn(self):
         return self.find_element(self.parent_btn_loc)
 
-    info_btn_loc = ('id', 'com.tencent.mm:id/a7n')
+    info_btn_loc = ('id', 'com.tencent.mm:id/a8q')  # 详情
 
     def elements_info_btn(self):
         return self.find_elements(self.info_btn_loc)
@@ -434,3 +462,6 @@ class Zaojiaopage(Crazy):
 
     def click_look_all_btn(self):
         self.click(self.look_all_btn_loc)
+
+    def element_look_all_btn(self):
+        return self.find_elements(self.look_all_btn_loc)

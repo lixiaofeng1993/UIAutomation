@@ -14,6 +14,7 @@ from appium.webdriver.common.touch_action import TouchAction
 from common.basics import open_app
 from common.logger import Log, img_path
 from page.page_zaojiao import Zaojiaopage
+from common import read_config
 
 
 # from common import readConfig
@@ -63,6 +64,7 @@ class TestXbu(unittest.TestCase):
         self.leading_class(z, n=2)
         self.create_baby(z)
         self.my_page_operation(z, n=2)
+        self.operation_game_class(z, n=2)
         self.log.info('第二个宝宝操作完成！\n')
 
     @BeautifulReport.add_test_img('test_3last_baby')
@@ -73,6 +75,7 @@ class TestXbu(unittest.TestCase):
         self.buy_class(z)
         self.leading_class(z, n=3)
         self.my_page_operation(z, n=3)
+        self.operation_game_class(z, n=3)
         self.log.info('第三个宝宝操作完成！\n')
 
     def click_reply_8_img(self, z, buy=False):
@@ -113,20 +116,26 @@ class TestXbu(unittest.TestCase):
 
     def add_group(self, z, make=False, buy=False):
         """进群流程"""
+        self.log.info('点击进群banner，进行进群流程验证...make：{}'.format(make))
         if make:
+            self.log.info('查找回复8进群banner中...')
             self.click_reply_8_img(z, buy=buy)
             z.click_add_to_btn()
             z.input_reply_5('8')
             z.click_send()
             time.sleep(3)
-            z.elements_reply_code()[-1].click()
+            self.log.info('发送 8 ，并长按返回二维码.')
+            # z.elements_reply_code()[-1].click()
+            z.clicks_reply_code(-1)
             z.long_press(z.element_long_code())
             z.click_discern_code()
-            z.elements_info_btn()[-1].click()
+            # z.elements_info_btn()[-1].click()
+            z.clicks_info_btn(-1)
             z.long_press(z.elements_reply_8()[0])
             z.click_discern_code()
+            self.log.info('跳转到公众号，点击推送信息，长按识别二维码进群！')
             self.assertIn('小小包早教课学习群', z.text_class_group(), '回复8，扫码识别错误！')
-            self.log.info('回复8，扫码识别成功！')
+            self.log.info('回复8，识别进群码成功！')
             time.sleep(1)
             z.back()
             time.sleep(1)
@@ -134,16 +143,21 @@ class TestXbu(unittest.TestCase):
             time.sleep(3)
             z.back()
         else:
+            self.log.info('点击回复5进群banner.')
             z.elements_reply_5()[0].click()
+            time.sleep(1)
             z.click_add_to_btn()
             z.input_reply_5('5')
             z.click_send()
             time.sleep(3)
-            z.elements_reply_code()[-1].click()
+            self.log.info('发送 5 ，并长按返回二维码.')
+            # z.elements_reply_code()[-1].click()
+            z.clicks_reply_code(-1)
             z.long_press(z.element_long_code())
+            self.log.info('识别进群码操作.')
             z.click_discern_code()
             self.assertIn('小小包早教训练营', z.text_class_group(), '回复5，扫码识别错误！')
-            self.log.info('回复5，扫码识别成功！')
+            self.log.info('回复5，识别进群码成功！')
             time.sleep(1)
             z.back()
             z.click_long_code()
@@ -162,12 +176,36 @@ class TestXbu(unittest.TestCase):
         self.add_group(z)
         z.click_get_to_know_btn()
         z.click_sure_buy_btn()
+        self.payment_window(z)
+
+    def payment_window(self, z):
+        """支付弹窗"""
+        self.assertEqual(z.text_payment(), '请输入支付密码', '调用微信支付失败！')
+        self.log.info('调用微信支付成功，弹出输入密码弹窗！')
         buy_money = float(z.text_buy_money().replace('¥', ''))
+        self.log.info('支付金额是：{} 元'.format(buy_money))
         if buy_money != 0.01:
             self.log.error('支付金额不是0.01元！{} 元'.format(buy_money))
             return
-        self.log.info('支付金额是：{} 元'.format(buy_money))
-        z.input_buy_password('802300')
+        i = 0
+        while True:
+            if i > len(read_config.payment_password):
+                self.log.error('配置文件中的支付密码没有正确的！')
+                break
+            if z.element_usd_password():
+                self.log.info('从指纹支付切换到输入密码支付！')
+                z.click_usd_password()
+            z.input_buy_password(read_config.payment_password[i])
+            if z.element_password_error():
+                i += 1
+                self.log.warning('密码输入错误，进行重试...{}/次'.format(i))
+                z.click_again_btn()
+            else:
+                break
+        if z.text_start_fingerprint_buy():
+            self.log.info('弹出开启指纹支付的提示，正在处理该弹窗！')
+            z.click_no_more_reminder_btn()
+            z.click_cancel_btn()
         z.click_success_btn()
         self.log.info('支付完成，进行领取核心课操作...')
 
@@ -175,6 +213,7 @@ class TestXbu(unittest.TestCase):
         """领取已购买课程，并查看历史推送"""
         buy = False
         if not self.receive_curriculum(z):
+            self.log.info('没有发现购买未领取的课程.')
             z.click_attend_lectures_btn()
         else:
             self.choice_moth(z, n)
@@ -182,6 +221,7 @@ class TestXbu(unittest.TestCase):
             buy = True
             self.log.info('领取课程成功！')
         if z.element_know():
+            self.log.info('存在我知道了弹层，正常点击中.')
             z.click_know()
         if z.element_get_to_know_btn():
             self.log.warning('该宝宝还未购买核心课！')
@@ -224,7 +264,6 @@ class TestXbu(unittest.TestCase):
             if not make:
                 z.swipeUp(n=5)
                 z.elements_class_name()[-1].click()
-                # z.click_class_name()
             else:
                 z.click_class2_name()
             z.swipeUp(n=5)
@@ -234,8 +273,11 @@ class TestXbu(unittest.TestCase):
             time.sleep(3)
             self.log.info('进行发布记录操作...')
             z.click_write_record_btn()
-            z.input_write_text(self.faker.text(max_nb_chars=200))
+            self.log.info('输入记录文本.')
+            data = self.faker.text(max_nb_chars=200)
+            z.input_write_text(data)
             time.sleep(1)
+            self.log.info('选择记录配图.')
             z.click_album_btn()
             if z.text_class_group() != '图片':
                 if z.element_album_btn():
@@ -256,7 +298,6 @@ class TestXbu(unittest.TestCase):
             if not make:
                 z.swipeUp(n=5)
                 z.elements_class_name()[-1].click()
-                # z.click_class_name()
             else:
                 z.click_class2_name()
             z.swipeUp(n=5)
@@ -267,8 +308,10 @@ class TestXbu(unittest.TestCase):
             self.log.info('进行发布视频记录操作...')
             time.sleep(1)
             z.click_write_record_btn()
-            z.input_write_text(self.faker.text(max_nb_chars=200))
+            data = self.faker.text(max_nb_chars=200)
+            z.input_write_text(data)
             z.click_small_video_btn()
+            self.log.info('选择要上传的视频.')
             if z.text_class_group() != '所有视频':
                 if z.element_small_video_btn():
                     z.click_album_btn()
@@ -282,7 +325,10 @@ class TestXbu(unittest.TestCase):
             z.click_complete_btn()
             time.sleep(3)
             z.click_release_btn()
-            self.log.info('发布成功')
+        time.sleep(3)
+        self.log.info('记录发布状态：{}'.format(z.element_record_info(data)))
+        self.assertTrue(z.element_record_info(data), '发布记录失败了呢！')
+        self.log.info('记录：{} 发布成功'.format(data))
 
     def create_baby(self, z):
         """创建宝宝，并返回首页切换最新创建的宝宝"""
@@ -319,11 +365,9 @@ class TestXbu(unittest.TestCase):
             return
         z.click_my()
         z.click_my_collection_btn()
-        if z.elements_my_collection_english_course_btn():
-            if n == len(z.elements_my_collection_english_course_btn()):
-                self.log.info('在课程详情页添加收藏成功，共 {} 条！'.format(n))
-            else:
-                self.log.warning('收藏数量不符！')
+        if z.elements_my_collection_english_course_btn() or z.elements_my_collection_game_course_btn():
+            self.log.info('在课程详情页添加收藏成功，共 {} 条！'.format(
+                len(z.elements_my_collection_english_course_btn()) + len(z.elements_my_collection_game_course_btn())))
         else:
             self.log.warning('在课程详情页添加收藏存在失败的情况，请查明原因！')
         time.sleep(1)
@@ -334,6 +378,8 @@ class TestXbu(unittest.TestCase):
                 self.log.info('成功购买 {} 节早教核心课！'.format(n))
             else:
                 self.log.warning('购买早教核心课数量出现错误！')
+        else:
+            self.log.error('当前未检测到购买的课程！')
         time.sleep(1)
         z.back()
         z.click_my_order_btn()

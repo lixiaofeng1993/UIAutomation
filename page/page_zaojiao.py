@@ -122,7 +122,7 @@ class Zaojiaopage(Crazy):
     def text_buy_money(self):
         return self.get_text(self.check_buy_money_loc)
 
-    success_btn_loc = ('id', 'com.tencent.mm:id/f8o')  # 完成按钮
+    success_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/f8o" and @text="完成"]')  # 完成按钮
 
     def click_success_btn(self):
         self.click(self.success_btn_loc)
@@ -310,6 +310,14 @@ class Zaojiaopage(Crazy):
     def click_release_btn(self):
         self.click(self.release_btn_loc)
 
+    def element_record_info(self, data):  # 判断是否定位到包含text的元素
+        record_info_loc = ('xpath', '//*[contains(@text, "{}")]'.format(data))
+        record_info = self.find_element(record_info_loc)
+        if record_info:
+            return True
+        else:
+            return False
+
     class_name_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
 
     def click_class_name(self):
@@ -347,6 +355,11 @@ class Zaojiaopage(Crazy):
 
     def elements_my_collection_english_course_btn(self):
         return self.find_elements(self.my_collection_english_course_btn_loc)
+
+    my_collection_game_course_btn_loc = ('xpath', '//*[contains(@text, "宝宝游戏馆")]')  # 宝宝游戏馆
+
+    def elements_my_collection_game_course_btn(self):
+        return self.find_elements(self.my_collection_game_course_btn_loc)
 
     my_course_btn_loc = ('xpath', '//*[contains(@text, "我的课程")]')  # 我的课程
 
@@ -415,6 +428,9 @@ class Zaojiaopage(Crazy):
     def elements_reply_code(self):
         return self.find_elements(self.reply_code_loc)
 
+    def clicks_reply_code(self, n):
+        self.clicks(self.reply_code_loc, n)
+
     long_code_loc = ('id', 'com.tencent.mm:id/adi')  # 长按二维码
 
     def element_long_code(self):
@@ -453,6 +469,9 @@ class Zaojiaopage(Crazy):
     def elements_info_btn(self):
         return self.find_elements(self.info_btn_loc)
 
+    def clicks_info_btn(self, n):
+        self.clicks(self.info_btn_loc, n)
+
     more_games_btn_loc = ('xpath', '//*[contains(@text, "更多亲子游戏")]')  # 更多亲子游戏
 
     def click_more_games_btn(self):
@@ -465,3 +484,41 @@ class Zaojiaopage(Crazy):
 
     def element_look_all_btn(self):
         return self.find_elements(self.look_all_btn_loc)
+
+    start_fingerprint_buy_loc = ('id', 'com.tencent.mm:id/btp')  # 开启指纹支付弹窗文本   开启指纹支付，支付时可通过验证指纹快速完成付款。
+
+    def text_start_fingerprint_buy(self):
+        return self.get_text(self.start_fingerprint_buy_loc)
+
+    no_more_reminder_btn_loc = ('id', 'com.tencent.mm:id/btq')  # 不再提醒
+
+    def click_no_more_reminder_btn(self):
+        self.click(self.no_more_reminder_btn_loc)
+
+    cancel_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/azz" and @text="取消"]')  # 取消
+
+    def click_cancel_btn(self):
+        self.click(self.cancel_btn_loc)
+
+    usd_password_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/fg4" and @text="使用密码"]')  # 使用密码
+
+    def element_usd_password(self):
+        return self.find_element(self.usd_password_loc)
+
+    def click_usd_password(self):
+        self.click(self.usd_password_loc)
+
+    password_error_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/d8x" and @text="支付密码错误，请重试"]')  # 支付密码错误，请重试
+
+    def element_password_error(self):
+        return self.find_element(self.password_error_loc)
+
+    again_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/azz" and @text="重试"]')  # 重试
+
+    def click_again_btn(self):
+        self.click(self.again_btn_loc)
+
+    payment_loc = ('id', 'com.tencent.mm:id/fg3')  # 请输入支付密码 文本
+
+    def text_payment(self):
+        return self.get_text(self.payment_loc)

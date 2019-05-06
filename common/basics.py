@@ -132,7 +132,7 @@ class Crazy:
                 if element.is_displayed():
                     return element
             except:
-                self.log.info('%s页面中未能找到元素%s' % (self, locator))
+                self.log.warning('%s页面中未能找到元素%s' % (self, locator))
                 return ""
 
     def find_elements(self, locator):

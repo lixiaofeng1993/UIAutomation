@@ -225,13 +225,16 @@ class Zaojiaopage(Crazy):
     def element_new_baby_btn(self):
         return self.find_element(self.new_baby_btn_loc)
 
+    def click_new_baby_btn(self):
+        self.click(self.new_baby_btn_loc)
+
+    def clicks_new_baby_btn(self, n):
+        self.clicks(self.new_baby_btn_loc, n)
+
     get_set_loc = ('xpath', '//*[contains(@text, "预备课 预备课")]')  # 新建宝宝
 
     def element_get_set(self):
         return self.find_element(self.get_set_loc)
-
-    def click_new_baby_btn(self):
-        self.click(self.new_baby_btn_loc)
 
     next_btn_loc = ('xpath', '//*[contains(@text, "下一步")]')  # 我的宝宝
 
@@ -281,6 +284,9 @@ class Zaojiaopage(Crazy):
     def click_collection_btn(self):
         self.click(self.collection_btn_loc)
 
+    def clicks_collection_btn(self, n):
+        self.clicks(self.collection_btn_loc, n)
+
     def element_collection_btn(self):
         return self.find_element(self.collection_btn_loc)
 
@@ -288,6 +294,9 @@ class Zaojiaopage(Crazy):
 
     def click_write_record_btn(self):
         self.click(self.write_record_btn_loc)
+
+    def clicks_write_record_btn(self, n):
+        self.clicks(self.write_record_btn_loc, n)
 
     album_btn_loc = ('xpath', '//*[contains(@text, "相册")]')  # 相册
 
@@ -309,6 +318,9 @@ class Zaojiaopage(Crazy):
 
     def click_release_btn(self):
         self.click(self.release_btn_loc)
+
+    def clicks_release_btn(self, n):
+        self.clicks(self.release_btn_loc, n)
 
     def element_record_info(self, data):  # 判断是否定位到包含text的元素
         record_info_loc = ('xpath', '//*[contains(@text, "{}")]'.format(data))

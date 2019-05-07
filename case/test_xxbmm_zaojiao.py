@@ -82,7 +82,7 @@ class TestXbu(unittest.TestCase):
         """点击回复 8 进群banner"""
         self.log.info('发现的元素数量：{}, buy: {}'.format(len(z.elements_reply_8()), buy))
         if buy:
-            i = 32
+            i = 33
         else:
             i = 17
         while True:
@@ -99,18 +99,21 @@ class TestXbu(unittest.TestCase):
                 if z.elements_title()[-1].text == '早教核心课':
                     if z.element_get_set() and not z.element_collection_btn():
                         if buy:
-                            self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 32))
+                            self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 33))
                         else:
                             self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 17))
                     else:
                         if buy:
-                            self.log.info('第{}次返回...'.format(i - 32))
+                            self.log.info('第{}次返回...'.format(i - 33))
                         else:
                             self.log.info('第{}次返回...'.format(i - 17))
                         time.sleep(1)
                         z.back()
                 else:
-                    self.log.info('第{}次返回...'.format(i - 17))
+                    if buy:
+                        self.log.info('第{}次返回...'.format(i - 33))
+                    else:
+                        self.log.info('第{}次返回...'.format(i - 17))
                     time.sleep(1)
                     z.back()
 
@@ -125,11 +128,14 @@ class TestXbu(unittest.TestCase):
             z.click_send()
             time.sleep(3)
             self.log.info('发送 8 ，并长按返回二维码.')
-            # z.elements_reply_code()[-1].click()
-            z.clicks_reply_code(-1)
-            z.long_press(z.element_long_code())
+            while True:
+                z.clicks_reply_code(-1)
+                if z.element_long_code():
+                    z.long_press(z.element_long_code())
+                    break
+                else:
+                    z.clicks_reply_code(-1)
             z.click_discern_code()
-            # z.elements_info_btn()[-1].click()
             z.clicks_info_btn(-1)
             z.long_press(z.elements_reply_8()[0])
             z.click_discern_code()
@@ -151,9 +157,13 @@ class TestXbu(unittest.TestCase):
             z.click_send()
             time.sleep(3)
             self.log.info('发送 5 ，并长按返回二维码.')
-            # z.elements_reply_code()[-1].click()
-            z.clicks_reply_code(-1)
-            z.long_press(z.element_long_code())
+            while True:
+                z.clicks_reply_code(-1)
+                if z.element_long_code():
+                    z.long_press(z.element_long_code())
+                    break
+                else:
+                    z.clicks_reply_code(-1)
             self.log.info('识别进群码操作.')
             z.click_discern_code()
             self.assertIn('小小包早教训练营', z.text_class_group(), '回复5，扫码识别错误！')
@@ -260,7 +270,7 @@ class TestXbu(unittest.TestCase):
     def class_info(self, z, n, make=False):
         """操作课程详情页功能"""
         if n == 1:
-            self.log.info('选择指定课程.{n}'.format(n=1))
+            self.log.info('选择指定课程.{n}'.format(n=n))
             if not make:
                 z.swipeUp(n=5)
                 z.elements_class_name()[-1].click()
@@ -268,11 +278,11 @@ class TestXbu(unittest.TestCase):
                 z.click_class2_name()
             z.swipeUp(n=5)
             time.sleep(2)
-            z.click_collection_btn()
+            z.clicks_collection_btn(-1)
             self.log.info('点击收藏按钮.')
             time.sleep(3)
             self.log.info('进行发布记录操作...')
-            z.click_write_record_btn()
+            z.clicks_write_record_btn(-1)
             self.log.info('输入记录文本.')
             data = self.faker.text(max_nb_chars=200)
             z.input_write_text(data)
@@ -292,9 +302,10 @@ class TestXbu(unittest.TestCase):
                 z.clicks_choice_album(i)
             self.log.info('选择图片完成.')
             z.click_complete_btn()
-            z.click_release_btn()
+            time.sleep(2)
+            z.clicks_release_btn(-1)
         else:
-            self.log.info('选择指定课程.{n}'.format(n=1))
+            self.log.info('选择指定课程.{n}'.format(n=n))
             if not make:
                 z.swipeUp(n=5)
                 z.elements_class_name()[-1].click()
@@ -302,12 +313,11 @@ class TestXbu(unittest.TestCase):
                 z.click_class2_name()
             z.swipeUp(n=5)
             time.sleep(2)
-            z.click_collection_btn()
+            z.clicks_collection_btn(-1)
             self.log.info('点击收藏按钮.')
             time.sleep(3)
             self.log.info('进行发布视频记录操作...')
-            time.sleep(1)
-            z.click_write_record_btn()
+            z.clicks_write_record_btn(-1)
             data = self.faker.text(max_nb_chars=200)
             z.input_write_text(data)
             z.click_small_video_btn()
@@ -323,8 +333,8 @@ class TestXbu(unittest.TestCase):
             z.clicks_choice_album(0)
             self.log.info('选择视频成功.')
             z.click_complete_btn()
-            time.sleep(3)
-            z.click_release_btn()
+            time.sleep(2)
+            z.clicks_release_btn(-1)
         time.sleep(3)
         self.log.info('记录发布状态：{}'.format(z.element_record_info(data)))
         self.assertTrue(z.element_record_info(data), '发布记录失败了呢！')
@@ -343,7 +353,7 @@ class TestXbu(unittest.TestCase):
         if not z.element_new_baby_btn():
             self.log.error('无法创建宝宝，请检查原因！')
             return
-        z.click_new_baby_btn()
+        z.clicks_new_baby_btn(-1)
         time.sleep(1)
         z.click_next()
         baby_name = self.faker.last_name()
@@ -408,7 +418,8 @@ class TestXbu(unittest.TestCase):
             return
         z.click_my_home()
         z.click_look_all_btn()
-        self.log.info(z.text_my_baby_title() + '=====>页面title')
+        time.sleep(1)
+        self.log.info(z.elements_title()[-1].text + '=====>页面title')
         self.assertEqual(z.elements_title()[-1].text, '游戏百宝箱', '进入游戏首页失败！')
         self.log.info('进入游戏主页成功！')
         z.element_look_all_btn()[-1].click()

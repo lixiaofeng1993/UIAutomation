@@ -243,8 +243,8 @@ class Zaojiaopage(Crazy):
 
     baby_name_loc = ('xpath', '//*[contains(@text, "请输入宝宝姓名")]')  # 请输入宝宝姓名
 
-    def input_baby_name(self, name):
-        self.send_keys(self.baby_name_loc, name)
+    def inputs_baby_name(self, name, n):
+        self.sends_keys(self.baby_name_loc, name, n)
 
     baby_bir_btn_loc = ('xpath', '//*[contains(@text, "宝宝的生日:")]')  # 宝宝的生日
 
@@ -255,6 +255,9 @@ class Zaojiaopage(Crazy):
 
     def click_finish_btn(self):
         self.click(self.finish_btn_loc)
+
+    def clicks_finish_btn(self, n):
+        self.clicks(self.finish_btn_loc, n)
 
     my_home_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/ct" and @text="首页"]')  # 首页
 
@@ -290,7 +293,7 @@ class Zaojiaopage(Crazy):
     def element_collection_btn(self):
         return self.find_element(self.collection_btn_loc)
 
-    write_record_btn_loc = ('xpath', '//*[contains(@text, "写记录")]')  # 写记录按钮
+    write_record_btn_loc = ('xpath', '//*[contains(@text, "写记录") and @class="android.widget.Button"]')  # 写记录按钮
 
     def click_write_record_btn(self):
         self.click(self.write_record_btn_loc)
@@ -335,6 +338,9 @@ class Zaojiaopage(Crazy):
     def click_class_name(self):
         self.click(self.class_name_loc)
 
+    def clicks_class_name(self, n):
+        self.clicks(self.class_name_loc, n)
+
     def elements_class_name(self):
         return self.find_elements(self.class_name_loc)
 
@@ -343,15 +349,21 @@ class Zaojiaopage(Crazy):
     def click_class2_name(self):
         self.click(self.class_name2_loc)
 
+    def clicks_class2_name(self, n):
+        self.clicks(self.class_name2_loc, n)
+
     write_text_loc = ('xpath', '//*[contains(@text, "0/256")]')  # 写记录
 
-    def input_write_text(self, text):
-        self.send_keys(self.write_text_loc, text)
+    def inputs_write_text(self, text, n):
+        self.sends_keys(self.write_text_loc, text, n)
 
     choice_album_loc = ('id', 'com.tencent.mm:id/bpy')
 
     def clicks_choice_album(self, n):
         self.clicks(self.choice_album_loc, n)
+
+    def elements_choice_album(self):
+        return self.find_elements(self.choice_album_loc)
 
     complete_btn_loc = ('id', 'com.tencent.mm:id/ki')  # 完成
 
@@ -534,3 +546,11 @@ class Zaojiaopage(Crazy):
 
     def text_payment(self):
         return self.get_text(self.payment_loc)
+
+    typewriting_finish_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/z2" and @text="完成"]')  # 输入法上的完成按钮
+
+    def element_typewriting_finish_btn(self):
+        return self.find_element(self.typewriting_finish_btn_loc)
+
+    def click_typewriting_finish_btn(self):
+        self.click(self.typewriting_finish_btn_loc)

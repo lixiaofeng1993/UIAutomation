@@ -174,7 +174,7 @@ class Crazy:
         element.clear()
         element.send_keys(text)
 
-    def sends_keys(self, locator, n, text):
+    def sends_keys(self, locator, text, n):
         """选中一组元素中的一个，发送文本，清空后输入"""
         element = self.find_elements(locator)[n]
         element.clear()

@@ -48,35 +48,85 @@ class TestXbu(unittest.TestCase):
         z.click_zao()
         self.log.info('正在进入被测小程序...\n')
         self.log.info('第一个宝宝开始进行操作...')
-        self.buy_class(z)
-        self.leading_class(z, n=1)
-        self.create_baby(z)
-        self.my_page_operation(z, n=1)
-        self.operation_game_class(z, n=1)
-        self.log.info('第一个宝宝操作完成！\n')
+        self.clock_card(z)
+        # self.buy_class(z)
+        # self.leading_class(z, n=1)
+        # self.create_baby(z)
+        # self.my_page_operation(z, n=1)
+        # self.operation_game_class(z, n=1)
+        # self.log.info('第一个宝宝操作完成！\n')
 
-    @BeautifulReport.add_test_img('test_2second_baby')
-    def test_2second_baby(self):
-        """第二个宝宝的购买和领课流程"""
-        z = self.zao
-        self.log.info('第二个宝宝开始进行操作...')
-        self.buy_class(z)
-        self.leading_class(z, n=2)
-        self.create_baby(z)
-        self.my_page_operation(z, n=2)
-        self.operation_game_class(z, n=2)
-        self.log.info('第二个宝宝操作完成！\n')
+    # @BeautifulReport.add_test_img('test_2second_baby')
+    # def test_2second_baby(self):
+    #     """第二个宝宝的购买和领课流程"""
+    #     z = self.zao
+    #     self.log.info('第二个宝宝开始进行操作...')
+    #     self.buy_class(z)
+    #     self.leading_class(z, n=2)
+    #     self.create_baby(z)
+    #     self.my_page_operation(z, n=2)
+    #     self.operation_game_class(z, n=2)
+    #     self.log.info('第二个宝宝操作完成！\n')
+    #
+    # @BeautifulReport.add_test_img('test_3last_baby')
+    # def test_3last_baby(self):
+    #     """第三个宝宝的购买和领课流程"""
+    #     z = self.zao
+    #     self.log.info('第三个宝宝开始进行操作...')
+    #     self.buy_class(z)
+    #     self.leading_class(z, n=3)
+    #     self.my_page_operation(z, n=3)
+    #     self.operation_game_class(z, n=3)
+    #     self.log.info('第三个宝宝操作完成！\n')
 
-    @BeautifulReport.add_test_img('test_3last_baby')
-    def test_3last_baby(self):
-        """第三个宝宝的购买和领课流程"""
-        z = self.zao
-        self.log.info('第三个宝宝开始进行操作...')
-        self.buy_class(z)
-        self.leading_class(z, n=3)
-        self.my_page_operation(z, n=3)
-        self.operation_game_class(z, n=3)
-        self.log.info('第三个宝宝操作完成！\n')
+    def clock_card(self, z):
+        """打卡"""
+        if not z.element_my_btn():
+            self.log.error('当前位置不在首页，无法点击 首页 按钮！')
+            return
+        z.click_my_home()
+        if not z.element_clock_btn():
+            self.log.error('没有发现打卡按钮！')
+            return
+        z.click_clock_btn()
+        self.log.info(z.elements_title()[-1].text + '=====>页面title')
+        self.assertEqual(z.elements_title()[-1].text, '打卡攻略', '进入打卡首页失败！')
+        self.log.info('进入打卡页面成功！')
+        if not z.element_no_clock_btn():
+            self.log.warning('打卡界面没有发现未打卡标志，退出！')
+            # return
+        z.click_get_card_btn()
+        i = 1
+        while True:
+            if z.element_generated_loading():
+                self.log.info('等待海报生成中...{}'.format(i))
+                i += 1
+                time.sleep(1)
+            else:
+                self.log.info('生成海报成功！')
+                break
+        self.log.info(z.elements_title()[-1].text + '=====>1')
+        z.click_save_img_btn()
+        self.log.info(z.elements_title()[-1].text + '=====>2')
+        z.click_copy_text_btn()
+        if z.element_copy_format_btn():
+            z.click_know()
+        z.click_card_go_btn()
+        self.log.info(z.elements_title()[-1].text + '=====>4')
+        z.swipeUp(n=1)
+        try:
+            z.click_upload_card_btn()
+        except AttributeError:
+            z.click_again_upload_card_btn()
+            z.click_reset_img_btn()
+        z.clicks_choice_album(0)
+        z.click_complete_btn()
+        self.log.info(z.elements_title()[-1].text + '=====>5')
+        z.click_upload_btn()
+        if z.element_today_card_btn():
+            self.log.info('上传打卡成功！')
+        else:
+            self.log.error('上传打卡失败！')
 
     def click_reply_8_img(self, z, buy=False):
         """点击回复 8 进群banner"""
@@ -86,6 +136,7 @@ class TestXbu(unittest.TestCase):
         else:
             i = 17
         while True:
+            self.log.info('尝试点击image元素.')
             z.elements_reply_8()[i].click()
             i += 1
             if i > len(z.elements_reply_8()):
@@ -144,7 +195,7 @@ class TestXbu(unittest.TestCase):
                 time.sleep(3)
             self.assertIn('小小包早教训练营', z.text_class_group(), '回复5，扫码识别错误！')
             self.log.info('回复5，识别进群码成功！')
-            time.sleep(1)
+            time.sleep(3)
             z.back()
             z.click_long_code()
             time.sleep(1)
@@ -155,7 +206,6 @@ class TestXbu(unittest.TestCase):
 
     def long_code_fun(self, z, n):
         """发现二维码并长按"""
-
         z.click_add_to_btn()
         z.input_reply_5(n)
         z.click_send()
@@ -197,7 +247,10 @@ class TestXbu(unittest.TestCase):
 
     def payment_window(self, z):
         """支付弹窗"""
-        self.assertEqual(z.text_payment(), '请输入支付密码', '调用微信支付失败！')
+        # self.assertEqual(z.text_payment(), '请输入支付密码', '调用微信支付失败！')
+        if z.text_payment() not in ['请输入支付密码', '请验证指纹']:
+            self.log.error('调用微信支付失败!')
+            return
         self.log.info('调用微信支付成功，弹出输入密码弹窗！')
         buy_money = float(z.text_buy_money().replace('¥', ''))
         self.log.info('支付金额是：{} 元'.format(buy_money))
@@ -215,7 +268,7 @@ class TestXbu(unittest.TestCase):
             z.input_buy_password(read_config.payment_password[i])
             if z.element_password_error():
                 i += 1
-                self.log.warning('密码输入错误，进行重试...{}/次'.format(i))
+                self.log.warning('密码输入错误，进行重试...{}次'.format(i))
                 z.click_again_btn()
             else:
                 break
@@ -252,7 +305,7 @@ class TestXbu(unittest.TestCase):
         else:
             self.log.error('查看历史推送失败！')
             return
-        self.class_info(z, n)
+        self.release_record(z, n)
         self._back(z)
 
     def choice_moth(self, z, n):
@@ -274,82 +327,7 @@ class TestXbu(unittest.TestCase):
             z.click_mouth_btn()
             z.click_sure_btn()
 
-    def class_info(self, z, n, make=False):
-        """操作课程详情页功能"""
-        if n == 1:
-            self.log.info('选择指定课程.{n}'.format(n=n))
-            if not make:
-                z.swipeUp(n=5)
-                z.clicks_class_name(-1)
-            else:
-                z.clicks_class2_name(-1)
-            z.swipeUp(n=5)
-            time.sleep(2)
-            z.clicks_collection_btn(-1)
-            self.log.info('点击收藏按钮.')
-            self.log.info('进行发布记录操作...')
-            z.click_write_record_btn()
-            self.log.info('输入记录文本.')
-            data = self.faker.text(max_nb_chars=200)
-            z.inputs_write_text(data, -1)
-            time.sleep(1)
-            self.log.info('选择记录配图.')
-            if z.element_typewriting_finish_btn():
-                z.click_typewriting_finish_btn()
-            z.click_album_btn()
-            # if z.text_class_group() != '图片':
-            #     if z.element_album_btn():
-            #         self.log.info('再次点击相册按钮！')
-            #         z.click_album_btn()
-            #     else:
-            #         self.log.error('选择图片失败！')
-            #         return
-            n = random.randint(1, 9)
-            for i in range(n):
-                self.log.info('选择第{}张图片中...'.format(i))
-                z.clicks_choice_album(i)
-            self.log.info('选择图片完成.')
-            z.click_complete_btn()
-            time.sleep(2)
-            z.clicks_release_btn(-1)
-        else:
-            self.log.info('选择指定课程.{n}'.format(n=n))
-            if not make:
-                z.swipeUp(n=5)
-                z.clicks_class_name(-1)
-            else:
-                z.clicks_class2_name(-1)
-            z.swipeUp(n=5)
-            time.sleep(2)
-            z.clicks_collection_btn(-1)
-            self.log.info('点击收藏按钮.')
-            self.log.info('进行发布视频记录操作...')
-            z.click_write_record_btn()
-            data = self.faker.text(max_nb_chars=200)
-            z.inputs_write_text(data, -1)
-            z.click_small_video_btn()
-            self.log.info('选择要上传的视频.')
-            if z.element_typewriting_finish_btn():
-                z.click_typewriting_finish_btn()
-            # if z.text_class_group() != '所有视频':
-            #     if z.element_small_video_btn():
-            #         z.click_album_btn()
-            #         self.log.info('再次点击小视频按钮！')
-            #         z.click_small_video_btn()
-            #     else:
-            #         self.log.error('选择视频失败！')
-            #         return
-            z.clicks_choice_album(0)
-            self.log.info('选择视频成功.')
-            z.click_complete_btn()
-            time.sleep(2)
-            z.clicks_release_btn(-1)
-        time.sleep(3)
-        self.log.info('记录发布状态：{}'.format(z.element_record_info(data)))
-        self.assertTrue(z.element_record_info(data), '发布记录失败了呢！')
-        self.log.info('记录：{} 发布成功'.format(data))
-
-    def release_record(self, z, make=False, n=1):
+    def release_record(self, z, n=1, make=False):
         """发布记录操作"""
         self.log.info('选择指定课程.{n}'.format(n=n))
         if not make:
@@ -377,8 +355,9 @@ class TestXbu(unittest.TestCase):
             for i in range(n):
                 i += 1
                 num = random.randint(len(z.elements_choice_album()))
-                self.log.info('选择第{}张图片中...'.format(i))
+                self.log.info('选择第{}张图片中...选择的图片是: {}'.format(i, num))
                 z.clicks_choice_album(num)
+                # z.clicks_choice_album(0)
         else:
             self.log.info('选择视频中...')
             z.click_small_video_btn()
@@ -386,10 +365,16 @@ class TestXbu(unittest.TestCase):
                 z.click_typewriting_finish_btn()
             num = random.randint(len(z.elements_choice_album()))
             z.clicks_choice_album(num)
+            # z.clicks_choice_album(0)
         z.click_complete_btn()
         self.log.info('选择图片或视频成功！')
         time.sleep(2)
+        self.log.info('记录发布状态：{}'.format(z.element_record_info(data)))
+        self.assertTrue(z.element_record_info(data), '发布记录失败了呢！')
         z.clicks_release_btn(-1)
+        if z.element_typewriting_finish_btn():
+            z.click_typewriting_finish_btn()
+        self.log.info('记录：{} 发布成功'.format(data))
 
     def create_baby(self, z):
         """创建宝宝，并返回首页切换最新创建的宝宝"""
@@ -401,6 +386,8 @@ class TestXbu(unittest.TestCase):
         self.assertEqual(z.text_my_baby_title(), '个人中心', '进入个人中心失败！')
         self.log.info('进入个人中心成功，开始进行新建宝宝操作...')
         z.click_my_baby()
+        if z.element_typewriting_finish_btn():
+            z.click_typewriting_finish_btn()
         if not z.element_new_baby_btn():
             self.log.error('无法创建宝宝，请检查原因！')
             return
@@ -479,7 +466,7 @@ class TestXbu(unittest.TestCase):
         self.log.info(z.elements_title()[-1].text + '=====>页面title')
         self.assertEqual(z.elements_title()[-1].text, '宝宝游戏箱', '进入宝宝游戏箱失败！')
         self.log.info('进入宝宝游戏箱成功！')
-        self.class_info(z, n, make=True)
+        self.release_record(z, n, make=True)
         self._back(z)
         z.swipeDown(n=2)  # 返回首页顶部
 

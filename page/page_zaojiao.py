@@ -14,6 +14,8 @@ class Zaojiaopage(Crazy):
 
     zao_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cx" and @text="包妈优选"]')
 
+    # zao_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cx" and @text="小小包早教"]')
+
     def click_zao(self):
         self.click(self.zao_btn_loc)
 
@@ -293,7 +295,7 @@ class Zaojiaopage(Crazy):
     def element_collection_btn(self):
         return self.find_element(self.collection_btn_loc)
 
-    write_record_btn_loc = ('xpath', '//*[contains(@text, "写记录") and @class="android.widget.Button"]')  # 写记录按钮
+    write_record_btn_loc = ('xpath', '//*[@text="写记录" and @class="android.widget.Button"]')  # 写记录按钮
 
     def click_write_record_btn(self):
         self.click(self.write_record_btn_loc)
@@ -335,6 +337,8 @@ class Zaojiaopage(Crazy):
 
     class_name_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
 
+    # class_name_loc = ('xpath', '//*[contains(@text, "歌曲：Head and shoulders")]')  # 课程名称
+
     def click_class_name(self):
         self.click(self.class_name_loc)
 
@@ -345,6 +349,8 @@ class Zaojiaopage(Crazy):
         return self.find_elements(self.class_name_loc)
 
     class_name2_loc = ('xpath', '//*[contains(@text, "测试游戏课程")]')  # 课程名称
+
+    # class_name2_loc = ('xpath', '//*[contains(@text, "弹出来的画")]')  # 课程名称
 
     def click_class2_name(self):
         self.click(self.class_name2_loc)
@@ -554,3 +560,75 @@ class Zaojiaopage(Crazy):
 
     def click_typewriting_finish_btn(self):
         self.click(self.typewriting_finish_btn_loc)
+
+    # 打卡
+
+    clock_btn_loc = ('xpath', '//*[contains(@text, "打卡")]')  # 打卡
+
+    def click_clock_btn(self):
+        self.click(self.clock_btn_loc)
+
+    def element_clock_btn(self):
+        return self.find_element(self.clock_btn_loc)
+
+    # com.tencent.mm:id/ox
+
+    no_clock_btn_loc = ('xpath', '//*[contains(@text, "你还未开启打卡")]')  # 你还未开启打卡
+
+    def element_no_clock_btn(self):
+        return self.find_element(self.no_clock_btn_loc)
+
+    get_card_btn_loc = ('xpath', '//*[@text="获取打卡海报" and @class="android.widget.Button"]')  # 获取打卡海报
+
+    def click_get_card_btn(self):
+        self.click(self.get_card_btn_loc)
+
+    upload_card_btn_loc = ('xpath', '//*[@text="上传截图" and @class="android.widget.Button"]')  # 上传截图
+
+    def click_upload_card_btn(self):
+        self.click(self.upload_card_btn_loc)
+
+    again_upload_card_btn_loc = ('xpath', '//*[@text="重新上传截图" and @class="android.widget.Button"]')  # 重新上传截图
+
+    def click_again_upload_card_btn(self):
+        self.click(self.again_upload_card_btn_loc)
+
+    save_img_btn_loc = ('xpath', '//*[@text="保存图片" and @class="android.widget.Button"]')  # 保存图片
+
+    def click_save_img_btn(self):
+        self.click(self.save_img_btn_loc)
+
+    copy_text_btn_loc = ('xpath', '//*[@text="复制发圈文案" and @class="android.widget.Button"]')  # 复制发圈文案
+
+    def click_copy_text_btn(self):
+        self.click(self.copy_text_btn_loc)
+
+    copy_format_btn_loc = ('xpath', '//*[contains(@text, "发布朋友圈截图规范")]')  # 发布朋友圈截图规范
+
+    def element_copy_format_btn(self):
+        return self.find_element(self.copy_format_btn_loc)
+
+    card_go_btn_loc = ('xpath', '//*[contains(@text, "关闭小程序，去朋友圈打卡截图")]')  # 关闭小程序，去朋友圈打卡截图
+
+    def click_card_go_btn(self):
+        self.click(self.card_go_btn_loc)
+
+    upload_btn_loc = ('xpath', '//*[@text="上传" and @class="android.widget.Button"]')  # 上传
+
+    def click_upload_btn(self):
+        self.click(self.upload_btn_loc)
+
+    today_card_btn_loc = ('xpath', '//*[contains(@text, "今日已提交打卡")]')  # 今日已提交打卡
+
+    def element_today_card_btn(self):
+        return self.find_element(self.today_card_btn_loc)
+
+    reset_img_btn_loc = ('xpath', '//*[@text="重新选择截图" and @class="android.widget.Button"]')  # 重新选择截图
+
+    def click_reset_img_btn(self):
+        self.click(self.reset_img_btn_loc)
+
+    generated_loading_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cx" and @text="正在生成..."]')  # 正在生成...
+
+    def element_generated_loading(self):
+        return self.find_element(self.generated_loading_loc)

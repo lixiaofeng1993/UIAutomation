@@ -14,7 +14,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/UIAutomation$zaojiao.coverage" NAME="zaojiao Coverage Results" MODIFIED="1557483326267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/UIAutomation$format_json.coverage" NAME="format_json Coverage Results" MODIFIED="1557994656741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Interface_framework_Beauty/tmp" />
+    <SUITE FILE_PATH="coverage/UIAutomation$zaojiao.coverage" NAME="zaojiao Coverage Results" MODIFIED="1558089313417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -33,8 +34,8 @@
       <file leaf-file-name="page_zaojiao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="632" column="33" lean-forward="false" selection-start-line="632" selection-start-column="8" selection-end-line="632" selection-end-column="33" />
+            <state relative-caret-position="132">
+              <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -43,35 +44,41 @@
       <file leaf-file-name="test_xxbmm_zaojiao.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="105" column="38" lean-forward="false" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+            <state relative-caret-position="379">
+              <caret line="501" column="30" lean-forward="false" selection-start-line="501" selection-start-column="10" selection-end-line="501" selection-end-column="30" />
               <folding>
-                <element signature="e#4154#5700#0" expanded="false" />
-                <element signature="e#5761#6923#0" expanded="false" />
-                <element signature="e#6968#7944#0" expanded="false" />
-                <element signature="e#7982#8234#0" expanded="false" />
-                <element signature="e#8277#9551#0" expanded="false" />
-                <element signature="e#10495#10942#0" expanded="false" />
+                <element signature="e#8318#9592#0" expanded="false" />
+                <element signature="e#10562#11009#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logger.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/logger.py">
+      <file leaf-file-name="2019-05-17.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/2019-05-17.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+            <state relative-caret-position="691">
+              <caret line="2524" column="82" lean-forward="false" selection-start-line="2524" selection-start-column="77" selection-end-line="2524" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019-05-10.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/2019-05-10.log">
+      <file leaf-file-name="2019-05-16.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/2019-05-16.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="309" column="82" lean-forward="false" selection-start-line="309" selection-start-column="74" selection-end-line="309" selection-end-column="82" />
+            <state relative-caret-position="354">
+              <caret line="390" column="87" lean-forward="false" selection-start-line="390" selection-start-column="74" selection-end-line="390" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="format_json.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Interface_framework_Beauty/tmp/format_json.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -80,9 +87,11 @@
       <file leaf-file-name="basics.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/basics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="437" column="48" lean-forward="true" selection-start-line="437" selection-start-column="48" selection-end-line="437" selection-end-column="48" />
-              <folding />
+            <state relative-caret-position="132">
+              <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+              <folding>
+                <element signature="e#127#136#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,21 +100,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>创建宝宝失败</find>
-      <find>并长按返回二维码.</find>
-      <find>识别进群码操作</find>
-      <find>发送 5 ，并长按返回二维码.</find>
-      <find>elements_reply_code</find>
-      <find>点击回复5进群banner</find>
-      <find>进行发布视频记录操作</find>
-      <find>input_write_text</find>
-      <find>finish_btn_loc</find>
-      <find>input</find>
-      <find>class_info</find>
-      <find>并长按返回二维码</find>
-      <find>发现的元素数量</find>
       <find>class_nam</find>
-      <find>选择指定课程</find>
       <find>0.1</find>
       <find>记录</find>
       <find>从指纹支付切换到输入密码支付</find>
@@ -117,10 +112,24 @@
       <find>and</find>
       <find>上传</find>
       <find>Button</find>
-      <find>知道了</find>
-      <find>进行发布记录操作</find>
       <find>click_upload_btn</find>
       <find>com.tencent.mm:id/cx</find>
+      <find>com.tencent.mm:id/ap9</find>
+      <find>game</find>
+      <find>选择指定课程</find>
+      <find>知道了</find>
+      <find>输入记录文本</find>
+      <find>选择图片或视频成功</find>
+      <find>切换宝宝操作</find>
+      <find>//android.widget.Image</find>
+      <find>sw</find>
+      <find>才能完成游戏课程哦</find>
+      <find>presence_of_all_elements_located</find>
+      <find>领取课程成功</find>
+      <find>baby</find>
+      <find>[2019-05-17 11:40:26,677] [logger.py:103] [logger:__console] [INFO]- 进入个人中心成功，开始进行新建宝宝操作...</find>
+      <find>进行发布记录操作</find>
+      <find>收藏</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +142,11 @@
         <option value="$PROJECT_DIR$/logs/2019-05-08.log" />
         <option value="$PROJECT_DIR$/logs/2019-05-09.log" />
         <option value="$PROJECT_DIR$/logs/2019-05-10.log" />
+        <option value="$PROJECT_DIR$/logs/2019-05-14.log" />
+        <option value="$PROJECT_DIR$/logs/2019-05-15.log" />
+        <option value="D:/Interface_framework_Beauty/tmp/format_json.py" />
         <option value="$PROJECT_DIR$/page/page_zaojiao.py" />
+        <option value="$PROJECT_DIR$/logs/2019-05-17.log" />
         <option value="$PROJECT_DIR$/case/test_xxbmm_zaojiao.py" />
       </list>
     </option>
@@ -165,8 +178,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -176,6 +189,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UIAutomation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="case" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -191,6 +232,24 @@
     <property name="js-jscs-nodeInterpreter" value="D:\nodejs\node.exe" />
   </component>
   <component name="RunManager" selected="Python.zaojiao">
+    <configuration default="false" name="format_json" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/Interface_framework_Beauty/tmp" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="UIAutomation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/Interface_framework_Beauty/tmp/format_json.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -423,9 +482,15 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.zaojiao" />
+      <item index="1" class="java.lang.String" itemvalue="Python.format_json" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.format_json" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -441,16 +506,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.116204694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5418455" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -477,17 +542,254 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-16.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8580">
+          <caret line="390" column="87" lean-forward="false" selection-start-line="390" selection-start-column="74" selection-end-line="390" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Interface_framework_Beauty/tmp/format_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3300">
+          <caret line="163" column="23" lean-forward="false" selection-start-line="163" selection-start-column="23" selection-end-line="163" selection-end-column="23" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10868">
+          <caret line="494" column="33" lean-forward="true" selection-start-line="494" selection-start-column="33" selection-end-line="494" selection-end-column="33" />
+          <folding>
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7832">
+          <caret line="356" column="0" lean-forward="true" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4154#5700#0" expanded="false" />
-            <element signature="e#5761#6923#0" expanded="false" />
-            <element signature="e#6968#7944#0" expanded="false" />
-            <element signature="e#7982#8234#0" expanded="false" />
-            <element signature="e#8277#9551#0" expanded="false" />
-            <element signature="e#10495#10942#0" expanded="false" />
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2596">
+          <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-10.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6798">
+          <caret line="309" column="82" lean-forward="false" selection-start-line="309" selection-start-column="74" selection-end-line="309" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3630">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6336">
+          <caret line="288" column="28" lean-forward="false" selection-start-line="288" selection-start-column="8" selection-end-line="288" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-13.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12232">
+          <caret line="556" column="80" lean-forward="false" selection-start-line="556" selection-start-column="74" selection-end-line="556" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4576">
+          <caret line="216" column="8" lean-forward="false" selection-start-line="216" selection-start-column="8" selection-end-line="216" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2596">
+          <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-10.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6798">
+          <caret line="309" column="82" lean-forward="false" selection-start-line="309" selection-start-column="74" selection-end-line="309" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9328">
+          <caret line="437" column="48" lean-forward="false" selection-start-line="437" selection-start-column="48" selection-end-line="437" selection-end-column="48" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13904">
+          <caret line="632" column="33" lean-forward="false" selection-start-line="632" selection-start-column="8" selection-end-line="632" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2596">
+          <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-10.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6798">
+          <caret line="309" column="82" lean-forward="false" selection-start-line="309" selection-start-column="74" selection-end-line="309" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9328">
+          <caret line="437" column="48" lean-forward="false" selection-start-line="437" selection-start-column="48" selection-end-line="437" selection-end-column="48" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13904">
+          <caret line="632" column="33" lean-forward="false" selection-start-line="632" selection-start-column="8" selection-end-line="632" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2596">
+          <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-10.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6798">
+          <caret line="309" column="82" lean-forward="false" selection-start-line="309" selection-start-column="74" selection-end-line="309" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9328">
+          <caret line="437" column="48" lean-forward="true" selection-start-line="437" selection-start-column="48" selection-end-line="437" selection-end-column="48" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -504,7 +806,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3586">
           <caret line="176" column="18" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -513,23 +817,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4154#5700#0" expanded="false" />
-            <element signature="e#5761#6923#0" expanded="false" />
-            <element signature="e#6968#7944#0" expanded="false" />
-            <element signature="e#7982#8234#0" expanded="false" />
-            <element signature="e#8277#9551#0" expanded="false" />
-            <element signature="e#10495#10942#0" expanded="false" />
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019-05-08.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15972">
-          <caret line="726" column="14" lean-forward="false" selection-start-line="726" selection-start-column="14" selection-end-line="726" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-08.log" />
     <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8140">
@@ -542,7 +836,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3586">
           <caret line="176" column="18" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -551,73 +847,106 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019-05-08.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15972">
-          <caret line="726" column="14" lean-forward="false" selection-start-line="726" selection-start-column="14" selection-end-line="726" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019-05-09.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="424" column="82" lean-forward="false" selection-start-line="424" selection-start-column="78" selection-end-line="424" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-08.log" />
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-09.log" />
     <entry file="file://$PROJECT_DIR$/common/ID_code.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/basics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="437" column="48" lean-forward="true" selection-start-line="437" selection-start-column="48" selection-end-line="437" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/2019-05-10.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="6798">
           <caret line="309" column="82" lean-forward="false" selection-start-line="309" selection-start-column="74" selection-end-line="309" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common/logger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
+        <state relative-caret-position="2596">
           <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/python/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="216" column="8" lean-forward="false" selection-start-line="216" selection-start-column="8" selection-end-line="216" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-13.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="556" column="80" lean-forward="false" selection-start-line="556" selection-start-column="74" selection-end-line="556" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-14.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="804" column="82" lean-forward="false" selection-start-line="804" selection-start-column="82" selection-end-line="804" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-15.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="1205" column="80" lean-forward="false" selection-start-line="1205" selection-start-column="74" selection-end-line="1205" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Interface_framework_Beauty/tmp/format_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-16.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="390" column="87" lean-forward="false" selection-start-line="390" selection-start-column="74" selection-end-line="390" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding>
+            <element signature="e#127#136#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/page/page_zaojiao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="632" column="33" lean-forward="false" selection-start-line="632" selection-start-column="8" selection-end-line="632" selection-end-column="33" />
+        <state relative-caret-position="132">
+          <caret line="363" column="0" lean-forward="false" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-05-17.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="2524" column="82" lean-forward="false" selection-start-line="2524" selection-start-column="77" selection-end-line="2524" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/test_xxbmm_zaojiao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="105" column="38" lean-forward="false" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+        <state relative-caret-position="379">
+          <caret line="501" column="30" lean-forward="false" selection-start-line="501" selection-start-column="10" selection-end-line="501" selection-end-column="30" />
           <folding>
-            <element signature="e#4154#5700#0" expanded="false" />
-            <element signature="e#5761#6923#0" expanded="false" />
-            <element signature="e#6968#7944#0" expanded="false" />
-            <element signature="e#7982#8234#0" expanded="false" />
-            <element signature="e#8277#9551#0" expanded="false" />
-            <element signature="e#10495#10942#0" expanded="false" />
+            <element signature="e#8318#9592#0" expanded="false" />
+            <element signature="e#10562#11009#0" expanded="false" />
           </folding>
         </state>
       </provider>

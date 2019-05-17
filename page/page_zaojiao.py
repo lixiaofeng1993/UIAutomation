@@ -360,6 +360,9 @@ class Zaojiaopage(Crazy):
 
     write_text_loc = ('xpath', '//*[contains(@text, "0/256")]')  # 写记录
 
+    def input_write_text(self, text):
+        self.send_keys(self.write_text_loc, text)
+
     def inputs_write_text(self, text, n):
         self.sends_keys(self.write_text_loc, text, n)
 
@@ -632,3 +635,13 @@ class Zaojiaopage(Crazy):
 
     def element_generated_loading(self):
         return self.find_element(self.generated_loading_loc)
+
+    reminder_btn_loc = ('xpath', '//*[contains(@text, "温馨提示")]')  # 温馨提示
+
+    def element_reminder_btn(self):
+        return self.find_element(self.reminder_btn_loc)
+
+    page_expired_loc = ('xpath', '//*[contains(@text, "页面已经过期")]')  # 页面已经过期
+
+    def element_page_expired(self):
+        return self.find_element(self.page_expired_loc)

@@ -48,36 +48,36 @@ class TestXbu(unittest.TestCase):
         z.click_zao()
         self.log.info('正在进入被测小程序...\n')
         self.log.info('第一个宝宝开始进行操作...')
-        self.clock_card(z)
-        # self.buy_class(z)
-        # self.leading_class(z, n=1)
-        # self.create_baby(z)
-        # self.my_page_operation(z, n=1)
-        # self.operation_game_class(z, n=1)
-        # self.log.info('第一个宝宝操作完成！\n')
+        self.buy_class(z)
+        self.leading_class(z, n=1)
+        self.create_baby(z)
+        self.my_page_operation(z, n=1)
+        self.operation_game_class(z, n=1)
+        self.log.info('第一个宝宝操作完成！\n')
 
-    # @BeautifulReport.add_test_img('test_2second_baby')
-    # def test_2second_baby(self):
-    #     """第二个宝宝的购买和领课流程"""
-    #     z = self.zao
-    #     self.log.info('第二个宝宝开始进行操作...')
-    #     self.buy_class(z)
-    #     self.leading_class(z, n=2)
-    #     self.create_baby(z)
-    #     self.my_page_operation(z, n=2)
-    #     self.operation_game_class(z, n=2)
-    #     self.log.info('第二个宝宝操作完成！\n')
-    #
-    # @BeautifulReport.add_test_img('test_3last_baby')
-    # def test_3last_baby(self):
-    #     """第三个宝宝的购买和领课流程"""
-    #     z = self.zao
-    #     self.log.info('第三个宝宝开始进行操作...')
-    #     self.buy_class(z)
-    #     self.leading_class(z, n=3)
-    #     self.my_page_operation(z, n=3)
-    #     self.operation_game_class(z, n=3)
-    #     self.log.info('第三个宝宝操作完成！\n')
+    @BeautifulReport.add_test_img('test_2second_baby')
+    def test_2second_baby(self):
+        """第二个宝宝的购买和领课流程"""
+        z = self.zao
+        self.log.info('第二个宝宝开始进行操作...')
+        self.buy_class(z)
+        self.leading_class(z, n=2)
+        self.create_baby(z)
+        self.my_page_operation(z, n=2)
+        self.operation_game_class(z, n=2)
+        self.log.info('第二个宝宝操作完成！\n')
+
+    @BeautifulReport.add_test_img('test_3last_baby')
+    def test_3last_baby(self):
+        """第三个宝宝的购买和领课流程"""
+        z = self.zao
+        self.log.info('第三个宝宝开始进行操作...')
+        self.buy_class(z)
+        self.leading_class(z, n=3)
+        self.my_page_operation(z, n=3)
+        self.operation_game_class(z, n=3)
+        # self.clock_card(z)
+        self.log.info('第三个宝宝操作完成！\n')
 
     def clock_card(self, z):
         """打卡"""
@@ -197,6 +197,9 @@ class TestXbu(unittest.TestCase):
             self.log.info('回复5，识别进群码成功！')
             time.sleep(3)
             z.back()
+            if z.element_page_expired():
+                time.sleep(3)
+                z.back()
             z.click_long_code()
             time.sleep(1)
             z.back()
@@ -228,7 +231,7 @@ class TestXbu(unittest.TestCase):
                 i += 1
                 if z.elements_reply_code():
                     self.log.info('未发现可长按二维码，继续点击的次数{}'.format(i))
-                    z.clicks_reply_code(-1)
+                    # z.clicks_reply_code(-1)
                 else:
                     self.log.error('长按二维码出现错误！')
                     return False
@@ -287,6 +290,7 @@ class TestXbu(unittest.TestCase):
             z.click_attend_lectures_btn()
         else:
             self.choice_moth(z, n)
+            time.sleep(1)
             z.click_receive_btn()
             buy = True
             self.log.info('领取课程成功！')
@@ -329,21 +333,45 @@ class TestXbu(unittest.TestCase):
 
     def release_record(self, z, n=1, make=False):
         """发布记录操作"""
-        self.log.info('选择指定课程.{n}'.format(n=n))
+        self.log.info('选择指定课程.{n}--->{make}'.format(n=n, make=make))
         if not make:
             z.swipeUp(n=5)
             z.clicks_class_name(-1)
         else:
             z.clicks_class2_name(-1)
+            if z.element_reminder_btn():
+                z.click_know()
         z.swipeUp(n=5)
         time.sleep(2)
-        z.clicks_collection_btn(-1)
+        try:
+            z.clicks_collection_btn(-1)
+        except IndexError:
+            z.click_collection_btn()
+        except Exception:
+            self.log.warning('收藏按钮点击失败了......')
+            pass
         self.log.info('点击收藏按钮.')
         self.log.info('进行发布记录操作...')
-        z.click_write_record_btn()
+        try:
+            z.clicks_write_record_btn(-1)
+        except IndexError:
+            z.click_write_record_btn()
+        except AttributeError:
+            self.log.error('无法点击写记录按钮！')
+            return
+
+        if z.element_typewriting_finish_btn():
+            z.click_typewriting_finish_btn()
+
         self.log.info('输入记录文本.')
         data = self.faker.text(max_nb_chars=200)
-        z.inputs_write_text(data, -1)
+        try:
+            z.inputs_write_text(data, -1)
+        except IndexError:
+            z.input_write_text(data)
+        except AttributeError:
+            self.log.error('无法点击记录输入框！')
+            return
         time.sleep(1)
         self.log.info('选择记录配图或者小视频.')
         if z.element_typewriting_finish_btn():
@@ -351,21 +379,18 @@ class TestXbu(unittest.TestCase):
         if n == 1:
             self.log.info('选择图片中...')
             z.click_album_btn()
-            n = random.randint(1, 9)
-            for i in range(n):
-                i += 1
-                num = random.randint(len(z.elements_choice_album()))
-                self.log.info('选择第{}张图片中...选择的图片是: {}'.format(i, num))
-                z.clicks_choice_album(num)
+            for i in range(3):
+                self.log.info('选择第{}张图片中...'.format(i))
+                z.clicks_choice_album(i)
                 # z.clicks_choice_album(0)
         else:
             self.log.info('选择视频中...')
             z.click_small_video_btn()
             if z.element_typewriting_finish_btn():
                 z.click_typewriting_finish_btn()
-            num = random.randint(len(z.elements_choice_album()))
-            z.clicks_choice_album(num)
-            # z.clicks_choice_album(0)
+            # num = random.randint(0, len(z.elements_choice_album()))
+            # z.clicks_choice_album(num)
+            z.clicks_choice_album(0)
         z.click_complete_btn()
         self.log.info('选择图片或视频成功！')
         time.sleep(2)
@@ -457,15 +482,31 @@ class TestXbu(unittest.TestCase):
             self.log.error('当前位置不在首页，无法点击 首页 按钮！')
             return
         z.click_my_home()
-        z.click_look_all_btn()
-        time.sleep(1)
-        self.log.info(z.elements_title()[-1].text + '=====>页面title')
-        self.assertEqual(z.elements_title()[-1].text, '游戏百宝箱', '进入游戏首页失败！')
-        self.log.info('进入游戏主页成功！')
+        while True:
+            try:
+                z.element_look_all_btn()[-1].click()
+            except IndexError:
+                z.click_look_all_btn()
+            except AttributeError:
+                self.log.warning('没有找到 查看全部 按钮......')
+                return
+            time.sleep(1)
+            self.log.info(z.elements_title()[-1].text + '=====>页面title')
+            if z.elements_title()[-1].text == '游戏百宝箱':
+                self.log.info('进入游戏主页成功！')
+                break
+            else:
+                self.log.warning('到哪了这是？')
+                z._back(z)
+        # self.assertEqual(z.elements_title()[-1].text, '游戏百宝箱', '进入游戏首页失败！')
         z.element_look_all_btn()[-1].click()
+
         self.log.info(z.elements_title()[-1].text + '=====>页面title')
-        self.assertEqual(z.elements_title()[-1].text, '宝宝游戏箱', '进入宝宝游戏箱失败！')
-        self.log.info('进入宝宝游戏箱成功！')
+        if z.elements_title()[-1].text == '宝宝游戏箱':
+            self.log.info('进入宝宝游戏箱成功！')
+        else:
+            self.log.warning('到哪了这是 +1')
+        # self.assertEqual(z.elements_title()[-1].text, '宝宝游戏箱', '进入宝宝游戏箱失败！')
         self.release_record(z, n, make=True)
         self._back(z)
         z.swipeDown(n=2)  # 返回首页顶部

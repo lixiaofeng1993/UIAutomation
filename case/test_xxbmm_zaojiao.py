@@ -41,14 +41,9 @@ class TestXbu(unittest.TestCase):
     def test_1first_baby(self):
         """第一个宝宝的购买和领课流程"""
         z = self.zao
-        z.swipeDown(n=2)
-        if not z.element_zao():
-            self.log.error('被测小程序不存在！')
-            return
-        z.click_zao()
-        self.log.info('正在进入被测小程序...\n')
+        self.delete_applet(z)
         self.log.info('第一个宝宝开始进行操作...')
-        self.buy_class(z)
+        self.buy_class(z, n=1)
         self.leading_class(z, n=1)
         self.create_baby(z)
         self.my_page_operation(z, n=1)
@@ -78,6 +73,45 @@ class TestXbu(unittest.TestCase):
         self.operation_game_class(z, n=3)
         # self.clock_card(z)
         self.log.info('第三个宝宝操作完成！\n')
+
+    def delete_applet(self, z):
+        z.swipeDown(n=2)
+        if not z.element_zao():
+            self.log.error('被测小程序不存在！')
+        else:
+            self.log.info('删除被测小程序.')
+            element_obj = self.t.long_press(z.element_zao()).perform()
+            element_obj.move_to(z.element_delete_small1_btn()).wait(1000).release().perform()
+            time.sleep(2)
+        z.click_small_help_btn()
+        self.log.info('点击小程序助手，查找被测小程序.')
+        if not z.element_small_name():
+            z.click_switching_applet_btn()
+            if z.element_small_name():
+                z.click_small_name()
+            else:
+                self.log.error('没有发现要测试的小程序')
+                return
+        z.click_version_btn()
+        self.log.info('正在进入被测小程序...')
+        z.clicks_experience_version_btn()
+        while True:
+            if z.element_audition_class_btn():
+                z.click_audition_class_btn()
+                break
+            else:
+                self.log.info('未发现0元领取7节试听课按钮，等待中...')
+                time.sleep(3)
+        self.log.info('正在进行授权操作.')
+        z.click_wechat_grant_btn()
+        z.click_allow_btn()
+        while True:
+            if z.element_wechat_grant_btn():
+                z.click_wechat_grant_btn()
+                time.sleep(1)
+            else:
+                self.log.info('授权成功！')
+                break
 
     def clock_card(self, z):
         """打卡"""
@@ -128,31 +162,57 @@ class TestXbu(unittest.TestCase):
         else:
             self.log.error('上传打卡失败！')
 
-    def click_reply_8_img(self, z, buy=False):
+    def click_reply_8_img(self, z, buy=False, type=5):
         """点击回复 8 进群banner"""
-        self.log.info('发现的元素数量：{}, buy: {}'.format(len(z.elements_reply_8()), buy))
-        if buy:
-            i = 33
-        else:
-            i = 17
+        self.log.info('发现的元素数量：{}, buy: {}, type: {}'.format(len(z.elements_reply_8()), buy, type))
+        if type == 8:
+            if buy:
+                i = 33
+            else:
+                i = 17
+        elif type == 5:
+            i = 1
         while True:
             self.log.info('尝试点击image元素.')
-            z.elements_reply_8()[i].click()
+            if type == 5:
+                z.elements_reply_8()[i].click()
+            else:
+                z.elements_reply_8()[i].click()
             i += 1
             if i > len(z.elements_reply_8()):
                 self.log.error('遍历完成，没有发现正确的页面！')
                 break
             if z.element_parent_btn():
-                self.log.info('成功进入回复8页面！')
+                self.log.info('成功进入回复{}页面！'.format(type))
                 break
             else:
                 self.log.info(z.elements_title()[-1].text + '=====>页面title')
-                if z.elements_title()[-1].text == '早教核心课':
-                    if z.element_get_set() and not z.element_collection_btn():
-                        if buy:
-                            self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 33))
+                if type == 5:
+                    if z.elements_title()[-1].text == '早教试听课':
+                        if z.element_get_set() and not z.element_collection_btn():
+                            self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 1))
                         else:
-                            self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 17))
+                            self.log.info('第{}次返回...'.format(i - 1))
+                            time.sleep(1)
+                            z.back()
+                    else:
+                        self.log.info('第{}次返回...'.format(i - 1))
+                        time.sleep(1)
+                        z.back()
+                elif type == 8:
+                    if z.elements_title()[-1].text == '早教核心课':
+                        if z.element_get_set() and not z.element_collection_btn():
+                            if buy:
+                                self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 33))
+                            else:
+                                self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 17))
+                        else:
+                            if buy:
+                                self.log.info('第{}次返回...'.format(i - 33))
+                            else:
+                                self.log.info('第{}次返回...'.format(i - 17))
+                            time.sleep(1)
+                            z.back()
                     else:
                         if buy:
                             self.log.info('第{}次返回...'.format(i - 33))
@@ -160,34 +220,30 @@ class TestXbu(unittest.TestCase):
                             self.log.info('第{}次返回...'.format(i - 17))
                         time.sleep(1)
                         z.back()
-                else:
-                    if buy:
-                        self.log.info('第{}次返回...'.format(i - 33))
-                    else:
-                        self.log.info('第{}次返回...'.format(i - 17))
-                    time.sleep(1)
-                    z.back()
 
     def add_group(self, z, make=False, buy=False):
         """进群流程"""
         self.log.info('点击进群banner，进行进群流程验证...make：{}'.format(make))
         if make:
             self.log.info('查找回复8进群banner中...')
-            self.click_reply_8_img(z, buy=buy)
+            self.click_reply_8_img(z, buy=buy, type=8)
             if not self.long_code_fun(z, '8'):
                 return
             self.log.info('跳转到公众号，点击推送信息，长按识别二维码进群！')
+            if not z.text_class_group():
+                time.sleep(3)
             self.assertIn('小小包早教课学习群', z.text_class_group(), '回复8，扫码识别错误！')
             self.log.info('回复8，识别进群码成功！')
             time.sleep(1)
-            z.back()
+            z.click_x_btn()
             time.sleep(1)
             z.click_zao()
             time.sleep(3)
             z.back()
         else:
             self.log.info('点击回复5进群banner.')
-            z.elements_reply_5()[0].click()
+            # z.elements_reply_5()[0].click()
+            self.click_reply_8_img(z, type=5)
             time.sleep(1)
             if not self.long_code_fun(z, '5'):
                 return
@@ -196,10 +252,7 @@ class TestXbu(unittest.TestCase):
             self.assertIn('小小包早教训练营', z.text_class_group(), '回复5，扫码识别错误！')
             self.log.info('回复5，识别进群码成功！')
             time.sleep(3)
-            z.back()
-            if z.element_page_expired():
-                time.sleep(3)
-                z.back()
+            z.click_x_btn()
             z.click_long_code()
             time.sleep(1)
             z.back()
@@ -237,10 +290,16 @@ class TestXbu(unittest.TestCase):
                     return False
         return True
 
-    def buy_class(self, z):
+    def buy_class(self, z, n=0):
         """购买流程"""
         time.sleep(1)
-        z.click_attend_lectures_btn()
+        if n:
+            z.click_audition_class_btn()
+            time.sleep(1)
+            z.click_sure_btn()
+            # z.class_info_btn()
+        else:
+            z.click_attend_lectures_btn()
         time.sleep(1)
         self.log.info('进行购买核心课操作...')
         self.add_group(z)
@@ -346,19 +405,21 @@ class TestXbu(unittest.TestCase):
         try:
             z.clicks_collection_btn(-1)
         except IndexError:
-            z.click_collection_btn()
-        except Exception:
-            self.log.warning('收藏按钮点击失败了......')
-            pass
+            try:
+                z.click_collection_btn()
+            except AttributeError:
+                self.log.warning('收藏按钮点击失败了......')
+                pass
         self.log.info('点击收藏按钮.')
         self.log.info('进行发布记录操作...')
         try:
             z.clicks_write_record_btn(-1)
         except IndexError:
-            z.click_write_record_btn()
-        except AttributeError:
-            self.log.error('无法点击写记录按钮！')
-            return
+            try:
+                z.click_write_record_btn()
+            except AttributeError:
+                self.log.error('无法点击写记录按钮！')
+                return
 
         if z.element_typewriting_finish_btn():
             z.click_typewriting_finish_btn()
@@ -368,10 +429,11 @@ class TestXbu(unittest.TestCase):
         try:
             z.inputs_write_text(data, -1)
         except IndexError:
-            z.input_write_text(data)
-        except AttributeError:
-            self.log.error('无法点击记录输入框！')
-            return
+            try:
+                z.input_write_text(data)
+            except AttributeError:
+                self.log.error('无法点击记录输入框！')
+                return
         time.sleep(1)
         self.log.info('选择记录配图或者小视频.')
         if z.element_typewriting_finish_btn():
@@ -396,9 +458,9 @@ class TestXbu(unittest.TestCase):
         time.sleep(2)
         self.log.info('记录发布状态：{}'.format(z.element_record_info(data)))
         self.assertTrue(z.element_record_info(data), '发布记录失败了呢！')
-        z.clicks_release_btn(-1)
         if z.element_typewriting_finish_btn():
             z.click_typewriting_finish_btn()
+        z.clicks_release_btn(-1)
         self.log.info('记录：{} 发布成功'.format(data))
 
     def create_baby(self, z):
@@ -486,10 +548,11 @@ class TestXbu(unittest.TestCase):
             try:
                 z.element_look_all_btn()[-1].click()
             except IndexError:
-                z.click_look_all_btn()
-            except AttributeError:
-                self.log.warning('没有找到 查看全部 按钮......')
-                return
+                try:
+                    z.click_look_all_btn()
+                except AttributeError:
+                    self.log.warning('没有找到 查看全部 按钮......')
+                    return
             time.sleep(1)
             self.log.info(z.elements_title()[-1].text + '=====>页面title')
             if z.elements_title()[-1].text == '游戏百宝箱':
@@ -497,7 +560,7 @@ class TestXbu(unittest.TestCase):
                 break
             else:
                 self.log.warning('到哪了这是？')
-                z._back(z)
+                self._back(z)
         # self.assertEqual(z.elements_title()[-1].text, '游戏百宝箱', '进入游戏首页失败！')
         z.element_look_all_btn()[-1].click()
 

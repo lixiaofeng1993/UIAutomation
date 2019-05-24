@@ -40,10 +40,23 @@ class Zaojiaopage(Crazy):
     def click_helper(self):
         self.click(self.helper_loc)
 
-    zaojiao_small_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/c5" and @text="包妈优选"]')  # 包妈优选小程序
+    small_help_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/cx" and @text="小程序助手"]')  # 小程序助手
 
-    def element_zaojiao_small_btn(self):
-        return self.find_element(self.zaojiao_small_btn_loc)
+    def click_small_help_btn(self):
+        self.click(self.small_help_btn_loc)
+
+    small_name_loc = ('xpath', '//*[contains(@text, "包妈优选")]')  # 包妈优选
+
+    def element_small_name(self):
+        return self.find_element(self.small_name_loc)
+
+    def click_small_name(self):
+        self.click(self.small_name_loc)
+
+    switching_applet_btn_loc = ('xpath', '//*[contains(@text, "切换小程序")]')  # 切换小程序
+
+    def click_switching_applet_btn(self):
+        self.click(self.switching_applet_btn_loc)
 
     delete_small_btn_loc = ('xpath', '//*[contains(@text, "删除")]')  # 删除小程序按钮
 
@@ -65,15 +78,34 @@ class Zaojiaopage(Crazy):
     def click_version_btn(self):
         self.click(self.version_btn_loc)
 
-    experience_version_btn_loc = ('xpath', '//*[contains(@text, "1.1.498")]')  # 体验版
+    experience_version_btn_loc = ('xpath', '//*[contains(@text, "6.0.04")]')  # 体验版
 
-    def click_experience_version_btn(self):
-        self.click(self.experience_version_btn_loc)
+    def clicks_experience_version_btn(self):
+        self.clicks(self.experience_version_btn_loc, -1)
 
     audition_class_btn_loc = ('xpath', '//*[contains(@text, "0元领取7节试听课")]')  # 领取试听课
 
+    def element_audition_class_btn(self):
+        return self.find_element(self.audition_class_btn_loc)
+
     def click_audition_class_btn(self):
         self.click(self.audition_class_btn_loc)
+
+    wechat_grant_btn_loc = (('xpath', '//*[contains(@text, "微信授权") and @class="android.widget.Button" ]'))  # 微信授权
+
+    def click_wechat_grant_btn(self):
+        self.click(self.wechat_grant_btn_loc)
+
+    def double_click_wechat_grant(self):
+        self.double_click(self.wechat_grant_btn_loc)
+
+    def element_wechat_grant_btn(self):
+        return self.find_element(self.wechat_grant_btn_loc)
+
+    allow_btn_loc = ('xpath', '//*[@resource-id="com.tencent.mm:id/st" and @text="允许"]')  # 完成按钮
+
+    def click_allow_btn(self):
+        self.click(self.allow_btn_loc)
 
     month_btn_loc = ('xpath', '//*[contains(@text, "2018")]')  # 选择月份
 
@@ -85,8 +117,8 @@ class Zaojiaopage(Crazy):
     def click_sure_btn(self):
         self.click(self.sure_btn_loc)
 
-    # class_info_loc = ('xpath', '//*[contains(@text, "课程介绍")]')  # 课程介绍
-    class_info_loc = ('xpath', '//android.widget.FrameLayout/android.view.ViewGroup[0]')  # 课程介绍
+    class_info_loc = ('xpath', '//*[contains(@text, "课程介绍")]')  # 课程介绍
+    # class_info_loc = ('xpath', '//android.widget.FrameLayout/android.view.ViewGroup[0]')  # 课程介绍
 
     def class_info_btn(self):
         self.click(self.class_info_loc)
@@ -295,7 +327,7 @@ class Zaojiaopage(Crazy):
     def element_collection_btn(self):
         return self.find_element(self.collection_btn_loc)
 
-    write_record_btn_loc = ('xpath', '//*[@text="写记录" and @class="android.widget.Button"]')  # 写记录按钮
+    write_record_btn_loc = ('xpath', '//*[contains(@text, "写记录") and @class="android.widget.Button" ]')  # 写记录按钮
 
     def click_write_record_btn(self):
         self.click(self.write_record_btn_loc)
@@ -358,7 +390,7 @@ class Zaojiaopage(Crazy):
     def clicks_class2_name(self, n):
         self.clicks(self.class_name2_loc, n)
 
-    write_text_loc = ('xpath', '//*[contains(@text, "0/256")]')  # 写记录
+    write_text_loc = ('xpath', '//*[contains(@text, "0/1000")]')  # 写记录
 
     def input_write_text(self, text):
         self.send_keys(self.write_text_loc, text)
@@ -645,3 +677,8 @@ class Zaojiaopage(Crazy):
 
     def element_page_expired(self):
         return self.find_element(self.page_expired_loc)
+
+    x_btn_loc = ('id', 'com.tencent.mm:id/kx')
+
+    def click_x_btn(self):
+        self.click(self.x_btn_loc)

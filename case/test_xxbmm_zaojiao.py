@@ -15,6 +15,7 @@ from common.basics import open_app
 from common.logger import Log, img_path
 from page.page_zaojiao import Zaojiaopage
 from common import read_config
+from common.api import clear_user
 
 
 # from common import readConfig
@@ -41,6 +42,7 @@ class TestXbu(unittest.TestCase):
     def test_1first_baby(self):
         """第一个宝宝的购买和领课流程"""
         z = self.zao
+        time.sleep(2)
         self.delete_applet(z)
         self.log.info('第一个宝宝开始进行操作...')
         self.buy_class(z, n=1)
@@ -97,10 +99,11 @@ class TestXbu(unittest.TestCase):
         z.clicks_experience_version_btn()
         while True:
             if z.element_audition_class_btn():
+                self.log.info('点击按钮，进行授权!')
                 z.click_audition_class_btn()
                 break
             else:
-                self.log.info('未发现0元领取7节试听课按钮，等待中...')
+                self.log.info('未发现0元领取10节试听课按钮，等待中...')
                 time.sleep(3)
         self.log.info('正在进行授权操作.')
         z.click_wechat_grant_btn()
@@ -188,7 +191,7 @@ class TestXbu(unittest.TestCase):
             else:
                 self.log.info(z.elements_title()[-1].text + '=====>页面title')
                 if type == 5:
-                    if z.elements_title()[-1].text == '早教试听课':
+                    if z.elements_title()[-1].text == '在家早教课':
                         if z.element_get_set() and not z.element_collection_btn():
                             self.log.info('点击失败，还在当前页面！点击次数：{}'.format(i - 1))
                         else:
@@ -249,7 +252,7 @@ class TestXbu(unittest.TestCase):
                 return
             if not z.text_class_group():
                 time.sleep(3)
-            self.assertIn('小小包早教训练营', z.text_class_group(), '回复5，扫码识别错误！')
+            self.assertIn('小小包早教训练', z.text_class_group(), '回复5，扫码识别错误！')
             self.log.info('回复5，识别进群码成功！')
             time.sleep(3)
             z.click_x_btn()
@@ -294,10 +297,13 @@ class TestXbu(unittest.TestCase):
         """购买流程"""
         time.sleep(1)
         if n:
-            z.click_audition_class_btn()
-            time.sleep(1)
-            z.click_sure_btn()
-            # z.class_info_btn()
+            if z.element_attend_lectures_btn():
+                z.click_attend_lectures_btn()
+            else:
+                z.click_audition_class_btn()
+                time.sleep(1)
+                z.click_sure_btn()
+                # z.class_info_btn()
         else:
             z.click_attend_lectures_btn()
         time.sleep(1)
@@ -353,6 +359,9 @@ class TestXbu(unittest.TestCase):
             z.click_receive_btn()
             buy = True
             self.log.info('领取课程成功！')
+        if z.element_know():
+            self.log.info('存在我知道了弹层，正常点击中.')
+            z.click_know()
         if z.element_know():
             self.log.info('存在我知道了弹层，正常点击中.')
             z.click_know()

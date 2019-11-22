@@ -134,19 +134,19 @@ def run_email():
     # 生成报告测试路径
     run_case(all_case, report_path)
     # 获取最新的测试报告
-    # report_file_html = get_new_report_html(report_path)
-    # send_wx()  # 发送微信信息
-    # user = read_config.user
-    # # qq邮箱授权码
-    # pwd = read_config.pwd
-    # user_163 = read_config.user_163
-    # # 163邮箱授权码
-    # pwd_163 = read_config.pwd_163
-    # # _to = ['18701137212@163.com','liyongfeng@xxbmm.com','954274592@qq.com']
-    # _to = read_config.to.split(',')
-    # smtp_service = read_config.smtp_service
-    # smtp_service_163 = read_config.smtp_service_163
-    # send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163, report_file_html)
+    report_file_html = get_new_report_html(report_path)
+    send_wx()  # 发送微信信息
+    user = read_config.user
+    # qq邮箱授权码
+    pwd = read_config.pwd
+    user_163 = read_config.user_163
+    # 163邮箱授权码
+    pwd_163 = read_config.pwd_163
+    # _to = ['18701137212@163.com','liyongfeng@xxbmm.com','954274592@qq.com']
+    _to = read_config.to.split(',')
+    smtp_service = read_config.smtp_service
+    smtp_service_163 = read_config.smtp_service_163
+    send_email(user, pwd, user_163, pwd_163, _to, smtp_service, smtp_service_163, report_file_html)
 
 
 if __name__ == '__main__':

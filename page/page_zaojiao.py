@@ -78,12 +78,12 @@ class Zaojiaopage(Crazy):
     def click_version_btn(self):
         self.click(self.version_btn_loc)
 
-    experience_version_btn_loc = ('xpath', '//*[contains(@text, "6.0.04")]')  # 体验版
+    experience_version_btn_loc = ('xpath', '//*[contains(@text, "6.0.09")]')  # 体验版
 
     def clicks_experience_version_btn(self):
         self.clicks(self.experience_version_btn_loc, -1)
 
-    audition_class_btn_loc = ('xpath', '//*[contains(@text, "0元领取7节试听课")]')  # 领取试听课
+    audition_class_btn_loc = ('xpath', '//*[contains(@text, "0元领取10节试听课")]')  # 领取试听课
 
     def element_audition_class_btn(self):
         return self.find_element(self.audition_class_btn_loc)
@@ -118,12 +118,16 @@ class Zaojiaopage(Crazy):
         self.click(self.sure_btn_loc)
 
     class_info_loc = ('xpath', '//*[contains(@text, "课程介绍")]')  # 课程介绍
+
     # class_info_loc = ('xpath', '//android.widget.FrameLayout/android.view.ViewGroup[0]')  # 课程介绍
 
     def class_info_btn(self):
         self.click(self.class_info_loc)
 
     attend_lectures_btn_loc = ('xpath', '//*[contains(@text, "立即听课")]')  # 立即听课
+
+    def element_attend_lectures_btn(self):
+        return self.find_element(self.attend_lectures_btn_loc)
 
     def click_attend_lectures_btn(self):
         self.click(self.attend_lectures_btn_loc)
@@ -367,7 +371,7 @@ class Zaojiaopage(Crazy):
         else:
             return False
 
-    class_name_loc = ('xpath', '//*[contains(@text, "测试英语课程组")]')  # 课程名称
+    class_name_loc = ('xpath', '//*[contains(@text, "歌曲")]')  # 课程名称
 
     # class_name_loc = ('xpath', '//*[contains(@text, "歌曲：Head and shoulders")]')  # 课程名称
 
@@ -380,7 +384,7 @@ class Zaojiaopage(Crazy):
     def elements_class_name(self):
         return self.find_elements(self.class_name_loc)
 
-    class_name2_loc = ('xpath', '//*[contains(@text, "测试游戏课程")]')  # 课程名称
+    class_name2_loc = ('xpath', '//*[contains(@text, "一起走")]')  # 课程名称
 
     # class_name2_loc = ('xpath', '//*[contains(@text, "弹出来的画")]')  # 课程名称
 
@@ -431,7 +435,7 @@ class Zaojiaopage(Crazy):
     def click_my_course_btn(self):
         self.click(self.my_course_btn_loc)
 
-    my_course_buy_btn_loc = ('xpath', '//*[contains(@text, "早教核心课半年卡")]')  # 早教核心课半年卡
+    my_course_buy_btn_loc = ('xpath', '//*[contains(@text, "早教核心课年卡")]')  # 早教核心课年卡
 
     def elements_my_course_buy_btn(self):
         return self.find_elements(self.my_course_buy_btn_loc)

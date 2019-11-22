@@ -11,56 +11,57 @@
 #
 # print(round(text, 2))
 
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-
-import requests
-import threading
-import schedule
-import time
-
-login_url = 'http://gongjiaoapi.xuechebu.com/Student/setbadingstuinfo?password=123456&jgid=124001&id_type=1&xybh=5101231040';
-login_header = {
- 'User-Agent': 'ios_gongjiao;v4.0.0'
-}
-
-
-request = requests.session()
-
-response = requests.post(url=login_url,headers = login_header)
-
-content = response.content.decode()
-print(content)
-print("================================")
-cookies=response.cookies
+# from page_objects import PageElement,PageObject
+# from selenium import webdriver
+# from common.basics import open_browser
 #
-# #预约
+# class LoginPage(PageObject):
+#
+#     username = PageElement(id_='username')
+#     password = PageElement(id_='password')
+#     login_button = PageElement(tag_name='button')
+#
+#
+# if __name__ == '__main__':
+#     driver = webdriver.Chrome(executable_path=r'D:\UIAutomation\driver\chromedriver.exe')
+#     page = LoginPage(driver, root_uri='https://dev.edu.xxbmm.com/zh')
+#     page.get('/login')
+#     page.username = 'root'
+#     page.password = 'admin'
+#     page.login_button.click()
+#
 
 
+class Boos:
 
-def yuyue():
- date = ['2019年5月11日', '2019年5月12日']
- dateTime = ['58', '58']
- for i in range(len(date)):
-  #上午  812  下午  15
-  jx_url = 'http://gongjiaoapi.xuechebu.com/KM2/ClYyAddByMutil?aaaaa=O-add-r6rABjQPweieXIxb593Di2oK6xFyoJXqpe4ZeSnCFZsfxtYb87NstyWcXuAsIdqXFMQVwcC3zQ9HbfXoG4Tbhe7jkBJIm2uvKxwUmUi7yAicKbZSYtQk6wyk8gnkFb8GcH-add-Dqb/fGZB4fzdIxqkCfxyAD8KhPWZfZSh9EiHjI=&' \
-           'os=ios&version=2.6&xxzh=63512740&' \
-           'params=4%E9%98%9F11%E7%BB%84.' \
-           +date[i]+ '.' \
-            +dateTime[i]+'..&' \
-           'isJcsdYyMode=5&TrainType=2'
-  yx_response = requests.get(url=jx_url, headers=login_header, cookies=cookies)
-  yx_content = yx_response.content.decode()
-  print(yx_content)
+    def __init__(self):
+        self.money = 10000
+        self.goods = 0
+        self.staff = 1
 
+    def sell_goods(self):
+        return self.goods * 10
 
-def run_threaded(job_func):
-    job_thread = threading.Thread(target=job_func)
-    job_thread.start()
+class Employee(Boos):
 
+    def __init__(self):
+        Boos.__init__(self)
+        self.attr = 300
 
-schedule.every(1).seconds.do(run_threaded,yuyue)
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+    def boos_money(self):
+        for i in range(1, 121):
+            if i % 12 == 1 and i >= 12:
+                print(i, '===========')
+                self.staff += 1
+                if self.attr < 500:
+                    self.attr += 50
+            print(self.staff, self.attr, i)
+            self.goods = self.attr * self.staff
+            self.money += self.sell_goods() - self.staff * 2000
+        print(self.money)
+
+if __name__ == '__main__':
+    Employee().boos_money()

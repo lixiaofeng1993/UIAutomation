@@ -125,6 +125,19 @@ class Log:
         self.__console('error', message)
 
 
+class CustomException(Exception):
+    def __init__(self, error):
+        self.error = error
+
+    def __str__(self):
+        exception_msg = "Message: %s\n" % self.error
+        return exception_msg
+
+
+class NoTextFountException(CustomException):
+    pass
+
+
 if __name__ == "__main__":
     log = Log()
     log.debug("---测试开始----")

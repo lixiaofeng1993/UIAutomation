@@ -11,7 +11,7 @@ import time, os
 from BeautifulReport import BeautifulReport
 import paramunittest
 from page.page_child_login import ChildLoginPage
-from common.logger import Log, img_path
+from common.logger import Log, img_path, NoTextFountException
 from common.basics import open_browser
 from common import read_config
 
@@ -31,7 +31,7 @@ from common import read_config
 class TestLogin(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver = open_browser()
+        cls.driver = open_browser("firefox")
         cls.log = Log()
         cls.login = ChildLoginPage(cls.driver)
         cls.url = read_config.url
@@ -61,6 +61,7 @@ class TestLogin(unittest.TestCase):
         error = login.text_login_error()
         if error:
             self.log.info('登录报错：{}'.format(error))
+            raise NoTextFountException('登录报错：{}'.format(error))
         else:
             self.assertEqual(self.user, login.text_check_login(), '用户登录失败！')
             self.log.info('用户: {} 登录成功.'.format(self.user))
